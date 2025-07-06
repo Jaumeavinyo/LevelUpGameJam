@@ -14,16 +14,13 @@ public class Camera_Car : MonoBehaviour
     private bool isMoving = false;
     private bool goingToPos2 = true;
 
-    public InputActionAsset inputActions;
-    public InputAction inputActionCamera;
-    public float cameraDirectionInput;
+    //public InputActionAsset inputActions;
+    //public InputAction inputActionCamera;
+    //public float cameraDirectionInput;
 
     void Start()
-    {
-        // CurrentCamera.transform.position = CurrentCamera.transform.position; //creo q es redundante pero lo dejo por si acaso
-        // GetComponent(CameraPosX, CameraPosY);
+    {        
         StartCoroutine(Sequence());
-
     }
 
     // Update is called once per frame
@@ -65,24 +62,24 @@ public class Camera_Car : MonoBehaviour
             yield return new WaitForSeconds(5f);
         }
     }
-    private void OnEnable()
-    {
-        InputActionMap inputActionsMap = inputActions.FindActionMap("Player", throwIfNotFound: true);
+    //private void OnEnable()
+    //{
+    //    InputActionMap inputActionsMap = inputActions.FindActionMap("Player", throwIfNotFound: true);
 
-        if(inputActionsMap != null)
-        {
-            inputActionCamera = inputActionsMap.FindAction("Move", throwIfNotFound: false);
-            if (inputActionCamera != null)
-                inputActionCamera.Enable();
-        }
+    //    if(inputActionsMap != null)
+    //    {
+    //        inputActionCamera = inputActionsMap.FindAction("Move", throwIfNotFound: false);
+    //        if (inputActionCamera != null)
+    //            inputActionCamera.Enable();
+    //    }
 
-    }
+    //}
 
-    private void OnDisable()
-    {
-        if (inputActionCamera != null)
-        {
-            inputActionCamera.Disable();
-        }
-    }
+    //private void OnDisable()
+    //{
+    //    if (inputActionCamera != null)
+    //    {
+    //        inputActionCamera.Disable();
+    //    }
+    //}
 }
