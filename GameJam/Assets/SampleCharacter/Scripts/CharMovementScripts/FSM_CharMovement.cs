@@ -9,7 +9,7 @@ public class FSM_CharMovement : FSM
 
     public InputAction inputAction_jump; //own input added to player inputs
     public InputAction inputAction_move;
-    public InputAction inputAction_roll;
+    
     public InputAction inputAction_dash;
     public InputAction inputAction_heavy_attack;
     public InputAction inputAction_light_attack;
@@ -19,6 +19,7 @@ public class FSM_CharMovement : FSM
     public idle_state idle;
     public run_state run;
     public jump_state jump;
+    public dash_state dash;
     
     public Rigidbody2D rigidBody;
     public Animator animator;
@@ -35,6 +36,10 @@ public class FSM_CharMovement : FSM
 
     public bool grounded;
     public bool wallGrabbed;
+
+    public float gravityScale;
+    public float dashJumpGravityScale;
+
     private void Awake()
     {
 
@@ -45,6 +50,7 @@ public class FSM_CharMovement : FSM
         idle = new idle_state(this);
         run = new run_state(this);
         jump = new jump_state(this);
+        dash = new dash_state(this);
 
         grounded = isGrounded();
         directionInput = 0;
@@ -73,15 +79,15 @@ public class FSM_CharMovement : FSM
         {
             currentState.UpdateLogic();
         }
-        rigidBody.gravityScale = 3;
-        //if (currentState != jump && currentState != dash && currentState != roll)
-        //{
-        //    rigidBody.gravityScale = 3;
-        //}
-        //else
-        //{
-        //    rigidBody.gravityScale = 1.5f;
-        //}
+        
+        if (currentState != jump && currentState != dash)
+        {
+            rigidBody.gravityScale = gravityScale;
+        }
+        else
+        {
+            rigidBody.gravityScale = dashJumpGravityScale;
+        }
 
     }
 
@@ -179,6 +185,12 @@ public class FSM_CharMovement : FSM
             directionInput = lastDirectionInput = gameObject.transform.localScale.x;
         }
 
+        if(currentState == dash)
+        {
+            
+            directionInput = dash.horizontalDash;
+        }
+
         //existing inputs
         if (directionInput > 0)
         {
@@ -226,6 +238,8 @@ public class FSM_CharMovement : FSM
         inputAction_jump = inputActionsMap.FindAction("Jump", throwIfNotFound: true);
         inputAction_jump.Enable();
 
+        inputAction_dash = inputActionsMap.FindAction("Dash", throwIfNotFound: true);
+        inputAction_dash.Enable();
         //inputAction_jump = inputActions.Player.jump;
         //inputAction_jump.Enable();
 
@@ -241,6 +255,8 @@ public class FSM_CharMovement : FSM
     {
         inputAction_move.Disable();
         inputAction_jump.Disable();
+        inputAction_dash.Disable();
+
         //inputAction_roll.Disable();
         //inputAction_dash.Disable();
 

@@ -24,6 +24,10 @@ public class jump_state : FSM_BaseState
     {
         Debug.Log("ENTER() JUMP");
         base.Enter();
+
+        
+      
+
         horizontalInput = 0;
         currState = jumpStates.JUMP;
         doubleJump = false;
@@ -71,6 +75,8 @@ public class jump_state : FSM_BaseState
         currState = jumpStates.JUMP;
         jumpNow = false;
         jumping = false;
+
+        jumpInput = false;
     }
 
     public void jump()
@@ -113,14 +119,24 @@ public class jump_state : FSM_BaseState
             if (!doubleJumping)
             {
                 currState = jumpStates.JUMP;
-                doubleJump = true;
-                
+                doubleJump = true;               
             }
+
         }
 
         //   ### --- ###
         horizontalInput = my_sm.inputAction_move.ReadValue<Vector2>().x;
 
+        //   ### --- ###
+        float bDash = my_sm.inputAction_dash.ReadValue<float>();
+        if (bDash == 1.0f)
+        {
+            if(my_sm.previousState != my_sm.dash)
+            {
+                dashInput = true;
+                stateMachine.ChangeState(my_sm.dash);
+            }           
+        }
     }
 
     public void handleInternalJumpState()

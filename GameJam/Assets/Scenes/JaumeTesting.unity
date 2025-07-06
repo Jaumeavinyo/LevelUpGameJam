@@ -487,15 +487,6 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
-  inputAction_roll:
-    m_Name: Input Action_roll
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: b36ccbc4-5020-470b-90fc-e48ee70be763
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
   inputAction_dash:
     m_Name: Input Action_dash
     m_Type: 0
@@ -528,13 +519,15 @@ MonoBehaviour:
   animator: {fileID: 1602440420}
   capsuleCollider: {fileID: 1602440422}
   speed: 8
-  dashSpeed: 10
-  jumpForce: 16
+  dashSpeed: 13
+  jumpForce: 10
   groundDistanceDetection: 0.7
   directionInput: 0
   lastDirectionInput: 0
   grounded: 0
   wallGrabbed: 0
+  gravityScale: 3
+  dashJumpGravityScale: 2
 --- !u!114 &1602440424
 MonoBehaviour:
   m_ObjectHideFlags: 0
