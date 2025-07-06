@@ -14,9 +14,7 @@ public class run_state : FSM_BaseState
     {
         base.Enter();
         Debug.Log("ENTER() RUN");
-        horizontalInput = my_sm.inputAction_move.ReadValue<Vector2>().x;
-        jumpInput = false;
-        dashInput = false;
+        horizontalInput = my_sm.inputAction_move.ReadValue<Vector2>().x;       
 
     }
 
@@ -59,6 +57,13 @@ public class run_state : FSM_BaseState
             stateMachine.ChangeState(my_sm.jump);
         }
 
+        //   ### --- ###
+        float bDash = my_sm.inputAction_dash.ReadValue<float>();
+        if (bDash == 1.0f)
+        {
+            dashInput = true;
+            stateMachine.ChangeState(my_sm.dash);
+        }
     }
 
 
