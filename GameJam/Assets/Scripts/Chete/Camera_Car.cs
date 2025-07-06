@@ -6,8 +6,10 @@ using System.Collections;
 public class Camera_Car : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public Transform PosEvento1;
-    public Transform PosEvento2;
+    public Transform LWindow;
+    public Transform RWindow;
+    public Transform CarCenter;
+
     public float vel;
 
     private Transform target;
@@ -53,11 +55,11 @@ public class Camera_Car : MonoBehaviour
     {
         for (int i = 0; i < 3; i++)
         {
-            NewEvent(PosEvento1);
+            NewEvent(LWindow);
             yield return new WaitUntil(() => !isMoving);
             yield return new WaitForSeconds(5f);
 
-            NewEvent(PosEvento2);
+            NewEvent(RWindow);
             yield return new WaitUntil(() => !isMoving);
             yield return new WaitForSeconds(5f);
         }
