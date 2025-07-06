@@ -6,7 +6,6 @@ using UnityEngine.InputSystem;
 
 public class FSM_CharMovement : FSM
 {
-
     public InputAction inputAction_jump; //own input added to player inputs
     public InputAction inputAction_move;
     public InputAction inputAction_roll;
@@ -19,7 +18,7 @@ public class FSM_CharMovement : FSM
     public idle_state idle;
     public run_state run;
     public jump_state jump;
-    
+
     public Rigidbody2D rigidBody;
     public Animator animator;
     public CapsuleCollider2D capsuleCollider;
@@ -49,7 +48,7 @@ public class FSM_CharMovement : FSM
         grounded = isGrounded();
         directionInput = 0;
         lastDirectionInput = 0;
-        
+
     }
 
     public override void Update()
@@ -97,7 +96,7 @@ public class FSM_CharMovement : FSM
 
         RaycastHit2D rayHit = Physics2D.Raycast(capsuleCollider.bounds.center, Vector2.down, capsuleCollider.bounds.extents.y + groundDistanceDetection);
         Color rayColor;
-        
+
         if (rayHit.collider != null)
         {
             ret = true;

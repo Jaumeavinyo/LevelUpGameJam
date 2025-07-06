@@ -33,6 +33,6 @@ public class DebugManager : MonoBehaviour
 
     public void ChangeSpeed(bool increase)
     {
-        ChunksManager.Instance.Speed += increase ? 50 : -50;
+        ChunksManager.Instance.Speed += increase ? .3f : -.3f;
     }
 }

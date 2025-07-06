@@ -9,7 +9,8 @@ public class ChunksManager : MonoBehaviour
     [NonSerialized] public List<Chunk> LiveChunks = new();
     [NonSerialized] public Chunk CurrentChunk;
     public Transform ChunksHolder;
-    [NonSerialized] public float Speed = 200;
+    [NonSerialized] public float Speed = 2, Acceleration = 0.1f;
+
 
     void Awake()
     {
@@ -34,7 +35,7 @@ public class ChunksManager : MonoBehaviour
         Chunk selectedTemplate = CurrentChunk.NextPossibleChunks[index];
         Chunk newChunk = Instantiate(selectedTemplate, ChunksHolder);
         LiveChunks.Add(newChunk);
-        newChunk.transform.localPosition = CurrentChunk.transform.localPosition + new Vector3(newChunk.GetXSize() / 2, 0, 0);
+        newChunk.transform.localPosition = CurrentChunk.transform.localPosition + new Vector3(CurrentChunk.GetXSize() / 2, 0, 0) + new Vector3(newChunk.GetXSize() / 2, 0, 0);
         CurrentChunk = newChunk;
     }
 
@@ -44,12 +45,13 @@ public class ChunksManager : MonoBehaviour
         foreach (Chunk chunk in CurrentLiveChunks)
         {
             chunk.transform.localPosition += new Vector3(-Speed * Time.deltaTime, 0, 0);
-            if (chunk.transform.localPosition.x <= -chunk.GetXSize() / 2)
+            if (chunk.transform.localPosition.x <= -30)
             {
                 Destroy(chunk.gameObject);
                 LiveChunks.Remove(chunk);
             }
         }
-        if (CurrentChunk.transform.localPosition.x <= 1900) GenerateRandomNextChunk();
+        if (CurrentChunk.transform.localPosition.x <= 11) GenerateRandomNextChunk();
+        Speed += Time.deltaTime * Acceleration;
     }
 }
