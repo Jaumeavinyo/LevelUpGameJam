@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 using System.Collections;
@@ -12,8 +13,8 @@ public class Camera_Car : MonoBehaviour
 
     public float vel;
 
-    private Transform target;
-    private bool isMoving = false;
+    [NonSerialized] public Transform target;
+    [NonSerialized] public bool isMoving = false;
     private bool goingToPos2 = true;
 
     //public InputActionAsset inputActions;

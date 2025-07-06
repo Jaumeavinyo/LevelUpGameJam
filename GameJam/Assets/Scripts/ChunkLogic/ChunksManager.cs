@@ -12,6 +12,7 @@ public class ChunksManager : MonoBehaviour
     [NonSerialized] public float Speed = 2, Acceleration = 0.1f;
 
 
+
     void Awake()
     {
         Instance = this;
