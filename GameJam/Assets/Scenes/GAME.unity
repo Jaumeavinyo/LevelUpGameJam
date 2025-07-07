@@ -423,7 +423,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartingChunk: {fileID: 1737325614816170554, guid: fde02eac401f4a441823686f437630de, type: 3}
   Display: {fileID: 445523841}
-  Character: {fileID: 1620646996}
+  Character: {fileID: 1620647000}
 --- !u!4 &692484571
 Transform:
   m_ObjectHideFlags: 0
