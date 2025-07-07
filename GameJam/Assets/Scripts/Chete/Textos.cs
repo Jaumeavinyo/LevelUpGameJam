@@ -40,7 +40,7 @@ public class Textos : MonoBehaviour
         {
             return;
         }
-        
+        //-->
         exclamationTimer += Time.deltaTime;
         if (exclamationTimer >= exclamationInterval && !exclamationImage.activeSelf)
         {
@@ -67,5 +67,6 @@ public class Textos : MonoBehaviour
 
             exclamationTimer = 0f;
         }
+        //<--
     }
 }
