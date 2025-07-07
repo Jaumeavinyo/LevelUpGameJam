@@ -96,8 +96,8 @@ public class GameManager : MonoBehaviour
                 }
                 break;
         }
-        
-        
+
+
     }
 
     private void CheckCameraMovementInput()
@@ -153,17 +153,19 @@ public class GameManager : MonoBehaviour
             PressEGameObject.SetActive(false);
         }
 
-        
-        
+
+
         if (canEnterPlayNinja && Input.GetKey(KeyCode.E))
         {
             ChangingToPlayMode = true;
-           
             PressEGameObject.SetActive(false);
-        }else if(canEnterPlayNinja && gamepadButtonPressed==1.0)
+            PressAgameObject.SetActive(false);
+        }
+        else if (canEnterPlayNinja && gamepadButtonPressed == 1.0)
         {
             ChangingToPlayMode = true;
             PressAgameObject.SetActive(false);
+            PressEGameObject.SetActive(false);
         }
     }
 

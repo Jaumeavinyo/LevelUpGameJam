@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -56,6 +57,21 @@ public class ChunksManager : MonoBehaviour
         Character.GetComponent<Dissolve>().StartAppear();
     }
 
+    public void StartRestartCountdown()
+    {
+        if (GameStarted)
+        {
+            Character.GetComponent<Dissolve>().StartVanishing();
+            StartCoroutine(RestartAfterDelay());
+        }
+    }
+
+    private IEnumerator RestartAfterDelay()
+    {
+        yield return new WaitForSeconds(1f);
+        RestartGame();
+    }
+
     void Update()
     {
         bool GameMangerPlaying = GameManager.Instance.gamePlayMode == GamePlayMode.PLAYING;
@@ -79,7 +95,7 @@ public class ChunksManager : MonoBehaviour
                 if (CurrentChunk.transform.localPosition.x <= 11) GenerateRandomNextChunk();
                 Character.gameObject.transform.localPosition += new Vector3(-Speed * Time.deltaTime, 0, 0);
                 Speed += Time.deltaTime * Acceleration;
-                Debug.Log("Speed ChunksManager"+ Speed);
+                Debug.Log("Speed ChunksManager" + Speed);
             }
         }
         else if (GameStarted)
@@ -87,7 +103,7 @@ public class ChunksManager : MonoBehaviour
             Character.GetComponent<Dissolve>().StartVanishing();
             GameStarted = false;
         }
-        
-        
+
+
     }
 }
