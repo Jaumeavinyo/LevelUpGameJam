@@ -3,12 +3,23 @@ using System;
 using UnityEngine.AI;
 using TMPro;
 using UnityEngine.InputSystem;
+using NUnit.Framework;
+using System.Collections.Generic;
 
 public enum GamePlayMode
 {
     PLAYING,
     IN_EVENT,
     FREE_MOVEMENT
+}
+
+[System.Serializable]
+public struct StructEvent
+{
+    [Tooltip("Time in seconds when the event triggers")]
+    public float eventTime;
+    [Tooltip("The camera position to move to at this time")]
+    public Transform CameraPosition;
 }
 public class GameManager : MonoBehaviour
 {
@@ -44,11 +55,10 @@ public class GameManager : MonoBehaviour
     public float minY = -1, maxY = 1;
     private bool ChangingToPlayMode = false;
 
-    //public InputActionAsset inputActions;
-    //public InputAction inputActionCamera;
-    //public float cameraDirectionInput;
-
-    // Update is called once per frame
+    
+    public List<StructEvent> Events = new List<StructEvent>();
+   
+   
     void Update()
     {
         switch (gamePlayMode)
@@ -64,6 +74,7 @@ public class GameManager : MonoBehaviour
                 }
                 else
                 {
+                    //HERE WE SHOULD CALL THE PARENTS TEXT TODO
                     gamePlayMode = GamePlayMode.FREE_MOVEMENT;
                     StateText.text = "Free Movement";
                 }
@@ -71,6 +82,16 @@ public class GameManager : MonoBehaviour
                 break;
             case GamePlayMode.PLAYING:
                 moveTimer += Time.deltaTime;
+                
+                for(int i = 0;i< Events.Count; i++)
+                {
+                    if (Math.Abs(Events[i].eventTime - moveTimer) < 1.0f)
+                    {
+                        TriggerEvent(Events[i]);
+                    }
+                }
+                
+                
                 if (moveTimer >= TIME_BETWEEN_EVENTS)
                 {
                     NewEvent(getNextTarget());
@@ -99,7 +120,9 @@ public class GameManager : MonoBehaviour
 
 
     }
-
+    public void TriggerEvent(StructEvent event_){
+        NewEvent(event_.CameraPosition);
+    }
     private void CheckCameraMovementInput()
     {
         Vector3 newPosition = Camera.transform.position;
@@ -107,22 +130,6 @@ public class GameManager : MonoBehaviour
         Vector3 InputVec3D = new Vector3(InputVec2D.x, InputVec2D.y, 0);
 
         newPosition += Time.deltaTime * freeMovementVel * InputVec3D;
-        //if (Input.GetKey(KeyCode.W))
-        //{
-        //    newPosition += Time.deltaTime * freeMovementVel * new Vector3(0, 1f, 0);
-        //}
-        //if (Input.GetKey(KeyCode.A))
-        //{
-        //    newPosition += Time.deltaTime * freeMovementVel * new Vector3(-1f, 0, 0);
-        //}
-        //if (Input.GetKey(KeyCode.S))
-        //{
-        //    newPosition += Time.deltaTime * freeMovementVel * new Vector3(0, -1f, 0);
-        //}
-        //if (Input.GetKey(KeyCode.D))
-        //{
-        //    newPosition += Time.deltaTime * freeMovementVel * new Vector3(1f, 0, 0);
-        //}
 
         newPosition.x = Mathf.Clamp(newPosition.x, minX, maxX);
         newPosition.y = Mathf.Clamp(newPosition.y, minY, maxY);
@@ -242,6 +249,7 @@ public class GameManager : MonoBehaviour
 
     void NewEvent(Transform newTarget)
     {
+        //HERE WE SHOULD CHANGE THE CAR SPRITES OF THE EVENT TODO
         target = newTarget;
         isMoving = true;
         gamePlayMode = GamePlayMode.IN_EVENT;
