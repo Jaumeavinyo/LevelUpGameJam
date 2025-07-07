@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     public InputAction inputAction_interact;
     public static string LastInputDevice = "None";
 
+    public string playerName;
+
     public static GameManager Instance;
     public TextMeshProUGUI StateText;
     public static float TIME_BETWEEN_EVENTS = 10;
@@ -209,6 +211,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         gamePlayMode = GamePlayMode.FREE_MOVEMENT;
+        playerName = PlayerData.playerName;
+        Debug.Log(playerName);
     }
 
     void Awake()
