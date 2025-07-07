@@ -8,9 +8,9 @@ public class ChunksManager : MonoBehaviour
     public Chunk StartingChunk;
     [NonSerialized] public List<Chunk> LiveChunks = new();
     [NonSerialized] public Chunk CurrentChunk;
-    public Transform ChunksHolder;
     [NonSerialized] public float Speed = 2, Acceleration = 0.1f;
-
+    public GameObject Display, Character;
+    private bool GameStarted = false;
 
 
     void Awake()
@@ -20,11 +20,6 @@ public class ChunksManager : MonoBehaviour
 
     void Start()
     {
-        Chunk firstChunk = Instantiate(StartingChunk, ChunksHolder);
-        LiveChunks.Add(firstChunk);
-        CurrentChunk = firstChunk;
-        GenerateRandomNextChunk();
-        GenerateRandomNextChunk();
     }
 
     public void GenerateRandomNextChunk()
@@ -34,25 +29,57 @@ public class ChunksManager : MonoBehaviour
 
         int index = UnityEngine.Random.Range(0, CurrentChunk.NextPossibleChunks.Count);
         Chunk selectedTemplate = CurrentChunk.NextPossibleChunks[index];
-        Chunk newChunk = Instantiate(selectedTemplate, ChunksHolder);
+        Chunk newChunk = Instantiate(selectedTemplate, Display.transform);
         LiveChunks.Add(newChunk);
         newChunk.transform.localPosition = CurrentChunk.transform.localPosition + new Vector3(CurrentChunk.GetXSize() / 2, 0, 0) + new Vector3(newChunk.GetXSize() / 2, 0, 0);
         CurrentChunk = newChunk;
     }
 
+    private void RestartGame()
+    {
+        foreach (Chunk chunk in LiveChunks)
+        {
+            Destroy(chunk.gameObject);
+        }
+        LiveChunks.Clear();
+        Display.SetActive(true);
+        GameStarted = true;
+        Chunk firstChunk = Instantiate(StartingChunk, Display.transform);
+        LiveChunks.Add(firstChunk);
+        CurrentChunk = firstChunk;
+        GenerateRandomNextChunk();
+        GenerateRandomNextChunk();
+        Character.transform.position = firstChunk.transform.position + new Vector3(0, 1, 0);
+    }
+
     void Update()
     {
-        List<Chunk> CurrentLiveChunks = new(LiveChunks);
-        foreach (Chunk chunk in CurrentLiveChunks)
+        bool GameMangerPlaying = GameManager.Instance.gamePlayMode == GamePlayMode.PLAYING;
+        if (GameMangerPlaying)
         {
-            chunk.transform.localPosition += new Vector3(-Speed * Time.deltaTime, 0, 0);
-            if (chunk.transform.localPosition.x <= -30)
+            if (!GameStarted)
             {
-                Destroy(chunk.gameObject);
-                LiveChunks.Remove(chunk);
+                RestartGame();
+            }
+            {
+                List<Chunk> CurrentLiveChunks = new(LiveChunks);
+                foreach (Chunk chunk in CurrentLiveChunks)
+                {
+                    chunk.transform.localPosition += new Vector3(-Speed * Time.deltaTime, 0, 0);
+                    if (chunk.transform.localPosition.x <= -30)
+                    {
+                        Destroy(chunk.gameObject);
+                        LiveChunks.Remove(chunk);
+                    }
+                }
+                if (CurrentChunk.transform.localPosition.x <= 11) GenerateRandomNextChunk();
+                Speed += Time.deltaTime * Acceleration;
             }
         }
-        if (CurrentChunk.transform.localPosition.x <= 11) GenerateRandomNextChunk();
-        Speed += Time.deltaTime * Acceleration;
+        else
+        {
+            Display.SetActive(false);
+            GameStarted = false;
+        }
     }
 }
