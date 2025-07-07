@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine.InputSystem;
 using NUnit.Framework;
 using System.Collections.Generic;
+using System.Collections;
 
 public enum GamePlayMode
 {
@@ -18,8 +19,11 @@ public struct StructEvent
 {
     [Tooltip("Time in seconds when the event triggers")]
     public float eventTime;
+
     [Tooltip("The camera position to move to at this time")]
     public Transform CameraPosition;
+
+    public GameObject Dialogue;
 }
 public class GameManager : MonoBehaviour
 {
@@ -29,6 +33,7 @@ public class GameManager : MonoBehaviour
     public InputAction inputAction_interact;
     public static string LastInputDevice = "None";
 
+    public float secondsToForceEventIfNointeraction;
     public string playerName;
 
     public static GameManager Instance;
@@ -57,8 +62,20 @@ public class GameManager : MonoBehaviour
 
     
     public List<StructEvent> Events = new List<StructEvent>();
-   
-   
+    public Textos TextScript;
+    public GameObject TextManager;
+    void Start()
+    {
+        gamePlayMode = GamePlayMode.FREE_MOVEMENT;
+        playerName = PlayerData.playerName;
+        Debug.Log(playerName);
+        TextScript = TextManager.GetComponent<Textos>();
+    }
+
+    void Awake()
+    {
+        Instance = this;
+    }
     void Update()
     {
         switch (gamePlayMode)
@@ -81,22 +98,16 @@ public class GameManager : MonoBehaviour
                 CheckCameraZoom();
                 break;
             case GamePlayMode.PLAYING:
+
                 moveTimer += Time.deltaTime;
-                
-                for(int i = 0;i< Events.Count; i++)
+                for(int i = 0;i< Events.Count; i++)//check if we should trigger an event
                 {
                     if (Math.Abs(Events[i].eventTime - moveTimer) < 1.0f)
                     {
-                        TriggerEvent(Events[i]);
+                        DelayedMoveCamera(Events[i]);                        
                     }
                 }
-                
-                
-                if (moveTimer >= TIME_BETWEEN_EVENTS)
-                {
-                    NewEvent(getNextTarget());
-                    moveTimer = 0;
-                }
+                               
                 break;
             case GamePlayMode.FREE_MOVEMENT:
                 if (ChangingToPlayMode)
@@ -120,8 +131,26 @@ public class GameManager : MonoBehaviour
 
 
     }
-    public void TriggerEvent(StructEvent event_){
-        NewEvent(event_.CameraPosition);
+  
+
+    IEnumerator DelayedMoveCamera(StructEvent event_)
+    {
+        
+        TextScript.CreateEventNotification(event_.Dialogue);
+
+        float Timer = 0;
+        
+       while(TextScript.bcloseNotification != 1 && Timer < secondsToForceEventIfNointeraction)
+       {
+            Timer += Time.deltaTime;
+            yield return null; // wait one frame
+       }
+        // If the player did NOT close it in time, force close it
+        if (TextScript.bcloseNotification != 1)
+        {
+            NewEvent(event_.CameraPosition);
+            TextScript.closeNotification();
+        }
     }
     private void CheckCameraMovementInput()
     {
@@ -217,17 +246,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void Start()
-    {
-        gamePlayMode = GamePlayMode.FREE_MOVEMENT;
-        playerName = PlayerData.playerName;
-        Debug.Log(playerName);
-    }
-
-    void Awake()
-    {
-        Instance = this;
-    }
+    
 
     private Transform getNextTarget()
     {
