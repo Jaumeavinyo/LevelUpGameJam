@@ -2,6 +2,9 @@ using UnityEngine;
 using System;
 using UnityEngine.AI;
 using TMPro;
+using UnityEngine.InputSystem;
+using NUnit.Framework;
+using System.Collections.Generic;
 
 public enum GamePlayMode
 {
@@ -9,8 +12,25 @@ public enum GamePlayMode
     IN_EVENT,
     FREE_MOVEMENT
 }
+
+[System.Serializable]
+public struct StructEvent
+{
+    [Tooltip("Time in seconds when the event triggers")]
+    public float eventTime;
+    [Tooltip("The camera position to move to at this time")]
+    public Transform CameraPosition;
+}
 public class GameManager : MonoBehaviour
 {
+    //INPUT SYSTEM
+    public InputActionAsset inputActions;
+    public InputAction inputAction_move_camera;
+    public InputAction inputAction_interact;
+    public static string LastInputDevice = "None";
+
+    public string playerName;
+
     public static GameManager Instance;
     public TextMeshProUGUI StateText;
     public static float TIME_BETWEEN_EVENTS = 10;
@@ -19,7 +39,7 @@ public class GameManager : MonoBehaviour
     public Transform RWindow;
     public Transform CarCenter;
     public Camera Camera;
-    public static float IN_GAME_CAMERA_SIZE = 3.5f;
+    public static float IN_GAME_CAMERA_SIZE = 4f;
     public static float IN_EVENT_CAMERA_SIZE = 6;
 
     public float vel, freeMovementVel;
@@ -29,16 +49,16 @@ public class GameManager : MonoBehaviour
     private float moveTimer = 0, eventTimer = 0;
     [NonSerialized] public GamePlayMode gamePlayMode;
     public GameObject PressEGameObject;
+    public GameObject PressAgameObject;
 
     public float minX = -18, maxX = 18;
     public float minY = -1, maxY = 1;
     private bool ChangingToPlayMode = false;
 
-    //public InputActionAsset inputActions;
-    //public InputAction inputActionCamera;
-    //public float cameraDirectionInput;
-
-    // Update is called once per frame
+    
+    public List<StructEvent> Events = new List<StructEvent>();
+   
+   
     void Update()
     {
         switch (gamePlayMode)
@@ -54,6 +74,7 @@ public class GameManager : MonoBehaviour
                 }
                 else
                 {
+                    //HERE WE SHOULD CALL THE PARENTS TEXT TODO
                     gamePlayMode = GamePlayMode.FREE_MOVEMENT;
                     StateText.text = "Free Movement";
                 }
@@ -61,6 +82,16 @@ public class GameManager : MonoBehaviour
                 break;
             case GamePlayMode.PLAYING:
                 moveTimer += Time.deltaTime;
+                
+                for(int i = 0;i< Events.Count; i++)
+                {
+                    if (Math.Abs(Events[i].eventTime - moveTimer) < 1.0f)
+                    {
+                        TriggerEvent(Events[i]);
+                    }
+                }
+                
+                
                 if (moveTimer >= TIME_BETWEEN_EVENTS)
                 {
                     NewEvent(getNextTarget());
@@ -86,28 +117,19 @@ public class GameManager : MonoBehaviour
                 }
                 break;
         }
-    }
 
+
+    }
+    public void TriggerEvent(StructEvent event_){
+        NewEvent(event_.CameraPosition);
+    }
     private void CheckCameraMovementInput()
     {
         Vector3 newPosition = Camera.transform.position;
+        Vector2 InputVec2D = inputAction_move_camera.ReadValue<Vector2>();
+        Vector3 InputVec3D = new Vector3(InputVec2D.x, InputVec2D.y, 0);
 
-        if (Input.GetKey(KeyCode.W))
-        {
-            newPosition += Time.deltaTime * freeMovementVel * new Vector3(0, 1f, 0);
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            newPosition += Time.deltaTime * freeMovementVel * new Vector3(-1f, 0, 0);
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            newPosition += Time.deltaTime * freeMovementVel * new Vector3(0, -1f, 0);
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            newPosition += Time.deltaTime * freeMovementVel * new Vector3(1f, 0, 0);
-        }
+        newPosition += Time.deltaTime * freeMovementVel * InputVec3D;
 
         newPosition.x = Mathf.Clamp(newPosition.x, minX, maxX);
         newPosition.y = Mathf.Clamp(newPosition.y, minY, maxY);
@@ -118,11 +140,38 @@ public class GameManager : MonoBehaviour
 
     private void CheckPlayability()
     {
-        bool canPressE = Camera.transform.localPosition.x <= -15 && gamePlayMode == GamePlayMode.FREE_MOVEMENT;
-        PressEGameObject.SetActive(canPressE);
-        if (canPressE && Input.GetKey(KeyCode.E))
+        //inputAction_interact
+        float gamepadButtonPressed = inputAction_interact.ReadValue<float>();
+
+        bool canEnterPlayNinja = Camera.transform.localPosition.x <= -15 && gamePlayMode == GamePlayMode.FREE_MOVEMENT;
+        // Detect keyboard 
+        if (Input.anyKeyDown || Input.GetAxis("Mouse X") != 0 || Input.GetAxis("Mouse Y") != 0)
+        {
+            LastInputDevice = "KeyboardMouse";
+            PressEGameObject.SetActive(canEnterPlayNinja);
+            PressAgameObject.SetActive(false);
+        }
+
+        // Detect gamepad 
+        if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0 || Input.GetKeyDown(KeyCode.JoystickButton0))
+        {
+            LastInputDevice = "Gamepad";
+            PressAgameObject.SetActive(canEnterPlayNinja);
+            PressEGameObject.SetActive(false);
+        }
+
+
+
+        if (canEnterPlayNinja && Input.GetKey(KeyCode.E))
         {
             ChangingToPlayMode = true;
+            PressEGameObject.SetActive(false);
+            PressAgameObject.SetActive(false);
+        }
+        else if (canEnterPlayNinja && gamepadButtonPressed == 1.0)
+        {
+            ChangingToPlayMode = true;
+            PressAgameObject.SetActive(false);
             PressEGameObject.SetActive(false);
         }
     }
@@ -171,6 +220,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         gamePlayMode = GamePlayMode.FREE_MOVEMENT;
+        playerName = PlayerData.playerName;
+        Debug.Log(playerName);
     }
 
     void Awake()
@@ -198,9 +249,28 @@ public class GameManager : MonoBehaviour
 
     void NewEvent(Transform newTarget)
     {
+        //HERE WE SHOULD CHANGE THE CAR SPRITES OF THE EVENT TODO
         target = newTarget;
         isMoving = true;
         gamePlayMode = GamePlayMode.IN_EVENT;
         StateText.text = "EVENT";
+    }
+
+
+    private void OnEnable()
+    {
+        InputActionMap inputActionsMap = inputActions.FindActionMap("Player", throwIfNotFound: true);
+
+        inputAction_move_camera = inputActionsMap.FindAction("Move", throwIfNotFound: true);
+        inputAction_move_camera.Enable();
+        inputAction_interact = inputActionsMap.FindAction("Dash", throwIfNotFound: true);//same button as dash xd
+        inputAction_interact.Enable();
+    }
+
+    private void OnDisable()
+    {
+        inputAction_move_camera.Disable();
+        inputAction_interact.Disable();
+
     }
 }

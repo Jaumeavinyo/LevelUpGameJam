@@ -3,9 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class FSM_CharMovement : FSM
 {
+    
+
     public InputAction inputAction_jump; //own input added to player inputs
     public InputAction inputAction_move;
 
@@ -45,7 +48,7 @@ public class FSM_CharMovement : FSM
         rigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         capsuleCollider = GetComponent<CapsuleCollider2D>();
-
+        
         idle = new idle_state(this);
         run = new run_state(this);
         jump = new jump_state(this);
@@ -59,6 +62,9 @@ public class FSM_CharMovement : FSM
 
     public override void Update()
     {
+
+        //CHUNKS BACK MOVEMENT
+        Debug.Log("Speed Character" + rigidBody.linearVelocity.x);
 
         if (inputAction_move.ReadValue<Vector2>().x > 0)
         {

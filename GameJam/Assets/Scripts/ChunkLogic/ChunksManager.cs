@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,9 +10,10 @@ public class ChunksManager : MonoBehaviour
     [NonSerialized] public List<Chunk> LiveChunks = new();
     [NonSerialized] public Chunk CurrentChunk;
     [NonSerialized] public float Speed = 2, Acceleration = 0.1f;
-    public GameObject Display, Character;
+    public GameObject Display;
     private bool GameStarted = false;
 
+    public FSM_CharMovement Character;
 
     void Awake()
     {
@@ -42,14 +44,32 @@ public class ChunksManager : MonoBehaviour
             Destroy(chunk.gameObject);
         }
         LiveChunks.Clear();
-        Display.SetActive(true);
         GameStarted = true;
         Chunk firstChunk = Instantiate(StartingChunk, Display.transform);
         LiveChunks.Add(firstChunk);
         CurrentChunk = firstChunk;
         GenerateRandomNextChunk();
         GenerateRandomNextChunk();
-        Character.transform.position = firstChunk.transform.position + new Vector3(0, 1, 0);
+        Character.transform.position = firstChunk.transform.position + new Vector3(0, 2, 0);
+        Rigidbody2D rb = Character.GetComponent<Rigidbody2D>();
+        rb.linearVelocity = Vector2.zero;
+        rb.angularVelocity = 0f;
+        Character.GetComponent<Dissolve>().StartAppear();
+    }
+
+    public void StartRestartCountdown()
+    {
+        if (GameStarted)
+        {
+            Character.GetComponent<Dissolve>().StartVanishing();
+            StartCoroutine(RestartAfterDelay());
+        }
+    }
+
+    private IEnumerator RestartAfterDelay()
+    {
+        yield return new WaitForSeconds(1f);
+        RestartGame();
     }
 
     void Update()
@@ -73,13 +93,17 @@ public class ChunksManager : MonoBehaviour
                     }
                 }
                 if (CurrentChunk.transform.localPosition.x <= 11) GenerateRandomNextChunk();
+                Character.gameObject.transform.localPosition += new Vector3(-Speed * Time.deltaTime, 0, 0);
                 Speed += Time.deltaTime * Acceleration;
+                Debug.Log("Speed ChunksManager" + Speed);
             }
         }
-        else
+        else if (GameStarted)
         {
-            Display.SetActive(false);
+            Character.GetComponent<Dissolve>().StartVanishing();
             GameStarted = false;
         }
+
+
     }
 }

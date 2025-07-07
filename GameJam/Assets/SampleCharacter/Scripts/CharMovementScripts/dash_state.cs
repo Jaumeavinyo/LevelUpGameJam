@@ -88,7 +88,7 @@ public class dash_state : FSM_BaseState
     public void dash(int dir)
     {
         Vector2 velDir = my_sm.rigidBody.linearVelocity;
-        velDir.x = my_sm.dashSpeed * dir;
+        velDir.x = my_sm.dashSpeed * dir /*+ (-ChunksManager.Instance.Speed)*/;
         my_sm.rigidBody.linearVelocity = velDir;
     }
     public void handleStateInputs()

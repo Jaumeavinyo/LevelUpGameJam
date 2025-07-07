@@ -39,6 +39,14 @@ public class FSM : MonoBehaviour
     {
         return null;
     }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Border"))
+        {
+            Debug.Log("Hit the border!");
+            ChunksManager.Instance.StartRestartCountdown();
+        }
+    }
 
     private void OnGUI()
     {
