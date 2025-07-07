@@ -1040,6 +1040,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f71d99822637a14fa5274a012e3a319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputActions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  inputAction_move_camera:
+    m_Name: Input Action_move_camera
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: e558a749-f6cc-4b43-9fd8-06b5436e1ad6
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
   StateText: {fileID: 2141811197}
   LWindow: {fileID: 1728003794}
   RWindow: {fileID: 1432375470}
