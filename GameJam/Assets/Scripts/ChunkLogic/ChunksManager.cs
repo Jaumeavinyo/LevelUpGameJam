@@ -42,14 +42,17 @@ public class ChunksManager : MonoBehaviour
             Destroy(chunk.gameObject);
         }
         LiveChunks.Clear();
-        Display.SetActive(true);
         GameStarted = true;
         Chunk firstChunk = Instantiate(StartingChunk, Display.transform);
         LiveChunks.Add(firstChunk);
         CurrentChunk = firstChunk;
         GenerateRandomNextChunk();
         GenerateRandomNextChunk();
-        Character.transform.position = firstChunk.transform.position + new Vector3(0, 1, 0);
+        Character.transform.position = firstChunk.transform.position + new Vector3(0, 2, 0);
+        Rigidbody2D rb = Character.GetComponent<Rigidbody2D>();
+        rb.linearVelocity = Vector2.zero;
+        rb.angularVelocity = 0f;
+        Character.GetComponent<Dissolve>().StartAppear();
     }
 
     void Update()
@@ -76,9 +79,9 @@ public class ChunksManager : MonoBehaviour
                 Speed += Time.deltaTime * Acceleration;
             }
         }
-        else
+        else if (GameStarted)
         {
-            Display.SetActive(false);
+            Character.GetComponent<Dissolve>().StartVanishing();
             GameStarted = false;
         }
     }
