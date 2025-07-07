@@ -64,9 +64,7 @@ public class FSM_CharMovement : FSM
     {
 
         //CHUNKS BACK MOVEMENT
-        //Vector2 velDir = this.rigidBody.linearVelocity;
-        //velDir.x = -ChunksManager.Instance.Speed;
-        //this.rigidBody.linearVelocity += velDir;
+        Debug.Log("Speed Character" + rigidBody.linearVelocity.x);
 
         if (inputAction_move.ReadValue<Vector2>().x > 0)
         {

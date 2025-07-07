@@ -59,7 +59,7 @@ public class jump_state : FSM_BaseState
         base.UpdatePhysics();
 
         Vector2 velDir = my_sm.rigidBody.linearVelocity;
-        velDir.x = my_sm.speed * horizontalInput;
+        velDir.x = my_sm.speed * horizontalInput /*+ (-ChunksManager.Instance.Speed)*/;
         my_sm.rigidBody.linearVelocity = velDir;
 
         if (jumpNow)

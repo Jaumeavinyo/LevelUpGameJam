@@ -9,9 +9,10 @@ public class ChunksManager : MonoBehaviour
     [NonSerialized] public List<Chunk> LiveChunks = new();
     [NonSerialized] public Chunk CurrentChunk;
     [NonSerialized] public float Speed = 2, Acceleration = 0.1f;
-    public GameObject Display, Character;
+    public GameObject Display;
     private bool GameStarted = false;
 
+    public FSM_CharMovement Character;
 
     void Awake()
     {
@@ -73,7 +74,9 @@ public class ChunksManager : MonoBehaviour
                     }
                 }
                 if (CurrentChunk.transform.localPosition.x <= 11) GenerateRandomNextChunk();
+                Character.gameObject.transform.localPosition += new Vector3(-Speed * Time.deltaTime, 0, 0);
                 Speed += Time.deltaTime * Acceleration;
+                Debug.Log("Speed ChunksManager"+ Speed);
             }
         }
         else
@@ -81,5 +84,7 @@ public class ChunksManager : MonoBehaviour
             Display.SetActive(false);
             GameStarted = false;
         }
+        
+        
     }
 }
