@@ -74,7 +74,7 @@ public class ChunksManager : MonoBehaviour
 
     void Update()
     {
-        bool GameMangerPlaying = GameManager.Instance.gamePlayMode == GamePlayMode.PLAYING;
+        bool GameMangerPlaying = GameManager.Instance == null || GameManager.Instance.gamePlayMode == GamePlayMode.PLAYING;
         if (GameMangerPlaying)
         {
             if (!GameStarted)
