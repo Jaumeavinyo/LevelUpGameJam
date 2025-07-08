@@ -1,10 +1,8 @@
-using UnityEngine;
 using System;
-using UnityEngine.UI;
+using System.Collections;
 using TMPro;
-using System.Threading;
+using UnityEngine;
 using UnityEngine.InputSystem;
-using System.Collections.Generic;
 
 public class Textos : MonoBehaviour
 {
@@ -13,48 +11,53 @@ public class Textos : MonoBehaviour
 
     InputAction AcceptNotification;//una accion q se triggerea con un boton
 
-    public GameObject exclamationImage;
+    [SerializeField] private GameObject exclamationImage;
     public GameObject uiBackground;
+    [SerializeField] private TextMeshProUGUI eventText;
+    [NonSerialized] public float bcloseNotification;
 
-  
-    public GameObject DialogueToShowNext;
+    [NonSerialized] public bool ShowNotification;
 
-    public float bcloseNotification;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
-       
-        //canvasText.text = "Hola soy un texto";
         exclamationImage.SetActive(false);
-        uiBackground.SetActive(false);    
+        uiBackground.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
-    {     
-
+    {
+        exclamationImage.gameObject.SetActive(ShowNotification);
         bcloseNotification = AcceptNotification.ReadValue<float>();
 
-        if(bcloseNotification == 1.0f)
+        if (ShowNotification && bcloseNotification == 1.0f)
         {
-            closeNotification();
+            GameManager.Instance.LoadNewEvent();
         }
     }
-   
-    public void closeNotification()
+    private IEnumerator openTextBoxRoutine()
     {
-        exclamationImage.SetActive(false);
+        float timer = 0f;
+        while (timer < 1f)
+        {
+            timer += Time.deltaTime;
+            yield return null;
+        }
         uiBackground.SetActive(true);
-        DialogueToShowNext.SetActive(true);   
     }
 
-    public void CreateEventNotification(GameObject dialogueToOpen)
+    public void OpenEvent(string Dialogue)
     {
-        exclamationImage.SetActive(true);
-        DialogueToShowNext = dialogueToOpen;
+        eventText.text = Dialogue;
+        ShowNotification = false;
+        StartCoroutine(openTextBoxRoutine());
     }
 
-
+    public void FinishEvent()
+    {
+        uiBackground.SetActive(false);
+    }
 
     private void OnEnable()
     {
@@ -64,8 +67,9 @@ public class Textos : MonoBehaviour
         //setteo mi accion
         AcceptNotification = inputActionsMap.FindAction("Dash", throwIfNotFound: true);//dash tiene guardado input de E y input de el dash
         AcceptNotification.Enable();
-        
+
     }
+
     private void OnDisable()
     {
         AcceptNotification.Disable();

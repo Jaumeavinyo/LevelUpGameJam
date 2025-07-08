@@ -1,11 +1,8 @@
 using UnityEngine;
 using System;
-using UnityEngine.AI;
 using TMPro;
 using UnityEngine.InputSystem;
-using NUnit.Framework;
 using System.Collections.Generic;
-using System.Collections;
 
 public enum GamePlayMode
 {
@@ -14,56 +11,47 @@ public enum GamePlayMode
     FREE_MOVEMENT
 }
 
-[System.Serializable]
+[Serializable]
 public struct StructEvent
 {
-    [Tooltip("Time in seconds when the event triggers")]
-    public float eventTime;
 
     [Tooltip("The camera position to move to at this time")]
     public Transform CameraPosition;
 
-    public GameObject Dialogue;
+    public string Dialogue;
+    public float EventDuration;
 }
+
 public class GameManager : MonoBehaviour
 {
     //INPUT SYSTEM
     public InputActionAsset inputActions;
-    public InputAction inputAction_move_camera;
-    public InputAction inputAction_interact;
+    public InputAction inputAction_move_camera, inputAction_interact;
     public static string LastInputDevice = "None";
 
     public float secondsToForceEventIfNointeraction;
-    public string playerName;
+    [NonSerialized] public string playerName;
 
     public static GameManager Instance;
     public TextMeshProUGUI StateText;
-    public static float TIME_BETWEEN_EVENTS = 10;
     public static Vector3 CAMERA_POSITION_FOR_GAME = new(-16.5f, 1, -1);
-    public Transform LWindow;
-    public Transform RWindow;
-    public Transform CarCenter;
+    public Transform LWindow, RWindow, CarCenter;
     public Camera Camera;
-    public static float IN_GAME_CAMERA_SIZE = 4f;
-    public static float IN_EVENT_CAMERA_SIZE = 6;
-
+    public static float IN_GAME_CAMERA_SIZE = 4f, IN_EVENT_CAMERA_SIZE = 6;
+    public static float TIME_BETWEEN_EVENTS = 10;
     public float vel, freeMovementVel;
 
     [NonSerialized] public Transform target;
     [NonSerialized] public bool isMoving = false;
-    private float moveTimer = 0, eventTimer = 0;
+    private float nextEventTimer = 0, eventTimer = 0, forceEventTimer = 0;
     [NonSerialized] public GamePlayMode gamePlayMode;
-    public GameObject PressEGameObject;
-    public GameObject PressAgameObject;
+    public GameObject PressEGameObject, PressAgameObject;
 
-    public float minX = -18, maxX = 18;
-    public float minY = -1, maxY = 1;
+    public float minX = -18, maxX = 18, minY = -1, maxY = 1;
     private bool ChangingToPlayMode = false;
-
-    
-    public List<StructEvent> Events = new List<StructEvent>();
     public Textos TextScript;
     public GameObject TextManager;
+    public EventsManager eventsManager;
     void Start()
     {
         gamePlayMode = GamePlayMode.FREE_MOVEMENT;
@@ -91,23 +79,27 @@ public class GameManager : MonoBehaviour
                 }
                 else
                 {
-                    //HERE WE SHOULD CALL THE PARENTS TEXT TODO
                     gamePlayMode = GamePlayMode.FREE_MOVEMENT;
                     StateText.text = "Free Movement";
+                    TextScript.FinishEvent();
                 }
                 CheckCameraZoom();
                 break;
             case GamePlayMode.PLAYING:
-
-                moveTimer += Time.deltaTime;
-                for(int i = 0;i< Events.Count; i++)//check if we should trigger an event
+                nextEventTimer += Time.deltaTime;
+                TextScript.ShowNotification = false;
+                if (eventsManager.Events.Count > 0)
                 {
-                    if (Math.Abs(Events[i].eventTime - moveTimer) < 1.0f)
+                    if (nextEventTimer >= TIME_BETWEEN_EVENTS)
                     {
-                        DelayedMoveCamera(Events[i]);                        
+                        forceEventTimer += Time.deltaTime;
+                        TextScript.ShowNotification = true;
+                        if (forceEventTimer >= secondsToForceEventIfNointeraction)
+                        {
+                            LoadNewEvent();
+                        }
                     }
                 }
-                               
                 break;
             case GamePlayMode.FREE_MOVEMENT:
                 if (ChangingToPlayMode)
@@ -128,35 +120,13 @@ public class GameManager : MonoBehaviour
                 }
                 break;
         }
-
-
     }
-  
 
-    IEnumerator DelayedMoveCamera(StructEvent event_)
-    {
-        
-        TextScript.CreateEventNotification(event_.Dialogue);
-
-        float Timer = 0;
-        
-       while(TextScript.bcloseNotification != 1 && Timer < secondsToForceEventIfNointeraction)
-       {
-            Timer += Time.deltaTime;
-            yield return null; // wait one frame
-       }
-        // If the player did NOT close it in time, force close it
-        if (TextScript.bcloseNotification != 1)
-        {
-            NewEvent(event_.CameraPosition);
-            TextScript.closeNotification();
-        }
-    }
     private void CheckCameraMovementInput()
     {
         Vector3 newPosition = Camera.transform.position;
         Vector2 InputVec2D = inputAction_move_camera.ReadValue<Vector2>();
-        Vector3 InputVec3D = new Vector3(InputVec2D.x, InputVec2D.y, 0);
+        Vector3 InputVec3D = new(InputVec2D.x, InputVec2D.y, 0);
 
         newPosition += Time.deltaTime * freeMovementVel * InputVec3D;
 
@@ -165,7 +135,6 @@ public class GameManager : MonoBehaviour
 
         Camera.transform.position = newPosition;
     }
-
 
     private void CheckPlayability()
     {
@@ -188,8 +157,6 @@ public class GameManager : MonoBehaviour
             PressAgameObject.SetActive(canEnterPlayNinja);
             PressEGameObject.SetActive(false);
         }
-
-
 
         if (canEnterPlayNinja && Input.GetKey(KeyCode.E))
         {
@@ -246,14 +213,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    
-
-    private Transform getNextTarget()
-    {
-        int index = UnityEngine.Random.Range(0, 2);
-        return index == 0 ? CarCenter : RWindow;
-    }
-
     void GoToEvent()
     {
         Vector3 targetPosition = new Vector3(target.position.x, target.position.y, -1);
@@ -262,17 +221,21 @@ public class GameManager : MonoBehaviour
         if (Vector3.Distance(Camera.transform.position, targetPosition) == 0)
         {
             isMoving = false;
-            eventTimer = 3;
         }
     }
 
-    void NewEvent(Transform newTarget)
+    public void LoadNewEvent()
     {
-        //HERE WE SHOULD CHANGE THE CAR SPRITES OF THE EVENT TODO
-        target = newTarget;
+        StructEvent newEvent = eventsManager.Events[0];
+        target = newEvent.CameraPosition;
         isMoving = true;
         gamePlayMode = GamePlayMode.IN_EVENT;
         StateText.text = "EVENT";
+        TextScript.OpenEvent(newEvent.Dialogue);
+        eventsManager.Events.Remove(newEvent);
+        forceEventTimer = 0;
+        nextEventTimer = 0;
+        eventTimer = newEvent.EventDuration;
     }
 
 
