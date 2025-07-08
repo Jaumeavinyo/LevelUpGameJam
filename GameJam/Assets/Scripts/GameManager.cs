@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
     public Transform LWindow, RWindow, CarCenter;
     public Camera Camera;
     public static float IN_GAME_CAMERA_SIZE = 4f, IN_EVENT_CAMERA_SIZE = 6;
-    public static float TIME_BETWEEN_EVENTS = 10;
+    public static float TIME_BETWEEN_EVENTS = 20;
     public float vel, freeMovementVel;
 
     [NonSerialized] public Transform target;
