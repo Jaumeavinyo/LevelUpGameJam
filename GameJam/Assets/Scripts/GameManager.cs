@@ -2,6 +2,8 @@ using UnityEngine;
 using System;
 using TMPro;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Users;
+using UnityEngine.InputSystem.UI;
 using System.Collections.Generic;
 
 public enum GamePlayMode
@@ -28,6 +30,8 @@ public class GameManager : MonoBehaviour
     public InputActionAsset inputActions;
     public InputAction inputAction_move_camera, inputAction_interact;
     public static string LastInputDevice = "None";
+    public PlayerInput playerInput;
+    public InputDeviceDetector inputdetector;
 
     public float secondsToForceEventIfNointeraction;
     [NonSerialized] public string playerName;
@@ -58,6 +62,7 @@ public class GameManager : MonoBehaviour
         playerName = PlayerData.playerName;
         Debug.Log(playerName);
         TextScript = TextManager.GetComponent<Textos>();
+        
     }
 
     void Awake()
@@ -122,6 +127,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
+   
+
     private void CheckCameraMovementInput()
     {
         Vector3 newPosition = Camera.transform.position;
@@ -138,38 +145,38 @@ public class GameManager : MonoBehaviour
 
     private void CheckPlayability()
     {
+        
         //inputAction_interact
         float gamepadButtonPressed = inputAction_interact.ReadValue<float>();
 
         bool canEnterPlayNinja = Camera.transform.localPosition.x <= -15 && gamePlayMode == GamePlayMode.FREE_MOVEMENT;
-        // Detect keyboard 
-        if (Input.anyKeyDown || Input.GetAxis("Mouse X") != 0 || Input.GetAxis("Mouse Y") != 0)
+        // Use manually tracked input device
+        if (InputDeviceDetector.LastInputDevice == "Gamepad")
         {
-            LastInputDevice = "KeyboardMouse";
+            PressAgameObject.SetActive(canEnterPlayNinja);
+            PressEGameObject.SetActive(false);
+        }
+        else // Assume Keyboard & Mouse
+        {
             PressEGameObject.SetActive(canEnterPlayNinja);
             PressAgameObject.SetActive(false);
         }
 
-        // Detect gamepad 
-        if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0 || Input.GetKeyDown(KeyCode.JoystickButton0))
+        // Start game logic for both control schemes
+        if (canEnterPlayNinja && InputDeviceDetector.LastInputDevice == "KeyboardMouse" && Input.GetKey(KeyCode.E))
         {
-            LastInputDevice = "Gamepad";
-            PressAgameObject.SetActive(canEnterPlayNinja);
+            ChangingToPlayMode = true;
+            PressEGameObject.SetActive(false);
+            PressAgameObject.SetActive(false);
+        }
+        else if (canEnterPlayNinja && InputDeviceDetector.LastInputDevice == "Gamepad" && gamepadButtonPressed == 1.0f)
+        {
+            ChangingToPlayMode = true;
+            PressAgameObject.SetActive(false);
             PressEGameObject.SetActive(false);
         }
 
-        if (canEnterPlayNinja && Input.GetKey(KeyCode.E))
-        {
-            ChangingToPlayMode = true;
-            PressEGameObject.SetActive(false);
-            PressAgameObject.SetActive(false);
-        }
-        else if (canEnterPlayNinja && gamepadButtonPressed == 1.0)
-        {
-            ChangingToPlayMode = true;
-            PressAgameObject.SetActive(false);
-            PressEGameObject.SetActive(false);
-        }
+
     }
 
     private bool CheckGameCameraPosition()
@@ -237,7 +244,19 @@ public class GameManager : MonoBehaviour
         nextEventTimer = 0;
         eventTimer = newEvent.EventDuration;
     }
+    private void OnAnyInput(InputControl control)
+    {
+        var device = control.device;
 
+        if (device is Gamepad)
+        {
+            LastInputDevice = "Gamepad";
+        }
+        else if (device is Keyboard || device is Mouse)
+        {
+            LastInputDevice = "KeyboardMouse";
+        }
+    }
 
     private void OnEnable()
     {
@@ -245,7 +264,8 @@ public class GameManager : MonoBehaviour
 
         inputAction_move_camera = inputActionsMap.FindAction("Move", throwIfNotFound: true);
         inputAction_move_camera.Enable();
-        inputAction_interact = inputActionsMap.FindAction("Dash", throwIfNotFound: true);//same button as dash xd
+        inputAction_interact = inputActionsMap.FindAction("Jump", throwIfNotFound: true);//same button as dash xd
+       
         inputAction_interact.Enable();
     }
 
@@ -253,6 +273,7 @@ public class GameManager : MonoBehaviour
     {
         inputAction_move_camera.Disable();
         inputAction_interact.Disable();
+       
 
     }
 }
