@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2595996242034424361}
   - component: {fileID: 8499458064394099852}
   - component: {fileID: 5024023641227474126}
+  - component: {fileID: 8786673201951054855}
   m_Layer: 2
   m_Name: Character
   m_TagString: Player
@@ -81,7 +82,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e7cf416f2fc553f45a2eb19f17f26685, type: 3}
+  m_Sprite: {fileID: -703850579747923803, guid: 5e49c3f9461dff748bb83af36e803004, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -126,8 +127,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.6}
-  m_Size: {x: 0.5, y: 1.24}
+  m_Offset: {x: 0, y: 0.02}
+  m_Size: {x: 0.5, y: 1.39}
   m_Direction: 0
 --- !u!50 &1027348671065137755
 Rigidbody2D:
@@ -279,3 +280,18 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &8786673201951054855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7442955865358822363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d19bf1749424c44abed768b24095dab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dissolveTime: 0.75
+  material: {fileID: 2100000, guid: af3e2491404d1ea43bf13a1a5f6b320f, type: 2}
+  UseVerticalDissolve: 0
