@@ -478,14 +478,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1631131843327622669, guid: 9a52d8addc5caec4c952fd2e66b221b2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2246613370661203287, guid: 9a52d8addc5caec4c952fd2e66b221b2, type: 3}
       propertyPath: m_Name
       value: TextManager
       objectReference: {fileID: 0}
     - target: {fileID: 2915430940653501637, guid: 9a52d8addc5caec4c952fd2e66b221b2, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6950116907230200332, guid: 9a52d8addc5caec4c952fd2e66b221b2, type: 3}
+      propertyPath: eventText
+      value: 
+      objectReference: {fileID: 1802617707}
     - target: {fileID: 6950116907230200332, guid: 9a52d8addc5caec4c952fd2e66b221b2, type: 3}
       propertyPath: inputActions
       value: 
@@ -565,6 +573,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartingChunk: {fileID: 1737325614816170554, guid: fde02eac401f4a441823686f437630de, type: 3}
+  Speed: 2
+  Acceleration: 0.01
   Display: {fileID: 445523841}
   Character: {fileID: 1620647000}
 --- !u!4 &692484571
@@ -1167,6 +1177,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1032448510}
   - component: {fileID: 1032448509}
+  - component: {fileID: 1032448511}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1205,27 +1216,23 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
-  secondsToForceEventIfNointeraction: 0
-  playerName: 
+  secondsToForceEventIfNointeraction: 10
   StateText: {fileID: 2141811197}
   LWindow: {fileID: 1728003794}
   RWindow: {fileID: 1432375470}
   CarCenter: {fileID: 448610587}
   Camera: {fileID: 907485541}
-  vel: 12
-  freeMovementVel: 15
+  vel: 18
+  freeMovementVel: 25
   PressEGameObject: {fileID: 866563857}
   PressAgameObject: {fileID: 1459835033}
   minX: -18
   maxX: 18
   minY: -1
   maxY: 1
-  Events:
-  - eventTime: 10
-    CameraPosition: {fileID: 448610587}
-    Dialogue: {fileID: 4906966614130945077, guid: bddeaf6cee4773844a3124f7c000f029, type: 3}
-  TextScript: {fileID: 0}
+  TextScript: {fileID: 1936378527}
   TextManager: {fileID: 1936378526}
+  eventsManager: {fileID: 1032448511}
 --- !u!4 &1032448510
 Transform:
   m_ObjectHideFlags: 0
@@ -1241,6 +1248,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1032448511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1032448508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8099b879cdd78154daa92b9fe64178d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShortEvents:
+  - CameraPosition: {fileID: 1432375470}
+    Dialogue: Evento 0
+    EventDuration: 3
+  - CameraPosition: {fileID: 448610587}
+    Dialogue: Evento 1
+    EventDuration: 2
+  - CameraPosition: {fileID: 448610587}
+    Dialogue: Evento 3
+    EventDuration: 4
+  - CameraPosition: {fileID: 1432375470}
+    Dialogue: Evento 4
+    EventDuration: 3
+  LongEvents:
+  - CameraPosition: {fileID: 1432375470}
+    Dialogue: Long Event 1
+    EventDuration: 10
+  - CameraPosition: {fileID: 1432375470}
+    Dialogue: Long Event 2
+    EventDuration: 8
+  - CameraPosition: {fileID: 448610587}
+    Dialogue: Long Event 3
+    EventDuration: 9
+  - CameraPosition: {fileID: 448610587}
+    Dialogue: Long Event 4
+    EventDuration: 6
+  GasEvent:
+    CameraPosition: {fileID: 448610587}
+    Dialogue: GAS GAS
+    EventDuration: 10
+  EndEvent:
+    CameraPosition: {fileID: 448610587}
+    Dialogue: END!
+    EventDuration: 100
 --- !u!1 &1180432524
 GameObject:
   m_ObjectHideFlags: 0
@@ -1902,6 +1955,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8882893820100421014, guid: d3e7b15870de6154aa92d2472a0cf63d, type: 3}
   m_PrefabInstance: {fileID: 1657018630}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1802617707 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4051533408924878979, guid: 9a52d8addc5caec4c952fd2e66b221b2, type: 3}
+  m_PrefabInstance: {fileID: 627779006}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1802622246
 GameObject:
   m_ObjectHideFlags: 0
@@ -1941,6 +2005,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2246613370661203287, guid: 9a52d8addc5caec4c952fd2e66b221b2, type: 3}
   m_PrefabInstance: {fileID: 627779006}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1936378527 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6950116907230200332, guid: 9a52d8addc5caec4c952fd2e66b221b2, type: 3}
+  m_PrefabInstance: {fileID: 627779006}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1936378526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aee2ed0f007c561428f5a291c06f7cfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2032991824
 GameObject:
   m_ObjectHideFlags: 0
