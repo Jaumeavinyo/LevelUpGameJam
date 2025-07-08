@@ -20,10 +20,12 @@ public class EventsManager : MonoBehaviour
         AddShorts();
         AddUniqueLong();
         AddShorts();
+        GasEvent.eventType = EventType.Long;
         Events.Add(GasEvent);
         AddShorts();
         AddUniqueLong();
         AddShorts();
+        EndEvent.eventType = EventType.Long;
         Events.Add(EndEvent);
     }
 
