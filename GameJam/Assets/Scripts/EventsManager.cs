@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class EventsManager : MonoBehaviour
 {
     [NonSerialized] public List<StructEvent> Events = new();
@@ -48,6 +49,7 @@ public class EventsManager : MonoBehaviour
         {
             if (pool.Count == 0) pool = new(ShortEvents);
             var selected = pool[UnityEngine.Random.Range(0, pool.Count)];
+            selected.IsShortEvent = true;
             Events.Add(selected);
             pool.Remove(selected);
         }

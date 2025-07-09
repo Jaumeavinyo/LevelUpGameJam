@@ -38,8 +38,12 @@ public struct StructEvent
     public string Dialogue;
     public float EventDuration;
 
+
     [SerializeField]
     public List<SpriteTarget> SpriteTargets;// Listado de sprites q queremos cambiar
+
+    [NonSerialized] public bool IsShortEvent;
+
 }
 
 public class GameManager : MonoBehaviour
@@ -70,7 +74,7 @@ public class GameManager : MonoBehaviour
     public GameObject PressEGameObject, PressAgameObject;
 
     public float minX = -18, maxX = 18, minY = -1, maxY = 1;
-    private bool ChangingToPlayMode = false;
+    private bool ChangingToPlayMode = false, InShortEvent = false;
     public Textos TextScript;
     public GameObject TextManager;
     public EventsManager eventsManager;
@@ -80,7 +84,7 @@ public class GameManager : MonoBehaviour
         playerName = PlayerData.playerName;
         Debug.Log(playerName);
         TextScript = TextManager.GetComponent<Textos>();
-        
+
     }
 
     void Awake()
@@ -102,8 +106,16 @@ public class GameManager : MonoBehaviour
                 }
                 else
                 {
+                    if (InShortEvent)
+                    {
+                        StateText.text = "Back to Game";
+                        ChangingToPlayMode = true;
+                    }
+                    else
+                    {
+                        StateText.text = "Free Movement";
+                    }
                     gamePlayMode = GamePlayMode.FREE_MOVEMENT;
-                    StateText.text = "Free Movement";
                     TextScript.FinishEvent();
                 }
                 CheckCameraZoom();
@@ -145,7 +157,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-   
+
 
     private void CheckCameraMovementInput()
     {
@@ -163,7 +175,7 @@ public class GameManager : MonoBehaviour
 
     private void CheckPlayability()
     {
-        
+
         //inputAction_interact
         float gamepadButtonPressed = inputAction_interact.ReadValue<float>();
 
@@ -202,7 +214,7 @@ public class GameManager : MonoBehaviour
         if (Camera.transform.localPosition != CAMERA_POSITION_FOR_GAME)
         {
             Camera.transform.localPosition =
-            Vector3.MoveTowards(Camera.transform.localPosition, CAMERA_POSITION_FOR_GAME, Time.deltaTime * 4);
+            Vector3.MoveTowards(Camera.transform.localPosition, CAMERA_POSITION_FOR_GAME, Time.deltaTime * 12);
             return false;
         }
         return true;
@@ -214,7 +226,7 @@ public class GameManager : MonoBehaviour
         {
             if (Camera.orthographicSize > IN_GAME_CAMERA_SIZE)
             {
-                Camera.orthographicSize -= Time.deltaTime * 4;
+                Camera.orthographicSize -= Time.deltaTime * 8;
                 return false;
             }
             else
@@ -227,7 +239,7 @@ public class GameManager : MonoBehaviour
         {
             if (Camera.orthographicSize < IN_EVENT_CAMERA_SIZE)
             {
-                Camera.orthographicSize += Time.deltaTime * 4;
+                Camera.orthographicSize += Time.deltaTime * 8;
                 return false;
             }
             else
@@ -261,6 +273,7 @@ public class GameManager : MonoBehaviour
         eventsManager.changeSprites(newEvent);
         forceEventTimer = 0;
         nextEventTimer = 0;
+        InShortEvent = newEvent.IsShortEvent;
         eventTimer = newEvent.EventDuration;
     }
     private void OnAnyInput(InputControl control)
@@ -284,7 +297,7 @@ public class GameManager : MonoBehaviour
         inputAction_move_camera = inputActionsMap.FindAction("Move", throwIfNotFound: true);
         inputAction_move_camera.Enable();
         inputAction_interact = inputActionsMap.FindAction("Jump", throwIfNotFound: true);//same button as dash xd
-       
+
         inputAction_interact.Enable();
     }
 
@@ -292,7 +305,7 @@ public class GameManager : MonoBehaviour
     {
         inputAction_move_camera.Disable();
         inputAction_interact.Disable();
-       
+
 
     }
 }
