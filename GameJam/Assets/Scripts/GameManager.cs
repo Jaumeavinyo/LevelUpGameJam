@@ -6,11 +6,26 @@ using UnityEngine.InputSystem.Users;
 using UnityEngine.InputSystem.UI;
 using System.Collections.Generic;
 
+
+public enum TargetName
+{
+    FATHER,
+    MOTHER,
+}
+
 public enum GamePlayMode
 {
     PLAYING,
     IN_EVENT,
     FREE_MOVEMENT
+}
+[Serializable]
+public struct SpriteTarget
+{
+    [Tooltip("Select if we want to change the mother or the father sprite")]
+    public TargetName target;//father or mother
+    [Tooltip("Select the sprite we want to use to substitute father or mother selected in target")]
+    public Sprite spriteTarget;//The sprite we want to put on screen instead of fathermother base
 }
 
 [Serializable]
@@ -23,6 +38,9 @@ public struct StructEvent
     public string Dialogue;
     public float EventDuration;
     [NonSerialized] public bool IsShortEvent;
+
+    [SerializeField]
+    public List<SpriteTarget> SpriteTargets;// Listado de sprites q queremos cambiar
 }
 
 public class GameManager : MonoBehaviour
@@ -43,7 +61,7 @@ public class GameManager : MonoBehaviour
     public Transform LWindow, RWindow, CarCenter;
     public Camera Camera;
     public static float IN_GAME_CAMERA_SIZE = 4f, IN_EVENT_CAMERA_SIZE = 6;
-    public static float TIME_BETWEEN_EVENTS = 20;
+    public static float TIME_BETWEEN_EVENTS = 5;
     public float vel, freeMovementVel;
 
     [NonSerialized] public Transform target;
@@ -95,6 +113,7 @@ public class GameManager : MonoBehaviour
                         StateText.text = "Free Movement";
                     }
                     gamePlayMode = GamePlayMode.FREE_MOVEMENT;
+                    eventsManager.ResetSprites();
                     TextScript.FinishEvent();
                 }
                 CheckCameraZoom();
@@ -119,12 +138,15 @@ public class GameManager : MonoBehaviour
                 if (ChangingToPlayMode)
                 {
                     bool cameraInPos = CheckGameCameraPosition();
-                    bool cameraWithZoom = CheckCameraZoom();
-                    if (cameraInPos && cameraWithZoom)
+                    if (cameraInPos)
                     {
-                        gamePlayMode = GamePlayMode.PLAYING;
-                        ChangingToPlayMode = false;
-                        StateText.text = "Playing";
+                        bool cameraWithZoom = CheckCameraZoom();
+                        if (cameraWithZoom)
+                        {
+                            gamePlayMode = GamePlayMode.PLAYING;
+                            ChangingToPlayMode = false;
+                            StateText.text = "Playing";
+                        }
                     }
                 }
                 else
@@ -135,7 +157,6 @@ public class GameManager : MonoBehaviour
                 break;
         }
     }
-
 
 
     private void CheckCameraMovementInput()
@@ -249,6 +270,7 @@ public class GameManager : MonoBehaviour
         StateText.text = "EVENT";
         TextScript.OpenEvent(newEvent.Dialogue);
         eventsManager.Events.Remove(newEvent);
+        eventsManager.changeSprites(newEvent);
         forceEventTimer = 0;
         nextEventTimer = 0;
         InShortEvent = newEvent.IsShortEvent;
