@@ -38,10 +38,13 @@ public struct StructEvent
 
     public string Dialogue;
     public float EventDuration;
-    [NonSerialized] public bool IsShortEvent;
+
 
     [SerializeField]
     public List<SpriteTarget> SpriteTargets;// Listado de sprites q queremos cambiar
+
+    [NonSerialized] public bool IsShortEvent;
+
 }
 
 public class GameManager : MonoBehaviour
