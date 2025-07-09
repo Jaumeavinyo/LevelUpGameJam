@@ -22,7 +22,7 @@ public struct StructEvent
 
     public string Dialogue;
     public float EventDuration;
-    [NonSerialized] public EventType eventType;
+    [NonSerialized] public bool IsShortEvent;
 }
 
 public class GameManager : MonoBehaviour
@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
     public GameObject PressEGameObject, PressAgameObject;
 
     public float minX = -18, maxX = 18, minY = -1, maxY = 1;
-    private bool ChangingToPlayMode = false, InLongEvent;
+    private bool ChangingToPlayMode = false, InShortEvent = false;
     public Textos TextScript;
     public GameObject TextManager;
     public EventsManager eventsManager;
@@ -85,14 +85,14 @@ public class GameManager : MonoBehaviour
                 }
                 else
                 {
-                    if (InLongEvent)
-                    {
-                        StateText.text = "Free Movement";
-                    }
-                    else
+                    if (InShortEvent)
                     {
                         StateText.text = "Back to Game";
                         ChangingToPlayMode = true;
+                    }
+                    else
+                    {
+                        StateText.text = "Free Movement";
                     }
                     gamePlayMode = GamePlayMode.FREE_MOVEMENT;
                     TextScript.FinishEvent();
@@ -251,6 +251,7 @@ public class GameManager : MonoBehaviour
         eventsManager.Events.Remove(newEvent);
         forceEventTimer = 0;
         nextEventTimer = 0;
+        InShortEvent = newEvent.IsShortEvent;
         eventTimer = newEvent.EventDuration;
     }
     private void OnAnyInput(InputControl control)
