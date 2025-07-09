@@ -1,25 +1,25 @@
 fileFormatVersion: 2
-guid: 8ffa6e754b9df3343889454c311a1121
+guid: 47814882f82aef446b1be91fccf32a86
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6608213344768440354
-    second: COrrer30_0
+      213: -4739887499350342379
+    second: JUMP2 .2_0
   - first:
-      213: -6741856859431569511
-    second: COrrer30_1
+      213: 1079036601511602072
+    second: JUMP2 .2_1
   - first:
-      213: -9102738054298577439
-    second: COrrer30_2
+      213: 9075317762879556853
+    second: JUMP2 .2_2
   - first:
-      213: 7020577395287506249
-    second: COrrer30_3
+      213: 7780489827302573958
+    second: JUMP2 .2_3
   - first:
-      213: 7066832014329974859
-    second: COrrer30_4
+      213: -1011622691921403176
+    second: JUMP2 .2_4
   - first:
-      213: -8857064619514737367
-    second: COrrer30_5
+      213: 7071410621759361669
+    second: JUMP2 .2_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -52,7 +52,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -66,7 +66,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 1200
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -115,13 +115,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: COrrer30_0
+      name: JUMP2 .2_0
       rect:
         serializedVersion: 2
-        x: 1846
-        y: 770
-        width: 1377
-        height: 1819
+        x: 316
+        y: 699
+        width: 186
+        height: 327
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,20 +130,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ed7c41989f8ea44a0800000000000000
-      internalID: -6608213344768440354
+      spriteID: 51588edae69883eb0800000000000000
+      internalID: -4739887499350342379
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: COrrer30_1
+      name: JUMP2 .2_1
       rect:
         serializedVersion: 2
-        x: 3368
-        y: 759
-        width: 1282
-        height: 1819
+        x: 1117
+        y: 758
+        width: 186
+        height: 251
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 997fc0ff7ec1072a0800000000000000
-      internalID: -6741856859431569511
+      spriteID: 8976eb4721289fe00800000000000000
+      internalID: 1079036601511602072
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: COrrer30_2
+      name: JUMP2 .2_2
       rect:
         serializedVersion: 2
-        x: 4678
-        y: 776
-        width: 45
-        height: 16
+        x: 1917
+        y: 699
+        width: 177
+        height: 294
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,20 +174,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1e55a1ec7f39ca180800000000000000
-      internalID: -9102738054298577439
+      spriteID: 5fc8a381c6102fd70800000000000000
+      internalID: 9075317762879556853
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: COrrer30_3
+      name: JUMP2 .2_3
       rect:
         serializedVersion: 2
-        x: 5197
-        y: 770
-        width: 886
-        height: 1752
+        x: 314
+        y: 0
+        width: 197
+        height: 331
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,20 +196,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 94dbf34c1f91e6160800000000000000
-      internalID: 7020577395287506249
+      spriteID: 68709ee664ad9fb60800000000000000
+      internalID: 7780489827302573958
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: COrrer30_4
+      name: JUMP2 .2_4
       rect:
         serializedVersion: 2
-        x: 6546
-        y: 770
-        width: 1037
-        height: 1858
+        x: 1116
+        y: 56
+        width: 188
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,30 +218,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b401f7d764e621260800000000000000
-      internalID: 7066832014329974859
+      spriteID: 8d2ec41858ef5f1f0800000000000000
+      internalID: -1011622691921403176
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: COrrer30_5
+      name: JUMP2 .2_5
       rect:
         serializedVersion: 2
-        x: 7957
-        y: 792
-        width: 1304
-        height: 1719
+        x: 1913
+        y: 0
+        width: 183
+        height: 295
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 9f5f63ef77f40b24e8b8fd58f607bac7
-      internalID: -8857064619514737367
+      spriteID: 58214ea9e72b22260800000000000000
+      internalID: 7071410621759361669
       vertices: []
       indices: 
       edges: []
@@ -250,7 +250,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: a846d6ed430262a4cacacb8f4c722bb5
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -258,16 +258,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
-    nameFileIdTable:
-      COrrer30_0: -6608213344768440354
-      COrrer30_1: -6741856859431569511
-      COrrer30_2: -9102738054298577439
-      COrrer30_3: 7020577395287506249
-      COrrer30_4: 7066832014329974859
-      COrrer30_5: -8857064619514737367
+      entries: []
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
