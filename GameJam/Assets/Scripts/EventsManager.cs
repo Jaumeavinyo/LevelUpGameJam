@@ -2,11 +2,6 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum EventType
-{
-    Short,
-    Long
-}
 
 public class EventsManager : MonoBehaviour
 {
@@ -20,12 +15,10 @@ public class EventsManager : MonoBehaviour
         AddShorts();
         AddUniqueLong();
         AddShorts();
-        GasEvent.eventType = EventType.Long;
         Events.Add(GasEvent);
         AddShorts();
         AddUniqueLong();
         AddShorts();
-        EndEvent.eventType = EventType.Long;
         Events.Add(EndEvent);
     }
 
@@ -37,7 +30,7 @@ public class EventsManager : MonoBehaviour
         {
             if (pool.Count == 0) pool = new(ShortEvents);
             var selected = pool[UnityEngine.Random.Range(0, pool.Count)];
-            selected.eventType = EventType.Short;
+            selected.IsShortEvent = true;
             Events.Add(selected);
             pool.Remove(selected);
         }
@@ -49,7 +42,6 @@ public class EventsManager : MonoBehaviour
         if (availableLongs.Count == 0) return;
 
         var selected = availableLongs[UnityEngine.Random.Range(0, availableLongs.Count)];
-        selected.eventType = EventType.Long;
         Events.Add(selected);
         usedLongEvents.Add(selected);
     }
