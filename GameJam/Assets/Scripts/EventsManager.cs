@@ -9,10 +9,9 @@ public class EventsManager : MonoBehaviour
     public List<StructEvent> ShortEvents, LongEvents;
     public StructEvent GasEvent, EndEvent;
     HashSet<StructEvent> usedLongEvents = new();
-
     public SpriteRenderer Father;
     public SpriteRenderer Mother;
-
+    private Sprite FatherBaseSprite, MotherBaseSprite;
 
     void Start()
     {
@@ -25,14 +24,22 @@ public class EventsManager : MonoBehaviour
         AddShorts();
         Events.Add(EndEvent);
 
-       
+        FatherBaseSprite = Father.sprite;
+        MotherBaseSprite = Mother.sprite;
+    }
+
+    public void ResetSprites()
+    {
+        Father.sprite = FatherBaseSprite;
+        Mother.sprite = MotherBaseSprite;
     }
 
     public void changeSprites(StructEvent Event)
     {
-        for(int i = 0; i < Event.SpriteTargets.Count; i++)
+        for (int i = 0; i < Event.SpriteTargets.Count; i++)
         {
-            if(Event.SpriteTargets[i].target == TargetName.FATHER){//cambiar el sprite base del padre por otro del padre
+            if (Event.SpriteTargets[i].target == TargetName.FATHER)
+            {//cambiar el sprite base del padre por otro del padre
                 Father.sprite = Event.SpriteTargets[i].spriteTarget;
             }
             else

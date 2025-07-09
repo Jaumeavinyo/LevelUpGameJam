@@ -10,7 +10,7 @@ using System.Collections.Generic;
 public enum TargetName
 {
     FATHER,
-    MOTHER,    
+    MOTHER,
 }
 
 public enum GamePlayMode
@@ -37,13 +37,10 @@ public struct StructEvent
 
     public string Dialogue;
     public float EventDuration;
-
+    [NonSerialized] public bool IsShortEvent;
 
     [SerializeField]
     public List<SpriteTarget> SpriteTargets;// Listado de sprites q queremos cambiar
-
-    [NonSerialized] public bool IsShortEvent;
-
 }
 
 public class GameManager : MonoBehaviour
@@ -116,6 +113,7 @@ public class GameManager : MonoBehaviour
                         StateText.text = "Free Movement";
                     }
                     gamePlayMode = GamePlayMode.FREE_MOVEMENT;
+                    eventsManager.ResetSprites();
                     TextScript.FinishEvent();
                 }
                 CheckCameraZoom();
@@ -140,12 +138,15 @@ public class GameManager : MonoBehaviour
                 if (ChangingToPlayMode)
                 {
                     bool cameraInPos = CheckGameCameraPosition();
-                    bool cameraWithZoom = CheckCameraZoom();
-                    if (cameraInPos && cameraWithZoom)
+                    if (cameraInPos)
                     {
-                        gamePlayMode = GamePlayMode.PLAYING;
-                        ChangingToPlayMode = false;
-                        StateText.text = "Playing";
+                        bool cameraWithZoom = CheckCameraZoom();
+                        if (cameraWithZoom)
+                        {
+                            gamePlayMode = GamePlayMode.PLAYING;
+                            ChangingToPlayMode = false;
+                            StateText.text = "Playing";
+                        }
                     }
                 }
                 else
@@ -156,7 +157,6 @@ public class GameManager : MonoBehaviour
                 break;
         }
     }
-
 
 
     private void CheckCameraMovementInput()
