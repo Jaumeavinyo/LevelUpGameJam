@@ -97,12 +97,12 @@ public class dash_state : FSM_BaseState
         horizontalInput = my_sm.inputAction_move.ReadValue<Vector2>().x;
 
         //   ### --- ###
-        float bJump = my_sm.inputAction_jump.ReadValue<float>();
-        if (bJump == 1.0f)
-        {
-            jumpInput = true;
-            stateMachine.ChangeState(my_sm.jump);
-        }      
+        //float bJump = my_sm.inputAction_jump.ReadValue<float>();
+        //if (bJump == 1.0f)
+        //{
+        //    jumpInput = true;
+        //    stateMachine.ChangeState(my_sm.jump);
+        //}      
         
     }
     public void chooseStateAfterDash()
