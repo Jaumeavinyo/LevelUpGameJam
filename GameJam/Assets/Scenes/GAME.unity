@@ -1132,6 +1132,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 2994932168594769322, guid: 7b3aa52c2b893404189583a372a62318, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: af3e2491404d1ea43bf13a1a5f6b320f, type: 2}
     - target: {fileID: 3259833154674830497, guid: 7b3aa52c2b893404189583a372a62318, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.23
@@ -1175,6 +1179,10 @@ PrefabInstance:
     - target: {fileID: 7442955865358822363, guid: 7b3aa52c2b893404189583a372a62318, type: 3}
       propertyPath: m_Name
       value: Character (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8786673201951054855, guid: 7b3aa52c2b893404189583a372a62318, type: 3}
+      propertyPath: UseVerticalDissolve
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
