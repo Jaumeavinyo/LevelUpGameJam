@@ -19,6 +19,7 @@ public enum GamePlayMode
     IN_EVENT,
     FREE_MOVEMENT
 }
+
 [Serializable]
 public struct SpriteTarget
 {
