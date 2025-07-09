@@ -1,31 +1,19 @@
 fileFormatVersion: 2
-guid: 9d69b9cf85345604f821278faa4e9ffe
+guid: 4b12fbc2efdcbee42913ae2e69c4b675
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5898588112866682912
-    second: CORRER_30_0
+      213: -8639123672378419616
+    second: Correr1-3_0
   - first:
-      213: 7271231801458756870
-    second: CORRER_30_1
+      213: -1115065070650248783
+    second: Correr1-3_1
   - first:
-      213: -6366533096428739950
-    second: CORRER_30_2
+      213: 3345995409607189497
+    second: Correr1-3_2
   - first:
-      213: -3332308324505660937
-    second: CORRER_30_3
-  - first:
-      213: 3661727092317960163
-    second: CORRER_30_4
-  - first:
-      213: 3684376814643911871
-    second: CORRER_30_5
-  - first:
-      213: -118782628920834478
-    second: CORRER_30_6
-  - first:
-      213: 1886216035676629814
-    second: CORRER_30_7
+      213: -570355171772018710
+    second: Correr1-3_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -121,89 +109,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CORRER_30_1
+      name: Correr1-3_0
       rect:
         serializedVersion: 2
-        x: 3352
-        y: 765
-        width: 1317
-        height: 1866
+        x: 665
+        y: 0
+        width: 1300
+        height: 3543
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 60d097d7cca98e460800000000000000
-      internalID: 7271231801458756870
+      spriteID: 0665731cacaab1880800000000000000
+      internalID: -8639123672378419616
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CORRER_30_2
+      name: Correr1-3_1
       rect:
         serializedVersion: 2
-        x: 4869
-        y: 765
-        width: 1317
-        height: 1866
+        x: 2472
+        y: 0
+        width: 1300
+        height: 3543
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 292e89051e785a7a0800000000000000
-      internalID: -6366533096428739950
+      spriteID: 1b13272e93e7680f0800000000000000
+      internalID: -1115065070650248783
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CORRER_30_4
+      name: Correr1-3_2
       rect:
         serializedVersion: 2
-        x: 6361
-        y: 765
-        width: 1317
-        height: 1866
+        x: 4012
+        y: 0
+        width: 1500
+        height: 3543
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 3e7390ac36111d230800000000000000
-      internalID: 3661727092317960163
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CORRER_30_5
-      rect:
-        serializedVersion: 2
-        x: 7963
-        y: 765
-        width: 1317
-        height: 1866
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fbc19873139812330800000000000000
-      internalID: 3684376814643911871
+      spriteID: f8b9c613118e2df4784a9186dc7c707f
+      internalID: 3345995409607189497
       vertices: []
       indices: 
       edges: []
@@ -212,7 +178,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 15b51181da33f5d4e80dcbd5c45f016e
+    spriteID: 0224897b56b8cf548a98104f7521b973
     internalID: 0
     vertices: []
     indices: 
@@ -220,16 +186,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":1.0},"gridSpriteSize":{"x":2017.0,"y":3543.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":100.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      CORRER_30_0: -5898588112866682912
-      CORRER_30_1: 7271231801458756870
-      CORRER_30_2: -6366533096428739950
-      CORRER_30_3: -3332308324505660937
-      CORRER_30_4: 3661727092317960163
-      CORRER_30_5: 3684376814643911871
-      CORRER_30_6: -118782628920834478
-      CORRER_30_7: 1886216035676629814
+      Correr1-3_0: -8639123672378419616
+      Correr1-3_1: -1115065070650248783
+      Correr1-3_2: 3345995409607189497
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
