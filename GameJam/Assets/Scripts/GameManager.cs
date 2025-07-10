@@ -20,30 +20,6 @@ public enum GamePlayMode
     FREE_MOVEMENT
 }
 
-[Serializable]
-public struct SpriteTarget
-{
-    [Tooltip("Select if we want to change the mother or the father sprite")]
-    public TargetName target;//father or mother
-    [Tooltip("Select the sprite we want to use to substitute father or mother selected in target")]
-    public Sprite spriteTarget;//The sprite we want to put on screen instead of fathermother base
-}
-
-[Serializable]
-public struct StructEvent
-{
-
-    [Tooltip("The camera position to move to at this time")]
-    public Transform CameraPosition;
-
-    public string Dialogue;
-    public float EventDuration;
-    [NonSerialized] public bool IsShortEvent;
-
-    [SerializeField]
-    public List<SpriteTarget> SpriteTargets;// Listado de sprites q queremos cambiar
-}
-
 public class GameManager : MonoBehaviour
 {
     //INPUT SYSTEM
@@ -63,71 +39,48 @@ public class GameManager : MonoBehaviour
     public Camera Camera;
     public static float IN_GAME_CAMERA_SIZE = 4f, IN_EVENT_CAMERA_SIZE = 6;
     public static float TIME_BETWEEN_EVENTS = 5;
-    public float vel, freeMovementVel;
-
-    [NonSerialized] public Transform target;
-    [NonSerialized] public bool isMoving = false;
-    private float nextEventTimer = 0, eventTimer = 0, forceEventTimer = 0;
+    public float freeMovementVel;
+    private float nextEventTimer = 0, forceEventTimer = 0;
     [NonSerialized] public GamePlayMode gamePlayMode;
     public GameObject PressEGameObject, PressAgameObject;
 
     public float minX = -18, maxX = 18, minY = -1, maxY = 1;
-    private bool ChangingToPlayMode = false, InShortEvent = false;
-    public Textos TextScript;
-    public GameObject TextManager;
-    public EventsManager eventsManager;
+    private bool ChangingToPlayMode = false;
+
     void Start()
     {
         gamePlayMode = GamePlayMode.FREE_MOVEMENT;
         playerName = PlayerData.playerName;
         Debug.Log(playerName);
-        TextScript = TextManager.GetComponent<Textos>();
-
     }
 
     void Awake()
     {
         Instance = this;
     }
+
+    public void FinishEvent(bool backToPlay)
+    {
+        ChangingToPlayMode = backToPlay;
+        gamePlayMode = GamePlayMode.FREE_MOVEMENT;
+    }
+
     void Update()
     {
         switch (gamePlayMode)
         {
             case GamePlayMode.IN_EVENT:
-                if (isMoving)
-                {
-                    GoToEvent();
-                }
-                else if (eventTimer > 0)
-                {
-                    eventTimer -= Time.deltaTime;
-                }
-                else
-                {
-                    if (InShortEvent)
-                    {
-                        StateText.text = "Back to Game";
-                        ChangingToPlayMode = true;
-                    }
-                    else
-                    {
-                        StateText.text = "Free Movement";
-                    }
-                    gamePlayMode = GamePlayMode.FREE_MOVEMENT;
-                    eventsManager.ResetSprites();
-                    TextScript.FinishEvent();
-                }
                 CheckCameraZoom();
                 break;
             case GamePlayMode.PLAYING:
                 nextEventTimer += Time.deltaTime;
-                TextScript.ShowNotification = false;
-                if (eventsManager.Events.Count > 0)
+                Textos.Instance.ShowNotification = false;
+                if (EventsManager.Instance.Events.Count > 0)
                 {
                     if (nextEventTimer >= TIME_BETWEEN_EVENTS)
                     {
                         forceEventTimer += Time.deltaTime;
-                        TextScript.ShowNotification = true;
+                        Textos.Instance.ShowNotification = true;
                         if (forceEventTimer >= secondsToForceEventIfNointeraction)
                         {
                             LoadNewEvent();
@@ -251,32 +204,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void GoToEvent()
-    {
-        Vector3 targetPosition = new Vector3(target.position.x, target.position.y, -1);
-        Camera.transform.position = Vector3.MoveTowards(Camera.transform.position, targetPosition, vel * Time.deltaTime);
-
-        if (Vector3.Distance(Camera.transform.position, targetPosition) == 0)
-        {
-            isMoving = false;
-        }
-    }
-
     public void LoadNewEvent()
     {
-        StructEvent newEvent = eventsManager.Events[0];
-        target = newEvent.CameraPosition;
-        isMoving = true;
         gamePlayMode = GamePlayMode.IN_EVENT;
         StateText.text = "EVENT";
-        TextScript.OpenEvent(newEvent.Dialogue);
-        eventsManager.Events.Remove(newEvent);
-        eventsManager.changeSprites(newEvent);
         forceEventTimer = 0;
         nextEventTimer = 0;
-        InShortEvent = newEvent.IsShortEvent;
-        eventTimer = newEvent.EventDuration;
+        EventsManager.Instance.StartNextEvent();
     }
+
     private void OnAnyInput(InputControl control)
     {
         var device = control.device;
@@ -306,7 +242,5 @@ public class GameManager : MonoBehaviour
     {
         inputAction_move_camera.Disable();
         inputAction_interact.Disable();
-
-
     }
 }

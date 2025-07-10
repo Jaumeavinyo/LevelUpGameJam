@@ -573,8 +573,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartingChunk: {fileID: 1737325614816170554, guid: fde02eac401f4a441823686f437630de, type: 3}
-  Speed: 2
-  Acceleration: 0.01
+  baseSpeed: 2
+  baseAcceleration: 0.1
   Display: {fileID: 445523841}
   Character: {fileID: 1869172342}
 --- !u!4 &692484571
@@ -1367,7 +1367,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1032448510}
   - component: {fileID: 1032448509}
-  - component: {fileID: 1032448511}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1414,7 +1413,6 @@ MonoBehaviour:
   RWindow: {fileID: 1432375470}
   CarCenter: {fileID: 448610587}
   Camera: {fileID: 907485541}
-  vel: 18
   freeMovementVel: 25
   PressEGameObject: {fileID: 866563857}
   PressAgameObject: {fileID: 1459835033}
@@ -1422,9 +1420,6 @@ MonoBehaviour:
   maxX: 18
   minY: -1
   maxY: 1
-  TextScript: {fileID: 1936378527}
-  TextManager: {fileID: 1936378526}
-  eventsManager: {fileID: 1032448511}
 --- !u!4 &1032448510
 Transform:
   m_ObjectHideFlags: 0
@@ -1440,66 +1435,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1032448511
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1032448508}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8099b879cdd78154daa92b9fe64178d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShortEvents:
-  - CameraPosition: {fileID: 1432375470}
-    Dialogue: Evento 0
-    EventDuration: 3
-    SpriteTargets: []
-  - CameraPosition: {fileID: 448610587}
-    Dialogue: Evento 1
-    EventDuration: 2
-    SpriteTargets: []
-  - CameraPosition: {fileID: 448610587}
-    Dialogue: Evento 3
-    EventDuration: 4
-    SpriteTargets: []
-  - CameraPosition: {fileID: 1432375470}
-    Dialogue: Evento 4
-    EventDuration: 3
-    SpriteTargets: []
-  LongEvents:
-  - CameraPosition: {fileID: 448610587}
-    Dialogue: Mother gives bocadillo
-    EventDuration: 6
-    SpriteTargets:
-    - target: 1
-      spriteTarget: {fileID: -703850579747923803, guid: 5e49c3f9461dff748bb83af36e803004, type: 3}
-  - CameraPosition: {fileID: 448610587}
-    Dialogue: Mother gives bocadillo
-    EventDuration: 6
-    SpriteTargets:
-    - target: 0
-      spriteTarget: {fileID: -8929938701799069507, guid: 555396336253add4bb0ec537d141c877, type: 3}
-  GasEvent:
-    CameraPosition: {fileID: 448610587}
-    Dialogue: GAS GAS
-    EventDuration: 10
-    SpriteTargets:
-    - target: 0
-      spriteTarget: {fileID: 0}
-    - target: 0
-      spriteTarget: {fileID: 0}
-  EndEvent:
-    CameraPosition: {fileID: 448610587}
-    Dialogue: END!
-    EventDuration: 100
-    SpriteTargets:
-    - target: 0
-      spriteTarget: {fileID: 21300000, guid: ff86cd811e2d3cd46bde4a1448cb5536, type: 3}
-  Father: {fileID: 711817468}
-  Mother: {fileID: 1970219309}
 --- !u!1 &1180432524
 GameObject:
   m_ObjectHideFlags: 0
@@ -1803,6 +1738,184 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 2
   m_TargetDisplay: 0
+--- !u!1 &1492295111
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1492295113}
+  - component: {fileID: 1492295112}
+  m_Layer: 0
+  m_Name: EventsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1492295112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492295111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8099b879cdd78154daa92b9fe64178d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CarCenter: {fileID: 448610587}
+  LWindow: {fileID: 1728003794}
+  RWindow: {fileID: 1432375470}
+  ShortEvents:
+  - Event:
+      TargetCameraPosition: 2
+      SpriteTargets:
+      - target: 0
+        spriteTarget: {fileID: 1488998789433884317, guid: a8ca2b15dde68d94e8ffe4a64c3f2131, type: 3}
+      Dialogue: Well, well, well
+      EventDuration: 3
+      Music: {fileID: 0}
+  - Event:
+      TargetCameraPosition: 2
+      SpriteTargets:
+      - target: 0
+        spriteTarget: {fileID: 1488998789433884317, guid: a8ca2b15dde68d94e8ffe4a64c3f2131, type: 3}
+      Dialogue: Well, well, well
+      EventDuration: 3
+      Music: {fileID: 0}
+  - Event:
+      TargetCameraPosition: 2
+      SpriteTargets:
+      - target: 0
+        spriteTarget: {fileID: 1488998789433884317, guid: a8ca2b15dde68d94e8ffe4a64c3f2131, type: 3}
+      Dialogue: Well, well, well
+      EventDuration: 3
+      Music: {fileID: 0}
+  - Event:
+      TargetCameraPosition: 2
+      SpriteTargets:
+      - target: 0
+        spriteTarget: {fileID: 1488998789433884317, guid: a8ca2b15dde68d94e8ffe4a64c3f2131, type: 3}
+      Dialogue: Well, well, well
+      EventDuration: 3
+      Music: {fileID: 0}
+  - Event:
+      TargetCameraPosition: 2
+      SpriteTargets:
+      - target: 0
+        spriteTarget: {fileID: 1488998789433884317, guid: a8ca2b15dde68d94e8ffe4a64c3f2131, type: 3}
+      Dialogue: Well, well, well
+      EventDuration: 3
+      Music: {fileID: 0}
+  LongEvents:
+  - Events:
+    - TargetCameraPosition: 1
+      SpriteTargets: []
+      Dialogue: Hello!
+      EventDuration: 0
+      Music: {fileID: 0}
+    - TargetCameraPosition: 1
+      SpriteTargets:
+      - target: 0
+        spriteTarget: {fileID: 7438324144978046287, guid: 640ac72d5e5d6a3449bdda271cab4144, type: 3}
+      - target: 1
+        spriteTarget: {fileID: -5293678131686772747, guid: 21bca44d8cff70e4c8115df796ac4c7a, type: 3}
+      Dialogue: Everything good?
+      EventDuration: 0
+      Music: {fileID: 0}
+    - TargetCameraPosition: 2
+      SpriteTargets: []
+      Dialogue: Look to the right!
+      EventDuration: 0
+      Music: {fileID: 0}
+    GoToPlayAfterEvent: 1
+    WaitForPlayerInput: 1
+  - Events:
+    - TargetCameraPosition: 1
+      SpriteTargets: []
+      Dialogue: Hello!
+      EventDuration: 0
+      Music: {fileID: 0}
+    - TargetCameraPosition: 1
+      SpriteTargets:
+      - target: 0
+        spriteTarget: {fileID: 7438324144978046287, guid: 640ac72d5e5d6a3449bdda271cab4144, type: 3}
+      - target: 1
+        spriteTarget: {fileID: -5293678131686772747, guid: 21bca44d8cff70e4c8115df796ac4c7a, type: 3}
+      Dialogue: Everything good?
+      EventDuration: 0
+      Music: {fileID: 0}
+    - TargetCameraPosition: 2
+      SpriteTargets: []
+      Dialogue: Look to the right!
+      EventDuration: 0
+      Music: {fileID: 0}
+    GoToPlayAfterEvent: 1
+    WaitForPlayerInput: 1
+  - Events:
+    - TargetCameraPosition: 1
+      SpriteTargets: []
+      Dialogue: Hello!
+      EventDuration: 0
+      Music: {fileID: 0}
+    - TargetCameraPosition: 1
+      SpriteTargets:
+      - target: 0
+        spriteTarget: {fileID: 7438324144978046287, guid: 640ac72d5e5d6a3449bdda271cab4144, type: 3}
+      - target: 1
+        spriteTarget: {fileID: -5293678131686772747, guid: 21bca44d8cff70e4c8115df796ac4c7a, type: 3}
+      Dialogue: Everything good?
+      EventDuration: 0
+      Music: {fileID: 0}
+    - TargetCameraPosition: 2
+      SpriteTargets: []
+      Dialogue: Look to the right!
+      EventDuration: 0
+      Music: {fileID: 0}
+    GoToPlayAfterEvent: 1
+    WaitForPlayerInput: 1
+  GasEvent:
+    Events:
+    - TargetCameraPosition: 0
+      SpriteTargets: []
+      Dialogue: Finally some gas...
+      EventDuration: 0
+      Music: {fileID: 0}
+    GoToPlayAfterEvent: 0
+    WaitForPlayerInput: 1
+    Deacceleration: -1
+  EndEvent:
+    Events:
+    - TargetCameraPosition: 0
+      SpriteTargets: []
+      Dialogue: DONE!
+      EventDuration: 0
+      Music: {fileID: 0}
+    GoToPlayAfterEvent: 0
+    WaitForPlayerInput: 1
+  Father: {fileID: 711817468}
+  Mother: {fileID: 1970219309}
+  Camera: {fileID: 907485541}
+  vel: 18
+--- !u!4 &1492295113
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492295111}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1657018630
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1925,22 +2038,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 338720772185be64fa0ea122341e2728, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &1936378526 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2246613370661203287, guid: 9a52d8addc5caec4c952fd2e66b221b2, type: 3}
-  m_PrefabInstance: {fileID: 627779006}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1936378527 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6950116907230200332, guid: 9a52d8addc5caec4c952fd2e66b221b2, type: 3}
-  m_PrefabInstance: {fileID: 627779006}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1936378526}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aee2ed0f007c561428f5a291c06f7cfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1970219307
@@ -2396,3 +2493,4 @@ SceneRoots:
   - {fileID: 862177036}
   - {fileID: 627779006}
   - {fileID: 921491111}
+  - {fileID: 1492295113}
