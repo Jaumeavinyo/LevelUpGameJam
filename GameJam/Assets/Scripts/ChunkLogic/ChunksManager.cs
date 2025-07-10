@@ -9,7 +9,7 @@ public class ChunksManager : MonoBehaviour
     public Chunk StartingChunk;
     [NonSerialized] public List<Chunk> LiveChunks = new();
     [NonSerialized] public Chunk CurrentChunk;
-    public float baseSpeed = 2, baseAcceleration = 0.1f;
+    public float baseSpeed = 2, baseAcceleration = 0.05f, MAX_SPEED = 3;
     [NonSerialized] public float Acceleration, Speed;
     public GameObject Display;
     private bool GameStarted = false;
@@ -64,7 +64,7 @@ public class ChunksManager : MonoBehaviour
     {
         if (GameStarted)
         {
-            Character.GetComponent<Dissolve>().StartVanishing();
+            Character.GetComponent<Dissolve>().StartVanishing(false);
             StartCoroutine(RestartAfterDelay());
         }
     }
@@ -98,12 +98,12 @@ public class ChunksManager : MonoBehaviour
                 if (CurrentChunk.transform.localPosition.x <= 11) GenerateRandomNextChunk();
                 Character.gameObject.transform.localPosition += new Vector3(-Speed * Time.deltaTime, 0, 0);
                 Speed += Time.deltaTime * Acceleration;
-                Debug.Log("Speed ChunksManager" + Speed);
+                Speed = Math.Min(Speed, MAX_SPEED);
             }
         }
         else if (GameStarted)
         {
-            Character.GetComponent<Dissolve>().StartVanishing();
+            Character.GetComponent<Dissolve>().StartVanishing(true);
             GameStarted = false;
         }
 
