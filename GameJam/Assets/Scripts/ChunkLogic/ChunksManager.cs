@@ -9,7 +9,8 @@ public class ChunksManager : MonoBehaviour
     public Chunk StartingChunk;
     [NonSerialized] public List<Chunk> LiveChunks = new();
     [NonSerialized] public Chunk CurrentChunk;
-    public float Speed = 2, Acceleration = 0.1f;
+    public float baseSpeed = 2, baseAcceleration = 0.1f;
+    [NonSerialized] public float Acceleration, Speed;
     public GameObject Display;
     private bool GameStarted = false;
 
@@ -22,6 +23,8 @@ public class ChunksManager : MonoBehaviour
 
     void Start()
     {
+        Acceleration = baseAcceleration;
+        Speed = baseSpeed;
     }
 
     public void GenerateRandomNextChunk()

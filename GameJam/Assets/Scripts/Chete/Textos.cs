@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 
 public class Textos : MonoBehaviour
 {
-
+    public static Textos Instance;
     public InputActionAsset inputActions;//todos los botones mapeados
 
     InputAction AcceptNotification;//una accion q se triggerea con un boton
@@ -14,9 +14,13 @@ public class Textos : MonoBehaviour
     [SerializeField] private GameObject exclamationImage;
     public GameObject uiBackground;
     [SerializeField] private TextMeshProUGUI eventText;
-    [NonSerialized] public float bcloseNotification;
 
     [NonSerialized] public bool ShowNotification;
+
+    void Awake()
+    {
+        Instance = this;
+    }
 
 
     void Start()
@@ -29,12 +33,23 @@ public class Textos : MonoBehaviour
     void Update()
     {
         exclamationImage.gameObject.SetActive(ShowNotification);
-        bcloseNotification = AcceptNotification.ReadValue<float>();
+        float pressedInput = AcceptNotification.ReadValue<float>();
 
-        if (ShowNotification && bcloseNotification == 1.0f)
+        // added this to skip 1 text per E press
+        bool pressedThisFrame = AcceptNotification.WasPressedThisFrame();
+        if (pressedInput == 1.0f && pressedThisFrame)
         {
-            GameManager.Instance.LoadNewEvent();
+            if (ShowNotification)
+            {
+                GameManager.Instance.LoadNewEvent();
+            }
+            else
+            {
+                EventsManager.Instance.PressedInput();
+            }
+
         }
+
     }
     private IEnumerator openTextBoxRoutine()
     {
@@ -51,7 +66,7 @@ public class Textos : MonoBehaviour
     {
         eventText.text = Dialogue;
         ShowNotification = false;
-        StartCoroutine(openTextBoxRoutine());
+        if (!uiBackground.activeInHierarchy) StartCoroutine(openTextBoxRoutine());
     }
 
     public void FinishEvent()

@@ -55,14 +55,14 @@ Material:
     m_Ints: []
     m_Floats:
     - _Dissolve: 1
-    - _DissolveAmount: 0
+    - _DissolveAmount: 0.5946294
     - _DissolveScale: 110
     - _EnableExternalAlpha: 0
     - _OutlineThickness: 0.033
     - _QueueControl: 0
     - _QueueOffset: 0
     - _SpiralStrenght: 5
-    - _VerticalDissolve: 0
+    - _VerticalDissolve: 0.5946294
     - _ZWrite: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}

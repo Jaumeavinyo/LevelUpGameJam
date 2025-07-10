@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BackgroundManager : MonoBehaviour
 {
-
     public BackgroundChunk StartingBackground;
     [NonSerialized] public List<BackgroundChunk> LiveBackgrounds = new();
     private BackgroundChunk CurrentBackground;
