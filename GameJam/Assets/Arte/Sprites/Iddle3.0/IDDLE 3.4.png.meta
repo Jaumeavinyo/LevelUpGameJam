@@ -1,25 +1,28 @@
 fileFormatVersion: 2
-guid: 47814882f82aef446b1be91fccf32a86
+guid: 3de94bf5b7f35434cb3b461435d13a77
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4739887499350342379
-    second: JUMP2 .2_0
+      213: -631370141979972165
+    second: IDDLE 3.4_0
   - first:
-      213: 1079036601511602072
-    second: JUMP2 .2_1
+      213: 425978985993182804
+    second: IDDLE 3.4_1
   - first:
-      213: 9075317762879556853
-    second: JUMP2 .2_2
+      213: -3152192576885356012
+    second: IDDLE 3.4_2
   - first:
-      213: 7780489827302573958
-    second: JUMP2 .2_3
+      213: 5986584812577817994
+    second: IDDLE 3.4_3
   - first:
-      213: -1011622691921403176
-    second: JUMP2 .2_4
+      213: -3791865593377276118
+    second: IDDLE 3.4_4
   - first:
-      213: 7071410621759361669
-    second: JUMP2 .2_5
+      213: -3514867831657456632
+    second: IDDLE 3.4_5
+  - first:
+      213: -4639380083515354879
+    second: IDDLE 3.4_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -52,7 +55,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -66,7 +69,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 200
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -115,133 +118,155 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: JUMP2 .2_0
+      name: IDDLE 3.4_0
       rect:
         serializedVersion: 2
-        x: 316
-        y: 699
-        width: 186
-        height: 327
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 51588edae69883eb0800000000000000
-      internalID: -4739887499350342379
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: JUMP2 .2_1
-      rect:
-        serializedVersion: 2
-        x: 1117
-        y: 758
-        width: 186
-        height: 251
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8976eb4721289fe00800000000000000
-      internalID: 1079036601511602072
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: JUMP2 .2_2
-      rect:
-        serializedVersion: 2
-        x: 1917
-        y: 699
-        width: 177
-        height: 294
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5fc8a381c6102fd70800000000000000
-      internalID: 9075317762879556853
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: JUMP2 .2_3
-      rect:
-        serializedVersion: 2
-        x: 314
+        x: 285
         y: 0
-        width: 197
-        height: 331
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 191
+        height: 375
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 68709ee664ad9fb60800000000000000
-      internalID: 7780489827302573958
+      spriteID: bbdee75733cec37f0800000000000000
+      internalID: -631370141979972165
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JUMP2 .2_4
+      name: IDDLE 3.4_1
       rect:
         serializedVersion: 2
-        x: 1116
-        y: 56
-        width: 188
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8d2ec41858ef5f1f0800000000000000
-      internalID: -1011622691921403176
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: JUMP2 .2_5
-      rect:
-        serializedVersion: 2
-        x: 1913
+        x: 1087
         y: 0
-        width: 183
-        height: 295
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 189
+        height: 367
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 58214ea9e72b22260800000000000000
-      internalID: 7071410621759361669
+      spriteID: 45e97ed71a169e500800000000000000
+      internalID: 425978985993182804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IDDLE 3.4_2
+      rect:
+        serializedVersion: 2
+        x: 1881
+        y: 0
+        width: 194
+        height: 356
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41a00276d892144d0800000000000000
+      internalID: -3152192576885356012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IDDLE 3.4_3
+      rect:
+        serializedVersion: 2
+        x: 2683
+        y: 0
+        width: 191
+        height: 361
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8503733b2f941350800000000000000
+      internalID: 5986584812577817994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IDDLE 3.4_4
+      rect:
+        serializedVersion: 2
+        x: 3487
+        y: 0
+        width: 189
+        height: 364
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2fb8be3556906bc0800000000000000
+      internalID: -3791865593377276118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IDDLE 3.4_5
+      rect:
+        serializedVersion: 2
+        x: 4289
+        y: 0
+        width: 189
+        height: 364
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80c1c95645ea83fc0800000000000000
+      internalID: -3514867831657456632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IDDLE 3.4_6
+      rect:
+        serializedVersion: 2
+        x: 5091
+        y: 0
+        width: 189
+        height: 375
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1019b00056c9d9fb0800000000000000
+      internalID: -4639380083515354879
       vertices: []
       indices: 
       edges: []
@@ -250,7 +275,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 0360ff9844ead604e833aa64570b44fa
     internalID: 0
     vertices: []
     indices: 
@@ -258,14 +283,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      JUMP2 .2_0: -4739887499350342379
-      JUMP2 .2_1: 1079036601511602072
-      JUMP2 .2_2: 9075317762879556853
-      JUMP2 .2_3: 7780489827302573958
-      JUMP2 .2_4: -1011622691921403176
-      JUMP2 .2_5: 7071410621759361669
+      IDDLE 3.4_0: -631370141979972165
+      IDDLE 3.4_1: 425978985993182804
+      IDDLE 3.4_2: -3152192576885356012
+      IDDLE 3.4_3: 5986584812577817994
+      IDDLE 3.4_4: -3791865593377276118
+      IDDLE 3.4_5: -3514867831657456632
+      IDDLE 3.4_6: -4639380083515354879
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

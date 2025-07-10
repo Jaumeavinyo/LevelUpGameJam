@@ -1,25 +1,34 @@
 fileFormatVersion: 2
-guid: 47814882f82aef446b1be91fccf32a86
+guid: 3d903ba3c5ec9874d89c0a56c7ce5ede
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4739887499350342379
-    second: JUMP2 .2_0
+      213: -1055212586766102713
+    second: COMPROBACION_Correr_0
   - first:
-      213: 1079036601511602072
-    second: JUMP2 .2_1
+      213: 1952612661888872667
+    second: COMPROBACION_Correr_1
   - first:
-      213: 9075317762879556853
-    second: JUMP2 .2_2
+      213: 3421087669781793879
+    second: COMPROBACION_Correr_2
   - first:
-      213: 7780489827302573958
-    second: JUMP2 .2_3
+      213: -1935889450390235005
+    second: COMPROBACION_Correr_3
   - first:
-      213: -1011622691921403176
-    second: JUMP2 .2_4
+      213: 6021264251577293253
+    second: COMPROBACION_Correr_4
   - first:
-      213: 7071410621759361669
-    second: JUMP2 .2_5
+      213: -2195218414913597752
+    second: COMPROBACION_Correr_5
+  - first:
+      213: -2428447900152229779
+    second: COMPROBACION_Correr_6
+  - first:
+      213: 5038221440918346424
+    second: COMPROBACION_Correr_7
+  - first:
+      213: -1700215071048899246
+    second: COMPROBACION_Correr_8
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -52,7 +61,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -66,7 +75,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 425
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -115,133 +124,177 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: JUMP2 .2_0
+      name: COMPROBACION_Correr_0
       rect:
         serializedVersion: 2
-        x: 316
-        y: 699
-        width: 186
-        height: 327
+        x: 155
+        y: 11
+        width: 546
+        height: 791
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 51588edae69883eb0800000000000000
-      internalID: -4739887499350342379
+      spriteID: 74f094b3eb12b51f0800000000000000
+      internalID: -1055212586766102713
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JUMP2 .2_1
+      name: COMPROBACION_Correr_1
       rect:
         serializedVersion: 2
-        x: 1117
-        y: 758
-        width: 186
-        height: 251
+        x: 1897
+        y: 47
+        width: 470
+        height: 737
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8976eb4721289fe00800000000000000
-      internalID: 1079036601511602072
+      spriteID: bd0f0dfded2191b10800000000000000
+      internalID: 1952612661888872667
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JUMP2 .2_2
+      name: COMPROBACION_Correr_2
       rect:
         serializedVersion: 2
-        x: 1917
-        y: 699
-        width: 177
-        height: 294
+        x: 3562
+        y: 11
+        width: 675
+        height: 810
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5fc8a381c6102fd70800000000000000
-      internalID: 9075317762879556853
+      spriteID: 75c00d62c152a7f20800000000000000
+      internalID: 3421087669781793879
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JUMP2 .2_3
+      name: COMPROBACION_Correr_3
       rect:
         serializedVersion: 2
-        x: 314
-        y: 0
-        width: 197
-        height: 331
+        x: 5083
+        y: 10
+        width: 718
+        height: 800
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 68709ee664ad9fb60800000000000000
-      internalID: 7780489827302573958
+      spriteID: 38850193dc65225e0800000000000000
+      internalID: -1935889450390235005
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JUMP2 .2_4
+      name: COMPROBACION_Correr_4
       rect:
         serializedVersion: 2
-        x: 1116
-        y: 56
-        width: 188
-        height: 256
+        x: 6769
+        y: 7
+        width: 590
+        height: 814
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8d2ec41858ef5f1f0800000000000000
-      internalID: -1011622691921403176
+      spriteID: 5c9d50e4fe3df8350800000000000000
+      internalID: 6021264251577293253
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JUMP2 .2_5
+      name: COMPROBACION_Correr_5
       rect:
         serializedVersion: 2
-        x: 1913
-        y: 0
-        width: 183
-        height: 295
+        x: 8569
+        y: 11
+        width: 407
+        height: 806
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 58214ea9e72b22260800000000000000
-      internalID: 7071410621759361669
+      spriteID: 8cecdae7b740981e0800000000000000
+      internalID: -2195218414913597752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COMPROBACION_Correr_6
+      rect:
+        serializedVersion: 2
+        x: 10278
+        y: 21
+        width: 433
+        height: 799
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6012e3508b6c4ed0800000000000000
+      internalID: -2428447900152229779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COMPROBACION_Correr_7
+      rect:
+        serializedVersion: 2
+        x: 11898
+        y: 11
+        width: 625
+        height: 822
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bad1b5f4bb5be540800000000000000
+      internalID: 5038221440918346424
       vertices: []
       indices: 
       edges: []
@@ -250,7 +303,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5f366ab3b74f4cc47b2257875b1891f1
     internalID: 0
     vertices: []
     indices: 
@@ -260,12 +313,15 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      JUMP2 .2_0: -4739887499350342379
-      JUMP2 .2_1: 1079036601511602072
-      JUMP2 .2_2: 9075317762879556853
-      JUMP2 .2_3: 7780489827302573958
-      JUMP2 .2_4: -1011622691921403176
-      JUMP2 .2_5: 7071410621759361669
+      COMPROBACION_Correr_0: -1055212586766102713
+      COMPROBACION_Correr_1: 1952612661888872667
+      COMPROBACION_Correr_2: 3421087669781793879
+      COMPROBACION_Correr_3: -1935889450390235005
+      COMPROBACION_Correr_4: 6021264251577293253
+      COMPROBACION_Correr_5: -2195218414913597752
+      COMPROBACION_Correr_6: -2428447900152229779
+      COMPROBACION_Correr_7: 5038221440918346424
+      COMPROBACION_Correr_8: -1700215071048899246
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

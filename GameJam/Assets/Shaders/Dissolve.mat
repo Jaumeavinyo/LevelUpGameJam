@@ -55,7 +55,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Dissolve: 1
-    - _DissolveAmount: 0.5946294
+    - _DissolveAmount: 0
     - _DissolveScale: 110
     - _EnableExternalAlpha: 0
     - _OutlineThickness: 0.033
