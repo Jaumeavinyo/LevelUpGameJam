@@ -5,6 +5,10 @@ using UnityEngine.UI;
 public class Chunk : MonoBehaviour
 {
     public List<Chunk> NextPossibleChunks;
-    public float size;
+
+    public float GetXSize()
+    {
+        return GetComponent<RectTransform>().sizeDelta.x;
+    }
 
 }

@@ -36,7 +36,7 @@ public class ChunksManager : MonoBehaviour
         Chunk selectedTemplate = CurrentChunk.NextPossibleChunks[index];
         Chunk newChunk = Instantiate(selectedTemplate, Display.transform);
         LiveChunks.Add(newChunk);
-        newChunk.transform.localPosition = CurrentChunk.transform.localPosition + new Vector3(CurrentChunk.size / 2, 0, 0) + new Vector3(newChunk.size / 2, 0, 0);
+        newChunk.transform.localPosition = CurrentChunk.transform.localPosition + new Vector3(CurrentChunk.GetXSize() / 2, 0, 0) + new Vector3(newChunk.GetXSize() / 2, 0, 0);
         CurrentChunk = newChunk;
     }
 
