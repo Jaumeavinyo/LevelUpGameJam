@@ -1,0 +1,376 @@
+fileFormatVersion: 2
+guid: 0f26cbed8812488469dd2b31692c50f7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3521943833987405827
+    second: COMPROBACION ANIMACIONES_0
+  - first:
+      213: -8304847324785480072
+    second: COMPROBACION ANIMACIONES_1
+  - first:
+      213: -2748438443956230827
+    second: COMPROBACION ANIMACIONES_2
+  - first:
+      213: 1276712645694970260
+    second: COMPROBACION ANIMACIONES_3
+  - first:
+      213: -4828060583144908968
+    second: COMPROBACION ANIMACIONES_4
+  - first:
+      213: 5535034404544865981
+    second: COMPROBACION ANIMACIONES_5
+  - first:
+      213: -8340736563420847924
+    second: COMPROBACION ANIMACIONES_6
+  - first:
+      213: 8414632571098526129
+    second: COMPROBACION ANIMACIONES_7
+  - first:
+      213: 3230261272977578118
+    second: COMPROBACION ANIMACIONES_8
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 500
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: COMPROBACION ANIMACIONES_0
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 101
+        width: 553
+        height: 803
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df7ad483eba8f1fc0800000000000000
+      internalID: -3521943833987405827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COMPROBACION ANIMACIONES_1
+      rect:
+        serializedVersion: 2
+        x: 1953
+        y: 126
+        width: 412
+        height: 803
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87eee4ceb514fbc80800000000000000
+      internalID: -8304847324785480072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COMPROBACION ANIMACIONES_2
+      rect:
+        serializedVersion: 2
+        x: 3553
+        y: 83
+        width: 541
+        height: 803
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55526fc0cc59bd9d0800000000000000
+      internalID: -2748438443956230827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COMPROBACION ANIMACIONES_3
+      rect:
+        serializedVersion: 2
+        x: 5080
+        y: 563
+        width: 9
+        height: 9
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 499d5ee036bc7b110800000000000000
+      internalID: 1276712645694970260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COMPROBACION ANIMACIONES_4
+      rect:
+        serializedVersion: 2
+        x: 5153
+        y: 95
+        width: 652
+        height: 803
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8571593da784ffcb0800000000000000
+      internalID: -4828060583144908968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COMPROBACION ANIMACIONES_5
+      rect:
+        serializedVersion: 2
+        x: 6765
+        y: 83
+        width: 621
+        height: 803
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db6667e077460dc40800000000000000
+      internalID: 5535034404544865981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COMPROBACION ANIMACIONES_6
+      rect:
+        serializedVersion: 2
+        x: 8561
+        y: 101
+        width: 424
+        height: 803
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc020346940cf3c80800000000000000
+      internalID: -8340736563420847924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COMPROBACION ANIMACIONES_7
+      rect:
+        serializedVersion: 2
+        x: 10271
+        y: 101
+        width: 443
+        height: 803
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b172c3adb7c6c470800000000000000
+      internalID: 8414632571098526129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COMPROBACION ANIMACIONES_8
+      rect:
+        serializedVersion: 2
+        x: 11896
+        y: 95
+        width: 632
+        height: 803
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e5d2b540f9bd7b478266c01270ab843
+      internalID: 3230261272977578118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COMPROBACION ANIMACIONES_9
+      rect:
+        serializedVersion: 2
+        x: 1883
+        y: 476
+        width: 20
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9058f918905241f4b89f5097abd78f22
+      internalID: 1529542561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 892860a044d9cdb46892e2930616bf73
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":7.0,"y":1.0},"gridSpriteSize":{"x":7.0,"y":1.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      COMPROBACION ANIMACIONES_0: -3521943833987405827
+      COMPROBACION ANIMACIONES_1: -8304847324785480072
+      COMPROBACION ANIMACIONES_2: -2748438443956230827
+      COMPROBACION ANIMACIONES_3: 1276712645694970260
+      COMPROBACION ANIMACIONES_4: -4828060583144908968
+      COMPROBACION ANIMACIONES_5: 5535034404544865981
+      COMPROBACION ANIMACIONES_6: -8340736563420847924
+      COMPROBACION ANIMACIONES_7: 8414632571098526129
+      COMPROBACION ANIMACIONES_8: 3230261272977578118
+      COMPROBACION ANIMACIONES_9: 1529542561
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

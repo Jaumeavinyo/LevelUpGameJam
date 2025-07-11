@@ -572,7 +572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e22b7b671f61c94ab22c01811bc9076, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartingChunk: {fileID: 1737325614816170554, guid: fde02eac401f4a441823686f437630de, type: 3}
+  StartingChunk: {fileID: 1737325614816170554, guid: 5a1343b4a3948a54dbd7a7396eb9db82, type: 3}
   baseSpeed: 2
   baseAcceleration: 0.1
   MAX_SPEED: 3
@@ -1340,7 +1340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 283ad2ed8de6b5d44877940ef5e4d8cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartingBackground: {fileID: 1200368075274275835, guid: f3aa930d7fad8254f94383a50765baf9, type: 3}
+  StartingBackground: {fileID: 1200368075274275835, guid: 694f436ad191f0547ae3c3f7319d6da6, type: 3}
   Display: {fileID: 1180432524}
 --- !u!4 &1027350379
 Transform:

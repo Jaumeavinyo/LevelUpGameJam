@@ -112,10 +112,10 @@ TextureImporter:
       name: Correr1-3_0
       rect:
         serializedVersion: 2
-        x: 665
-        y: 0
-        width: 1300
-        height: 3543
+        x: 691
+        y: 580
+        width: 1279
+        height: 1847
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,10 +134,10 @@ TextureImporter:
       name: Correr1-3_1
       rect:
         serializedVersion: 2
-        x: 2472
-        y: 0
-        width: 1300
-        height: 3543
+        x: 2738
+        y: 1451
+        width: 12
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,10 +156,10 @@ TextureImporter:
       name: Correr1-3_2
       rect:
         serializedVersion: 2
-        x: 4012
-        y: 0
-        width: 1500
-        height: 3543
+        x: 2840
+        y: 593
+        width: 842
+        height: 1802
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -170,6 +170,28 @@ TextureImporter:
       bones: []
       spriteID: f8b9c613118e2df4784a9186dc7c707f
       internalID: 3345995409607189497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Correr1-3_3
+      rect:
+        serializedVersion: 2
+        x: 4279
+        y: 576
+        width: 1230
+        height: 1733
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16bf09fcebe9f3f49964fcc13e5ca8cc
+      internalID: -1485744075
       vertices: []
       indices: 
       edges: []
@@ -188,11 +210,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":1.0},"gridSpriteSize":{"x":2017.0,"y":3543.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":100.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Correr1-3_0: -8639123672378419616
       Correr1-3_1: -1115065070650248783
       Correr1-3_2: 3345995409607189497
+      Correr1-3_3: -1485744075
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
