@@ -180,7 +180,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: bea20562a5d625a47abf9e0e81f9ea8a, type: 3}
+  m_Sprite: {fileID: 4095778227728484493, guid: 14e3792be02e04444b60681e6adadfe3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -200,7 +200,7 @@ Transform:
   m_GameObject: {fileID: 88163549}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.72817, y: -0.33188, z: 1}
+  m_LocalPosition: {x: 9.23, y: -1.38, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1194,6 +1194,10 @@ PrefabInstance:
     - target: {fileID: 7863260833606435794, guid: 4eb9686ad806d7448a6a733c34c2d35c, type: 3}
       propertyPath: freeMovementVel
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909447534461463253, guid: 4eb9686ad806d7448a6a733c34c2d35c, type: 3}
+      propertyPath: near clip plane
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7909447534461463253, guid: 4eb9686ad806d7448a6a733c34c2d35c, type: 3}
       propertyPath: orthographic size

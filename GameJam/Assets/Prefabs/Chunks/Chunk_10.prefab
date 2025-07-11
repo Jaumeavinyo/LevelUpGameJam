@@ -125,6 +125,14 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6179595651059626670, guid: ec71698570210804ebbdf35e292dbc3a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.991
+      objectReference: {fileID: 0}
+    - target: {fileID: 8169235602809309174, guid: ec71698570210804ebbdf35e292dbc3a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9177963021370173759, guid: ec71698570210804ebbdf35e292dbc3a, type: 3}
       propertyPath: m_SortingOrder
       value: 1
