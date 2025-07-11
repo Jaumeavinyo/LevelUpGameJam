@@ -572,9 +572,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e22b7b671f61c94ab22c01811bc9076, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartingChunk: {fileID: 1737325614816170554, guid: fde02eac401f4a441823686f437630de, type: 3}
+  StartingChunk: {fileID: 1737325614816170554, guid: 5a1343b4a3948a54dbd7a7396eb9db82, type: 3}
   baseSpeed: 2
   baseAcceleration: 0.1
+  MAX_SPEED: 3
   Display: {fileID: 445523841}
   Character: {fileID: 1869172342}
 --- !u!4 &692484571

@@ -112,6 +112,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8479455234873591044, guid: f020ebd7a58813041aa67554773ede0b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8512498800489759905, guid: f020ebd7a58813041aa67554773ede0b, type: 3}
       propertyPath: m_Name
       value: QUITAMIEDOS_MID (1)
@@ -178,6 +182,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8479455234873591044, guid: f020ebd7a58813041aa67554773ede0b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8512498800489759905, guid: f020ebd7a58813041aa67554773ede0b, type: 3}
       propertyPath: m_Name
       value: QUITAMIEDOS_MID (3)
@@ -239,6 +247,10 @@ PrefabInstance:
     - target: {fileID: 132562120033484092, guid: 04161a4401e260842abab64199fc5818, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1199333956809737900, guid: 04161a4401e260842abab64199fc5818, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8798408831724724337, guid: 04161a4401e260842abab64199fc5818, type: 3}
       propertyPath: m_Name
@@ -310,6 +322,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8479455234873591044, guid: f020ebd7a58813041aa67554773ede0b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8512498800489759905, guid: f020ebd7a58813041aa67554773ede0b, type: 3}
       propertyPath: m_Name
       value: QUITAMIEDOS_MID
@@ -332,6 +348,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2274585306788282535}
     m_Modifications:
+    - target: {fileID: 5640983909426212814, guid: cc117c58b06bea4459f9cfba56ed7a45, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6466762378934978147, guid: cc117c58b06bea4459f9cfba56ed7a45, type: 3}
       propertyPath: m_Name
       value: KM CARTEL_0
