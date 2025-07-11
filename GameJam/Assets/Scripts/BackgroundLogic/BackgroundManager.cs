@@ -31,7 +31,6 @@ public class BackgroundManager : MonoBehaviour
             }
         }
         if (CurrentBackground.transform.localPosition.x <= 11) GenerateRandomNextBackground();
-        ChunksManager.Instance.Speed += Time.deltaTime * ChunksManager.Instance.Acceleration;
     }
 
     public void GenerateRandomNextBackground()

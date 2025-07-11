@@ -52,6 +52,7 @@ public class GameManager : MonoBehaviour
         gamePlayMode = GamePlayMode.FREE_MOVEMENT;
         playerName = PlayerData.playerName;
         Debug.Log(playerName);
+        SoundManager.Instance.PlayMusic(MusicTheme.GAME_START);
     }
 
     void Awake()

@@ -4,12 +4,16 @@ using UnityEngine.SceneManagement;
 using Unity.VisualScripting;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using System.Collections.Generic;
+using System.Collections;
 using TMPro;
 
 
 
 public class MainMenuUI : MonoBehaviour
 {
+  
+
     public Button StartGame;
     public Button Options;//volume credits
     public Button Quit;
@@ -24,9 +28,9 @@ public class MainMenuUI : MonoBehaviour
     public Button AcceptInputName;
     public string PlayerName;
 
+    public SoundManager soundManager;
 
-
-
+    
     void Start()
     {
         StartGame.onClick.AddListener(OnStartGameClicked);
@@ -39,7 +43,7 @@ public class MainMenuUI : MonoBehaviour
 
         if (volumeSlider != null)
             volumeSlider.onValueChanged.AddListener(OnVolumeChanged);
-
+        SoundManager.Instance.PlayMusic(MusicTheme.MAIN_MENU);
         // Hide popups initially
         nameInputPopup.SetActive(false);
         optionsPopup.SetActive(false);
@@ -49,8 +53,14 @@ public class MainMenuUI : MonoBehaviour
         if(InputNameUI.text != null)
         {
             PlayerData.playerName = InputNameUI.text;
-            SceneManager.LoadScene("GAME");
+            SoundManager.Instance.StopCurrentMusic();
+            StartCoroutine(WaitnewScene("GAME", 5.0f));
         }
+    }
+    IEnumerator WaitnewScene(string scene,float timeToWait)
+    {
+        yield return new WaitForSeconds(timeToWait);
+        SceneManager.LoadScene("GAME");
     }
     void OnStartGameClicked()
     {
