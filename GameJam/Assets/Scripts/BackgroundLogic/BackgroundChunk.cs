@@ -10,6 +10,7 @@ public class BackgroundChunk : MonoBehaviour
     }
     public float GetXSize()
     {
-        return GetComponent<RectTransform>().sizeDelta.x;
+        RectTransform rect = GetComponent<RectTransform>();
+        return rect.sizeDelta.x * rect.localScale.x;
     }
 }

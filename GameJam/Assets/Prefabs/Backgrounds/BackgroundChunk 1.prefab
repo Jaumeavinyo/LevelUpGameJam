@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1200368075274275835}
   - component: {fileID: 6719085310792267652}
   m_Layer: 0
-  m_Name: BackgroundChunk
+  m_Name: BackgroundChunk 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -95,7 +95,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 3022836200017930395, guid: 6bce13afdd551d14abc5409735e800f0, type: 3}
+  m_Sprite: {fileID: 7576283880950701532, guid: ec4bd16d854633e4989e7f4351dd8112, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

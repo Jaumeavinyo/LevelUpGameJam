@@ -575,6 +575,7 @@ MonoBehaviour:
   StartingChunk: {fileID: 1737325614816170554, guid: fde02eac401f4a441823686f437630de, type: 3}
   baseSpeed: 2
   baseAcceleration: 0.1
+  MAX_SPEED: 3
   Display: {fileID: 445523841}
   Character: {fileID: 1869172342}
 --- !u!4 &692484571
@@ -1460,7 +1461,7 @@ Transform:
   m_GameObject: {fileID: 1180432524}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -4.27, y: 1.62, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
