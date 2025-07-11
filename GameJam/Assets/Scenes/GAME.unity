@@ -1344,7 +1344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 283ad2ed8de6b5d44877940ef5e4d8cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartingBackground: {fileID: 1200368075274275835, guid: f3aa930d7fad8254f94383a50765baf9, type: 3}
+  StartingBackground: {fileID: 1200368075274275835, guid: 694f436ad191f0547ae3c3f7319d6da6, type: 3}
   Display: {fileID: 1180432524}
 --- !u!4 &1027350379
 Transform:
@@ -1465,7 +1465,7 @@ Transform:
   m_GameObject: {fileID: 1180432524}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -4.27, y: 1.62, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

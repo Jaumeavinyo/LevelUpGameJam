@@ -12,10 +12,9 @@ public class BackgroundManager : MonoBehaviour
     void Start()
     {
         BackgroundChunk FirstBackground = Instantiate(StartingBackground, Display.transform);
+        FirstBackground.transform.localPosition = Vector3.zero;
         LiveBackgrounds.Add(FirstBackground);
         CurrentBackground = FirstBackground;
-        GenerateRandomNextBackground();
-        GenerateRandomNextBackground();
     }
 
     void Update()
@@ -42,7 +41,7 @@ public class BackgroundManager : MonoBehaviour
         BackgroundChunk selectedTemplate = CurrentBackground.NextPossibleBackgrounds[index];
         BackgroundChunk NewBackground = Instantiate(selectedTemplate, Display.transform);
         LiveBackgrounds.Add(NewBackground);
-        NewBackground.transform.localPosition = CurrentBackground.transform.localPosition + new Vector3(CurrentBackground.GetXSize() / 2, 0, 0) + new Vector3(NewBackground.GetXSize() / 2, 0, 0);
+        NewBackground.transform.localPosition = CurrentBackground.transform.localPosition + new Vector3(CurrentBackground.GetXSize() / 2f, 0, 0) + new Vector3(NewBackground.GetXSize() / 2f, 0, 0);
         CurrentBackground = NewBackground;
     }
 }
