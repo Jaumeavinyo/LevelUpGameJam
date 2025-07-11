@@ -13,6 +13,7 @@ public class ChunksManager : MonoBehaviour
     [NonSerialized] public float Acceleration, Speed;
     public GameObject Display;
     private bool GameStarted = false;
+    public Transform PlayerStartingPoint;
 
     public FSM_CharMovement Character;
 
@@ -25,6 +26,12 @@ public class ChunksManager : MonoBehaviour
     {
         Acceleration = baseAcceleration;
         Speed = baseSpeed;
+        Character.transform.localPosition = PlayerStartingPoint.transform.localPosition;
+        Chunk firstChunk = Instantiate(StartingChunk, Display.transform);
+        LiveChunks.Add(firstChunk);
+        CurrentChunk = firstChunk;
+        GenerateRandomNextChunk();
+        GenerateRandomNextChunk();
     }
 
     public void GenerateRandomNextChunk()
@@ -42,18 +49,8 @@ public class ChunksManager : MonoBehaviour
 
     private void RestartGame()
     {
-        foreach (Chunk chunk in LiveChunks)
-        {
-            Destroy(chunk.gameObject);
-        }
-        LiveChunks.Clear();
         GameStarted = true;
-        Chunk firstChunk = Instantiate(StartingChunk, Display.transform);
-        LiveChunks.Add(firstChunk);
-        CurrentChunk = firstChunk;
-        GenerateRandomNextChunk();
-        GenerateRandomNextChunk();
-        Character.transform.position = firstChunk.transform.position + new Vector3(0, 2, 0);
+        Character.transform.localPosition = PlayerStartingPoint.transform.localPosition;
         Rigidbody2D rb = Character.GetComponent<Rigidbody2D>();
         rb.linearVelocity = Vector2.zero;
         rb.angularVelocity = 0f;
@@ -85,17 +82,7 @@ public class ChunksManager : MonoBehaviour
                 RestartGame();
             }
             {
-                List<Chunk> CurrentLiveChunks = new(LiveChunks);
-                foreach (Chunk chunk in CurrentLiveChunks)
-                {
-                    chunk.transform.localPosition += new Vector3(-Speed * Time.deltaTime, 0, 0);
-                    if (chunk.transform.localPosition.x <= -30)
-                    {
-                        Destroy(chunk.gameObject);
-                        LiveChunks.Remove(chunk);
-                    }
-                }
-                if (CurrentChunk.transform.localPosition.x <= 11) GenerateRandomNextChunk();
+
                 Character.gameObject.transform.localPosition += new Vector3(-Speed * Time.deltaTime, 0, 0);
                 Speed += Time.deltaTime * Acceleration;
                 Speed = Math.Min(Speed, MAX_SPEED);
@@ -106,6 +93,17 @@ public class ChunksManager : MonoBehaviour
             Character.GetComponent<Dissolve>().StartVanishing(true);
             GameStarted = false;
         }
+        List<Chunk> CurrentLiveChunks = new(LiveChunks);
+        foreach (Chunk chunk in CurrentLiveChunks)
+        {
+            chunk.transform.localPosition += new Vector3(-Speed * Time.deltaTime, 0, 0);
+            if (chunk.transform.localPosition.x <= -30)
+            {
+                Destroy(chunk.gameObject);
+                LiveChunks.Remove(chunk);
+            }
+        }
+        if (CurrentChunk.transform.localPosition.x <= 11) GenerateRandomNextChunk();
 
 
     }

@@ -35,7 +35,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 57, y: 15}
+  m_SizeDelta: {x: 57.73812, y: 15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1200368075274275835
 MonoBehaviour:
@@ -49,8 +49,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f8faa68fd500824fa17833720bd25e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextPossibleBackgrounds:
-  - {fileID: 1200368075274275835}
 --- !u!212 &6719085310792267652
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -92,9 +90,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingLayerID: 957429737
+  m_SortingLayer: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: 3022836200017930395, guid: 6bce13afdd551d14abc5409735e800f0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
