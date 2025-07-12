@@ -35,6 +35,9 @@ public class idle_state : FSM_BaseState
     public override void UpdatePhysics()
     {
         base.UpdatePhysics();
+
+
+
         //avoid moving in idle by error
         Vector2 velocity = my_sm.rigidBody.linearVelocity;
         velocity.x = 0 /*(-ChunksManager.Instance.Speed)*/;

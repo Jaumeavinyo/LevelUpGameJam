@@ -87,8 +87,19 @@ public class dash_state : FSM_BaseState
 
     public void dash(int dir)
     {
+        float dire = dir;
+
+        if (my_sm.LWallCollision && horizontalInput < 0)
+        {
+            dire = 0.0f;
+        }
+        if (my_sm.RWallCollision && horizontalInput > 0)
+        {
+            dire = 0.0f;
+        }
+
         Vector2 velDir = my_sm.rigidBody.linearVelocity;
-        velDir.x = my_sm.dashSpeed * dir /*+ (-ChunksManager.Instance.Speed)*/;
+        velDir.x = my_sm.dashSpeed * dire /*+ (-ChunksManager.Instance.Speed)*/;
         my_sm.rigidBody.linearVelocity = velDir;
     }
     public void handleStateInputs()

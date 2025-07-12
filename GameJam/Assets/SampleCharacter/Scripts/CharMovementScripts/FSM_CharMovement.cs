@@ -39,7 +39,8 @@ public class FSM_CharMovement : FSM
     public float lastDirectionInput;
 
     public bool grounded;
-    public bool wallGrabbed;
+    public bool LWallCollision;
+    public bool RWallCollision;
 
     public float gravityScale;
     public float dashJumpGravityScale;
@@ -64,9 +65,8 @@ public class FSM_CharMovement : FSM
 
     public override void Update()
     {
-
-        //CHUNKS BACK MOVEMENT
-        //Debug.Log("Speed Character" + rigidBody.linearVelocity.x);
+        
+        
 
         if (inputAction_move.ReadValue<Vector2>().x > 0)
         {
@@ -78,10 +78,11 @@ public class FSM_CharMovement : FSM
         }
 
         setDirection();
-       // Debug.Log("ApplyRootMotion = " + animator.applyRootMotion);
+       
         grounded = isGrounded();
-        //wallGrabbed = isWallGrabbed();
-
+        LWallCollision = isCollidingLeft();
+        RWallCollision = isCollidingRight();
+        
         if (currentState != null)
         {
             currentState.UpdateLogic();
@@ -95,7 +96,7 @@ public class FSM_CharMovement : FSM
         {
             rigidBody.gravityScale = dashJumpGravityScale;
         }
-
+        
     }
 
     protected override FSM_BaseState getInitialState()
@@ -124,65 +125,54 @@ public class FSM_CharMovement : FSM
         return ret;
     }
 
-    //public grabb isWallGrabbed()
-    //{
-    //    grabb ret = grabb.noGrabb;
+    public bool isCollidingRight()
+    {
+        bool ret = false;
 
-    //    RaycastHit2D RrayHit = Physics2D.Raycast(capsuleCollider.bounds.center, Vector2.right, capsuleCollider.bounds.extents.x + wallDistanceDetection);
-    //    RaycastHit2D LrayHit = Physics2D.Raycast(capsuleCollider.bounds.center, Vector2.left, capsuleCollider.bounds.extents.x + wallDistanceDetection);
+        float long_ = 0.5f;
 
-    //    Vector2 top = new Vector2(capsuleCollider.bounds.center.x, (capsuleCollider.bounds.center.y + (capsuleCollider.bounds.size.y / 2)));
+        RaycastHit2D RrayHit = Physics2D.Raycast(capsuleCollider.bounds.center, Vector2.right, capsuleCollider.bounds.extents.x + long_);
+        
+        Color rayColor;
 
-    //    RaycastHit2D TRrayHit = Physics2D.Raycast(top, Vector2.right, capsuleCollider.bounds.extents.x + wallDistanceDetection);
-    //    RaycastHit2D TLrayHit = Physics2D.Raycast(top, Vector2.left, capsuleCollider.bounds.extents.x + wallDistanceDetection);
+        if (RrayHit.collider != null)
+        {
+            ret = true;
+            rayColor = Color.green;
+        }
+        else if (RrayHit.collider == null)
+        {
+            rayColor = Color.red;
+        }
 
-    //    Color rayColor;
+        Debug.DrawRay(capsuleCollider.bounds.center, Vector2.right * (capsuleCollider.bounds.extents.x + long_));
+        
+        return ret;
+    }
+    public bool isCollidingLeft()
+    {
+        bool ret = false;
+        float long_ = 0.5f;
 
-    //    if (RrayHit.collider != null)
-    //    {
-    //        ret = grabb.rightGrabb;
-    //        rayColor = Color.green;
-    //    }
-    //    else if (RrayHit.collider == null)
-    //    {
-    //        rayColor = Color.red;
-    //    }
-    //    if (LrayHit.collider != null)
-    //    {
-    //        ret = grabb.leftGrabb;
-    //        rayColor = Color.green;
-    //    }
-    //    else if (LrayHit.collider == null)
-    //    {
-    //        rayColor = Color.red;
-    //    }
+        RaycastHit2D LrayHit = Physics2D.Raycast(capsuleCollider.bounds.center, Vector2.left, capsuleCollider.bounds.extents.x + long_);
 
-    //    if (TRrayHit.collider != null)
-    //    {
-    //        ret = grabb.topRightGrabb;
-    //        rayColor = Color.green;
-    //    }
-    //    else if (RrayHit.collider == null)
-    //    {
-    //        rayColor = Color.red;
-    //    }
-    //    if (TLrayHit.collider != null)
-    //    {
-    //        ret = grabb.topLeftGrabb;
-    //        rayColor = Color.green;
-    //    }
-    //    else if (LrayHit.collider == null)
-    //    {
-    //        rayColor = Color.red;
-    //    }
+        Color rayColor;
+      
+        if (LrayHit.collider != null)
+        {
+            ret = true;
+            rayColor = Color.green;
+        }
+        else if (LrayHit.collider == null)
+        {
+            rayColor = Color.red;
+        }
+       
+        Debug.DrawRay(capsuleCollider.bounds.center, Vector2.left * (capsuleCollider.bounds.extents.x + long_));
 
-    //    Debug.DrawRay(capsuleCollider.bounds.center, Vector2.right * (capsuleCollider.bounds.extents.x + wallDistanceDetection));
-    //    Debug.DrawRay(capsuleCollider.bounds.center, Vector2.left * (capsuleCollider.bounds.extents.x + wallDistanceDetection));
 
-    //    Debug.DrawRay(top, Vector2.right * (capsuleCollider.bounds.extents.x + wallDistanceDetection));
-    //    Debug.DrawRay(top, Vector2.left * (capsuleCollider.bounds.extents.x + wallDistanceDetection));
-    //    return ret;
-    //}
+        return ret;
+    }
 
     public void setDirection()
     {

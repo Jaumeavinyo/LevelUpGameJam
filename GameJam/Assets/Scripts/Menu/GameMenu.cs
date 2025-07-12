@@ -79,6 +79,7 @@ public class MainMenuUI : MonoBehaviour
 
     void OnOptionsClicked()
     {
+        mainPanel.SetActive(false);
         optionsPopup.SetActive(true);
     }
 
