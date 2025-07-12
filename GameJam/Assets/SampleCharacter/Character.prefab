@@ -191,6 +191,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 338720772185be64fa0ea122341e2728, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpAudioClip: {fileID: 8300000, guid: 4ebafa388f986a04da4e2c90fe20ac86, type: 3}
+  dashAudioClip: {fileID: 8300000, guid: 556501916174f924eb0857c81a85504d, type: 3}
+  RunAudioClip: {fileID: 8300000, guid: ecd647025e0a3c04fbd5829fff509e09, type: 3}
   inputAction_jump:
     m_Name: Input Action_jump
     m_Type: 0

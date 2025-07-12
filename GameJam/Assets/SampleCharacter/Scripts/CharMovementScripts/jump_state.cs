@@ -25,8 +25,8 @@ public class jump_state : FSM_BaseState
         Debug.Log("ENTER() JUMP");
         base.Enter();
 
-        
-      
+
+        SoundManager.Instance.PlayOneShotSFX(my_sm.jumpAudioClip);
 
         horizontalInput = 0;
         currState = jumpStates.JUMP;

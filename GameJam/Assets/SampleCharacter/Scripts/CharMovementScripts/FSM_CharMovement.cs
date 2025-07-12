@@ -7,7 +7,9 @@ using UnityEngine.SceneManagement;
 
 public class FSM_CharMovement : FSM
 {
-    
+    public AudioClip jumpAudioClip;
+    public AudioClip dashAudioClip;
+    public AudioClip RunAudioClip;
 
     public InputAction inputAction_jump; //own input added to player inputs
     public InputAction inputAction_move;

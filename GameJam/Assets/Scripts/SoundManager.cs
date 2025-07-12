@@ -23,6 +23,8 @@ public class SoundManager : MonoBehaviour
     public AudioSource currentMusicSource;
     public AudioSource newMusicSource;
 
+    public AudioSource soundFXAudioSource;
+
     public float musicFadeDuration = 2.0f;
     public float musicFadeOutAndStopDuration = 2.0f;
     public List<GameMusic> GameMusicList;
@@ -54,10 +56,11 @@ public class SoundManager : MonoBehaviour
         
     }
 
-    public void PlayOneShotSFX(AudioSource audio)
+    public void PlayOneShotSFX(AudioClip audio)
     {
-        audio.loop = false;
-        audio.Play();
+
+        soundFXAudioSource.loop = false;
+        soundFXAudioSource.PlayOneShot(audio);
     }
 
     public void PlayMusic(MusicTheme theme_)

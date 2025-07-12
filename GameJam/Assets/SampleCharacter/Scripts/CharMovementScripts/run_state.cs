@@ -26,7 +26,7 @@ public class run_state : FSM_BaseState
             my_sm.ChangeState(my_sm.idle);
         }
         my_sm.animator.Play("run");
-
+        //SoundManager.Instance.PlayOneShotSFX(my_sm.RunAudioClip);
         handleStateInputs();
 
     }
