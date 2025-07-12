@@ -45,17 +45,6 @@ public abstract class BaseEvent
 }
 
 [Serializable]
-public class ShortEvent : BaseEvent
-{
-    public EventData Event;
-
-    public override EventData GetCurrentData()
-    {
-        return Event;
-    }
-}
-
-[Serializable]
 public class LongEvent : BaseEvent
 {
     public List<EventData> Events;

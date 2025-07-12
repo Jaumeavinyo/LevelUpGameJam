@@ -19,11 +19,10 @@ public class EventsManager : MonoBehaviour
     public static EventsManager Instance;
     [NonSerialized] public List<BaseEvent> Events = new();
     [NonSerialized] public CurrentGamePhase currentGamePhase;
-    public List<ShortEvent> ShortEvents;
+    public List<LongEvent> ShortEvents;
     public List<LongEvent> LongEvents;
     public GasEvent GasEvent;
     public EndEvent EndEvent;
-    HashSet<BaseEvent> usedLongEvents = new();
     public SpriteRenderer Father;
     public SpriteRenderer Mother;
     private Sprite FatherBaseSprite, MotherBaseSprite;
@@ -33,7 +32,7 @@ public class EventsManager : MonoBehaviour
     private bool isMoving, pressedInput;
     public float vel;
 
-  
+
 
     void Awake()
     {
@@ -95,12 +94,12 @@ public class EventsManager : MonoBehaviour
             {
                 StartCoroutine(soundManager.MusicFadeOut(data.fadeDuration, soundManager.currentMusicSource.volume, data.MusicVolumeDuringEvent));
             }
-            else if(data.musicTheme != MusicTheme.NONE && data.musicTheme != soundManager.getMusicByAudioSource(soundManager.currentMusicSource).theme)
+            else if (data.musicTheme != MusicTheme.NONE && data.musicTheme != soundManager.getMusicByAudioSource(soundManager.currentMusicSource).theme)
             {
                 StartCoroutine(soundManager.CrossfadeMusic(soundManager.currentMusicSource, soundManager.getMusicBytheme(data.musicTheme).music, data.fadeDuration));
             }
-            
-            
+
+
         }
         //if (data.Music != null)
         //{
@@ -128,11 +127,7 @@ public class EventsManager : MonoBehaviour
                 bool waitForInput = CurrentEvent is LongEvent lE && lE.WaitForPlayerInput;
                 if ((!waitForInput && eventTimer <= 0) || (waitForInput && pressedInput))
                 {
-                    if (CurrentEvent is ShortEvent)
-                    {
-                        FinishEvent(true);
-                    }
-                    else if (CurrentEvent is LongEvent longEvent)
+                    if (CurrentEvent is LongEvent longEvent)
                     {
                         longEvent.Events.RemoveAt(0);
                         EventData data = longEvent.GetCurrentData();
@@ -190,7 +185,7 @@ public class EventsManager : MonoBehaviour
         Father.sprite = FatherBaseSprite;
         Mother.sprite = MotherBaseSprite;
         Textos.Instance.FinishEvent();
-       
+
 
     }
 
@@ -211,7 +206,7 @@ public class EventsManager : MonoBehaviour
 
     void AddShorts()
     {
-        List<ShortEvent> pool = new(ShortEvents);
+        List<LongEvent> pool = new(ShortEvents);
         for (int i = 0; i < 2; i++)
         {
             if (pool.Count == 0) pool = new(ShortEvents);
@@ -223,11 +218,7 @@ public class EventsManager : MonoBehaviour
 
     void AddUniqueLong()
     {
-        List<LongEvent> availableLongs = LongEvents.FindAll(e => !usedLongEvents.Contains(e));
-        if (availableLongs.Count == 0) return;
-
-        var selected = availableLongs[UnityEngine.Random.Range(0, availableLongs.Count)];
-        Events.Add(selected);
-        usedLongEvents.Add(selected);
+        Events.Add(LongEvents[0]);
+        Events.RemoveAt(0);
     }
 }
