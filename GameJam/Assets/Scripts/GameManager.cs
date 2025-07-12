@@ -35,10 +35,8 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public TextMeshProUGUI StateText;
     public Vector3 CAMERA_POSITION_FOR_GAME = new(-16.5f, 1, -1);
-    public GameObject GamePositionOBJ;
-    public Transform LWindow, RWindow, CarCenter;
     public Camera Camera;
-    public static float IN_GAME_CAMERA_SIZE = 4f, IN_EVENT_CAMERA_SIZE = 6;
+    public static float IN_GAME_CAMERA_SIZE = 4.75f, IN_EVENT_CAMERA_SIZE = 6;
     public static float TIME_BETWEEN_EVENTS = 5;
     public float freeMovementVel;
     private float nextEventTimer = 0, forceEventTimer = 0;
@@ -54,7 +52,6 @@ public class GameManager : MonoBehaviour
         playerName = PlayerData.playerName;
         Debug.Log(playerName);
         SoundManager.Instance.PlayMusic(MusicTheme.GAME_START);
-        CAMERA_POSITION_FOR_GAME = GamePositionOBJ.transform.position;
     }
 
     void Awake()
@@ -94,16 +91,13 @@ public class GameManager : MonoBehaviour
             case GamePlayMode.FREE_MOVEMENT:
                 if (ChangingToPlayMode)
                 {
+                    bool cameraWithZoom = CheckCameraZoom();
                     bool cameraInPos = CheckGameCameraPosition();
-                    if (cameraInPos)
+                    if (cameraInPos && cameraWithZoom)
                     {
-                        bool cameraWithZoom = CheckCameraZoom();
-                        if (cameraWithZoom)
-                        {
-                            gamePlayMode = GamePlayMode.PLAYING;
-                            ChangingToPlayMode = false;
-                            StateText.text = "Playing";
-                        }
+                        gamePlayMode = GamePlayMode.PLAYING;
+                        ChangingToPlayMode = false;
+                        StateText.text = "Playing";
                     }
                 }
                 else
