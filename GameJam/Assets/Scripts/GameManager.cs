@@ -34,7 +34,8 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance;
     public TextMeshProUGUI StateText;
-    public static Vector3 CAMERA_POSITION_FOR_GAME = new(-16.5f, 1, -1);
+    public Vector3 CAMERA_POSITION_FOR_GAME = new(-16.5f, 1, -1);
+    public GameObject GamePositionOBJ;
     public Transform LWindow, RWindow, CarCenter;
     public Camera Camera;
     public static float IN_GAME_CAMERA_SIZE = 4f, IN_EVENT_CAMERA_SIZE = 6;
@@ -53,6 +54,7 @@ public class GameManager : MonoBehaviour
         playerName = PlayerData.playerName;
         Debug.Log(playerName);
         SoundManager.Instance.PlayMusic(MusicTheme.GAME_START);
+        CAMERA_POSITION_FOR_GAME = GamePositionOBJ.transform.position;
     }
 
     void Awake()
@@ -136,26 +138,30 @@ public class GameManager : MonoBehaviour
 
         bool canEnterPlayNinja = Camera.transform.localPosition.x <= -15 && gamePlayMode == GamePlayMode.FREE_MOVEMENT;
         // Use manually tracked input device
-        if (InputDeviceDetector.LastInputDevice == "Gamepad")
+        if (inputdetector.LastInputDevice == "Gamepad")
         {
+            Debug.Log("USING GAMEPAD");
             PressAgameObject.SetActive(canEnterPlayNinja);
             PressEGameObject.SetActive(false);
         }
         else // Assume Keyboard & Mouse
         {
+            Debug.Log("USING KEYBOARD");
             PressEGameObject.SetActive(canEnterPlayNinja);
             PressAgameObject.SetActive(false);
         }
 
         // Start game logic for both control schemes
-        if (canEnterPlayNinja && InputDeviceDetector.LastInputDevice == "KeyboardMouse" && Input.GetKey(KeyCode.E))
+        if (canEnterPlayNinja && inputdetector.LastInputDevice == "KeyboardMouse" && Input.GetKey(KeyCode.E))
         {
+            Debug.Log("USING KEYBOARD");
             ChangingToPlayMode = true;
             PressEGameObject.SetActive(false);
             PressAgameObject.SetActive(false);
         }
-        else if (canEnterPlayNinja && InputDeviceDetector.LastInputDevice == "Gamepad" && gamepadButtonPressed == 1.0f)
+        else if (canEnterPlayNinja && inputdetector.LastInputDevice == "Gamepad" && gamepadButtonPressed == 1.0f)
         {
+            Debug.Log("USING GAMEPAD");
             ChangingToPlayMode = true;
             PressAgameObject.SetActive(false);
             PressEGameObject.SetActive(false);

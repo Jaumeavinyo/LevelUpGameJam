@@ -43,7 +43,7 @@ public class FSM : MonoBehaviour
     {
         if (other.CompareTag("Border"))
         {
-            Debug.Log("Hit the border!");
+            //Debug.Log("Hit the border!");
             ChunksManager.Instance.StartRestartCountdown();
         }
     }

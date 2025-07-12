@@ -66,7 +66,7 @@ public class FSM_CharMovement : FSM
     {
 
         //CHUNKS BACK MOVEMENT
-        Debug.Log("Speed Character" + rigidBody.linearVelocity.x);
+        //Debug.Log("Speed Character" + rigidBody.linearVelocity.x);
 
         if (inputAction_move.ReadValue<Vector2>().x > 0)
         {
@@ -78,7 +78,7 @@ public class FSM_CharMovement : FSM
         }
 
         setDirection();
-        Debug.Log("ApplyRootMotion = " + animator.applyRootMotion);
+       // Debug.Log("ApplyRootMotion = " + animator.applyRootMotion);
         grounded = isGrounded();
         //wallGrabbed = isWallGrabbed();
 
@@ -247,14 +247,7 @@ public class FSM_CharMovement : FSM
 
         inputAction_dash = inputActionsMap.FindAction("Dash", throwIfNotFound: true);
         inputAction_dash.Enable();
-        //inputAction_jump = inputActions.Player.jump;
-        //inputAction_jump.Enable();
-
-        //inputAction_roll = inputActions.Player.roll;
-        //inputAction_roll.Enable();
-
-        //inputAction_dash = inputActions.Player.dash;
-        //inputAction_dash.Enable();
+        
 
     }
 
@@ -262,15 +255,11 @@ public class FSM_CharMovement : FSM
     {
         inputAction_move.Disable();
         inputAction_jump.Disable();
-        inputAction_dash.Disable();
-
-        //inputAction_roll.Disable();
-        //inputAction_dash.Disable();
-
+        inputAction_dash.Disable();      
     }
     void OnCollisionEnter2D(Collision2D col)
     {
-        Debug.Log("Collided with: " + col.collider.name);
+       // Debug.Log("Collided with: " + col.collider.name);
     }
 }
 

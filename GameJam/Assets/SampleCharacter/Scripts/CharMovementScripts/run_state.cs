@@ -13,7 +13,7 @@ public class run_state : FSM_BaseState
     public override void Enter()
     {
         base.Enter();
-        Debug.Log("ENTER() RUN");
+        //Debug.Log("ENTER() RUN");
         horizontalInput = my_sm.inputAction_move.ReadValue<Vector2>().x;       
 
     }

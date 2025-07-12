@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class InputDeviceDetector : MonoBehaviour
 {
-    public static string LastInputDevice = "KeyboardMouse";
+    public string LastInputDevice = "KeyboardMouse";
 
     void Update()
     {
