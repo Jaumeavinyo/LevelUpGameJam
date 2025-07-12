@@ -309,7 +309,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "Ilustracio\u0301n_sin_ti\u0301tulo (6)_0": -2819002711243198390
+      "Ilustracio\u0301n_sin_ti\u0301tulo (6)_1": 6006781358770934285
+      "Ilustracio\u0301n_sin_ti\u0301tulo (6)_2": -5213411589893833892
+      "Ilustracio\u0301n_sin_ti\u0301tulo (6)_3": -7125078517199676609
+      "Ilustracio\u0301n_sin_ti\u0301tulo (6)_4": -1278944044006153514
+      "Ilustracio\u0301n_sin_ti\u0301tulo (6)_5": -3863883032490425754
+      "Ilustracio\u0301n_sin_ti\u0301tulo (6)_6": -547203890257640451
+      "Ilustracio\u0301n_sin_ti\u0301tulo (6)_7": 4803206476364137315
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
