@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class BackgroundChunk : MonoBehaviour
 {
-    public List<BackgroundChunk> NextPossibleBackgrounds;
     void Start()
     {
         GetComponent<SpriteRenderer>().maskInteraction = SpriteMaskInteraction.VisibleInsideMask;

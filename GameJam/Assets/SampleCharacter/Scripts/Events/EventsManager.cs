@@ -3,12 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+public enum CurrentGamePhase
+{
+    First,
+    Second, // luego de gas (1/2)
+    Third // luego de evento largo despues de gas (3/4)
+}
+
 
 public class EventsManager : MonoBehaviour
 {
     public Transform CarCenter, LWindow, RWindow;
     public static EventsManager Instance;
     [NonSerialized] public List<BaseEvent> Events = new();
+    [NonSerialized] public CurrentGamePhase currentGamePhase;
     public List<ShortEvent> ShortEvents;
     public List<LongEvent> LongEvents;
     public GasEvent GasEvent;
@@ -41,6 +49,7 @@ public class EventsManager : MonoBehaviour
 
         FatherBaseSprite = Father.sprite;
         MotherBaseSprite = Mother.sprite;
+        currentGamePhase = CurrentGamePhase.First;
     }
 
     public void PressedInput()
@@ -115,6 +124,7 @@ public class EventsManager : MonoBehaviour
                         }
                         else
                         {
+                            if (currentGamePhase == CurrentGamePhase.Second) currentGamePhase = CurrentGamePhase.Third;
                             if (CurrentEvent is EndEvent)
                             {
                                 // END GAME
@@ -123,6 +133,7 @@ public class EventsManager : MonoBehaviour
                             {
                                 if (CurrentEvent is GasEvent)
                                 {
+                                    currentGamePhase = CurrentGamePhase.Second;
                                     ChunksManager.Instance.Speed = ChunksManager.Instance.baseSpeed;
                                     ChunksManager.Instance.Acceleration = ChunksManager.Instance.baseAcceleration;
                                 }
