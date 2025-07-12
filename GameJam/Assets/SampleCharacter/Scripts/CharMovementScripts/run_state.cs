@@ -34,9 +34,19 @@ public class run_state : FSM_BaseState
     public override void UpdatePhysics()
     {
         base.UpdatePhysics();
-     
+
+        float dir = horizontalInput;
+
+        if (my_sm.LWallCollision && horizontalInput < 0)
+        {
+            dir = 0.0f;
+        }
+        if (my_sm.RWallCollision && horizontalInput > 0)
+        {
+            dir = 0.0f;
+        }
         Vector2 velDir = my_sm.rigidBody.linearVelocity;
-        velDir.x = my_sm.speed * horizontalInput /*+(- ChunksManager.Instance.Speed)*/;
+        velDir.x = my_sm.speed * dir;
         my_sm.rigidBody.linearVelocity = velDir;    
     }
     public override void Exit()
