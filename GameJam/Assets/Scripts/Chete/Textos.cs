@@ -64,7 +64,7 @@ public class Textos : MonoBehaviour
 
     public void OpenEvent(string Dialogue)
     {
-        eventText.text = Dialogue;
+        eventText.text = Dialogue.Replace("<>", PlayerData.playerName);
         ShowNotification = false;
         if (!uiBackground.activeInHierarchy) StartCoroutine(openTextBoxRoutine());
     }
