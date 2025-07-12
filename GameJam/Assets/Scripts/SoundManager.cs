@@ -11,10 +11,11 @@ public enum MusicTheme
     RADIO_MUSIC
 }
 [System.Serializable]
-public struct GameMusic
+public class GameMusic
 {
     public AudioSource music;
     public MusicTheme theme;
+    public float maxVolume;
 }
 public class SoundManager : MonoBehaviour
 {
@@ -54,6 +55,26 @@ public class SoundManager : MonoBehaviour
     void Update()
     {
 
+    }
+
+    public void changeMaxVolume(float newMaxVolume)
+    {
+        for (int i = 0; i < GameMusicList.Count; i++)
+        {
+           
+            GameMusicList[i].maxVolume = newMaxVolume;
+           
+        }
+    }
+    public void changeOneSongMaxVolume(MusicTheme musicTheme,float newMaxVolume)
+    {
+        for(int i = 0;i< GameMusicList.Count; i++)
+        {
+            if (GameMusicList[i].theme == musicTheme)
+            {              
+                GameMusicList[i].maxVolume = newMaxVolume;
+            }
+        }
     }
 
     public void PlayOneShotSFX(AudioClip audio)

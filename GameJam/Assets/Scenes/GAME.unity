@@ -915,7 +915,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 8
   m_Sprite: {fileID: 850509716442320723, guid: 2ee8271a5a3c9a449aae6f10b4896745, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2866,119 +2866,34 @@ MonoBehaviour:
   RWindow: {fileID: 1432375470}
   ShortEvents:
   - Event:
-      TargetCameraPosition: 2
+      TargetCameraPosition: 1
       SpriteTargets:
-      - target: 0
-        spriteTarget: {fileID: 1488998789433884317, guid: a8ca2b15dde68d94e8ffe4a64c3f2131, type: 3}
-      Dialogue: Well, well, well
-      EventDuration: 3
-      Music: {fileID: 0}
-  - Event:
-      TargetCameraPosition: 2
-      SpriteTargets:
-      - target: 0
-        spriteTarget: {fileID: 1488998789433884317, guid: a8ca2b15dde68d94e8ffe4a64c3f2131, type: 3}
-      Dialogue: Well, well, well
-      EventDuration: 3
-      Music: {fileID: 0}
-  - Event:
-      TargetCameraPosition: 2
-      SpriteTargets:
-      - target: 0
-        spriteTarget: {fileID: 1488998789433884317, guid: a8ca2b15dde68d94e8ffe4a64c3f2131, type: 3}
-      Dialogue: Well, well, well
-      EventDuration: 3
-      Music: {fileID: 0}
-  - Event:
-      TargetCameraPosition: 2
-      SpriteTargets:
-      - target: 0
-        spriteTarget: {fileID: 1488998789433884317, guid: a8ca2b15dde68d94e8ffe4a64c3f2131, type: 3}
-      Dialogue: Well, well, well
-      EventDuration: 3
-      Music: {fileID: 0}
-  - Event:
-      TargetCameraPosition: 2
-      SpriteTargets:
-      - target: 0
-        spriteTarget: {fileID: 1488998789433884317, guid: a8ca2b15dde68d94e8ffe4a64c3f2131, type: 3}
-      Dialogue: Well, well, well
-      EventDuration: 3
+      - target: 1
+        spriteTarget: {fileID: 8374611977483790002, guid: 3a97c804383fec54f848606ba592b89f, type: 3}
+      Dialogue: 'Hey Sweetie! Do you still like this song! I love it! '
+      EventDuration: 8
       Music: {fileID: 0}
   LongEvents:
   - Events:
-    - TargetCameraPosition: 1
-      SpriteTargets: []
-      Dialogue: Hello!
-      EventDuration: 0
-      Music: {fileID: 0}
-    - TargetCameraPosition: 1
-      SpriteTargets:
-      - target: 0
-        spriteTarget: {fileID: 7438324144978046287, guid: 640ac72d5e5d6a3449bdda271cab4144, type: 3}
-      - target: 1
-        spriteTarget: {fileID: -5293678131686772747, guid: 21bca44d8cff70e4c8115df796ac4c7a, type: 3}
-      Dialogue: Everything good?
-      EventDuration: 0
-      Music: {fileID: 0}
-    - TargetCameraPosition: 2
-      SpriteTargets: []
-      Dialogue: Look to the right!
-      EventDuration: 0
-      Music: {fileID: 0}
-    GoToPlayAfterEvent: 1
-    WaitForPlayerInput: 1
-  - Events:
-    - TargetCameraPosition: 1
-      SpriteTargets: []
-      Dialogue: Hello!
-      EventDuration: 0
-      Music: {fileID: 0}
-    - TargetCameraPosition: 1
-      SpriteTargets:
-      - target: 0
-        spriteTarget: {fileID: 7438324144978046287, guid: 640ac72d5e5d6a3449bdda271cab4144, type: 3}
-      - target: 1
-        spriteTarget: {fileID: -5293678131686772747, guid: 21bca44d8cff70e4c8115df796ac4c7a, type: 3}
-      Dialogue: Everything good?
-      EventDuration: 0
-      Music: {fileID: 0}
-    - TargetCameraPosition: 2
-      SpriteTargets: []
-      Dialogue: Look to the right!
-      EventDuration: 0
-      Music: {fileID: 0}
-    GoToPlayAfterEvent: 1
-    WaitForPlayerInput: 1
-  - Events:
-    - TargetCameraPosition: 1
-      SpriteTargets: []
-      Dialogue: Hello!
-      EventDuration: 0
-      Music: {fileID: 0}
-    - TargetCameraPosition: 1
-      SpriteTargets:
-      - target: 0
-        spriteTarget: {fileID: 7438324144978046287, guid: 640ac72d5e5d6a3449bdda271cab4144, type: 3}
-      - target: 1
-        spriteTarget: {fileID: -5293678131686772747, guid: 21bca44d8cff70e4c8115df796ac4c7a, type: 3}
-      Dialogue: Everything good?
-      EventDuration: 0
-      Music: {fileID: 0}
-    - TargetCameraPosition: 2
-      SpriteTargets: []
-      Dialogue: Look to the right!
-      EventDuration: 0
-      Music: {fileID: 0}
-    GoToPlayAfterEvent: 1
-    WaitForPlayerInput: 1
-  GasEvent:
-    Events:
     - TargetCameraPosition: 0
       SpriteTargets: []
-      Dialogue: Finally some gas...
-      EventDuration: 0
+      Dialogue: sdfsdfsdfsdfsdf
+      EventDuration: 3
       Music: {fileID: 0}
+    - TargetCameraPosition: 0
+      SpriteTargets: []
+      Dialogue: asdasdasdasd
+      EventDuration: 3
+      Music: {fileID: 0}
+    - TargetCameraPosition: 0
+      SpriteTargets: []
+      Dialogue: adasdasd
+      EventDuration: 3
+      Music: {fileID: 0}
+    GoToPlayAfterEvent: 0
+    WaitForPlayerInput: 0
+  GasEvent:
+    Events: []
     GoToPlayAfterEvent: 0
     WaitForPlayerInput: 1
     Deacceleration: -1
@@ -3207,9 +3122,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingLayerID: -218153961
+  m_SortingLayer: 3
+  m_SortingOrder: 10
   m_Sprite: {fileID: 2794704429521113632, guid: 2ee8271a5a3c9a449aae6f10b4896745, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

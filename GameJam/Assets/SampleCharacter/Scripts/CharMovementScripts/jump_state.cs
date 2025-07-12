@@ -22,11 +22,11 @@ public class jump_state : FSM_BaseState
 
     public override void Enter()
     {
-        Debug.Log("ENTER() JUMP");
+        //Debug.Log("ENTER() JUMP");
         base.Enter();
 
 
-        SoundManager.Instance.PlayOneShotSFX(my_sm.jumpAudioClip);
+        //SoundManager.Instance.PlayOneShotSFX(my_sm.jumpAudioClip);
 
         horizontalInput = 0;
         currState = jumpStates.JUMP;
