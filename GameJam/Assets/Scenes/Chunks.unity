@@ -440,7 +440,9 @@ MonoBehaviour:
   StartingChunk: {fileID: 1737325614816170554, guid: 602df69bc92482e438a782962d980c83, type: 3}
   baseSpeed: 2
   baseAcceleration: 0.1
+  MAX_SPEED: 3
   Display: {fileID: 513273539}
+  PlayerStartingPoint: {fileID: 1145192388}
   Character: {fileID: 1145192389}
 --- !u!1 &135298412
 GameObject:

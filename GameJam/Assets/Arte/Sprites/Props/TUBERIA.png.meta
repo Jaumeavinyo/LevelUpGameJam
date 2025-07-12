@@ -112,10 +112,10 @@ TextureImporter:
       name: TUBERIA_0
       rect:
         serializedVersion: 2
-        x: 837
-        y: 567
-        width: 718
-        height: 1213
+        x: 902
+        y: 638
+        width: 653
+        height: 1134
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
