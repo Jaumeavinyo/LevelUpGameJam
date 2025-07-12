@@ -60,10 +60,8 @@ public class SoundManager : MonoBehaviour
     public void changeMaxVolume(float newMaxVolume)
     {
         for (int i = 0; i < GameMusicList.Count; i++)
-        {
-           
-            GameMusicList[i].maxVolume = newMaxVolume;
-           
+        {         
+            GameMusicList[i].maxVolume = newMaxVolume;           
         }
     }
     public void changeOneSongMaxVolume(MusicTheme musicTheme,float newMaxVolume)
@@ -79,7 +77,6 @@ public class SoundManager : MonoBehaviour
 
     public void PlayOneShotSFX(AudioClip audio)
     {
-
         soundFXAudioSource.loop = false;
         soundFXAudioSource.PlayOneShot(audio);
     }
@@ -101,41 +98,60 @@ public class SoundManager : MonoBehaviour
                 currentMusicSource.volume = 1f;
                 currentMusicSource.Play();
             }
-            int a = 3;
+            
         }
     }
     public void StopCurrentMusic()
     {
-        StartCoroutine(MusicFadeOut(musicFadeOutAndStopDuration));
+        StartCoroutine(MusicFadeOut(musicFadeOutAndStopDuration,currentMusicSource.volume,0.0f));
     }
-    IEnumerator MusicFadeOut(float duration)
+    IEnumerator MusicFadeOut(float duration,float from, float to)
     {
         float elapsed = 0;
         while (elapsed < duration)
         {
             float t = elapsed / duration;
-            float newVolume = Mathf.Lerp(1, 0, t);
+            float newVolume = Mathf.Lerp(from, to, t);
             currentMusicSource.volume = newVolume;
 
             elapsed += Time.deltaTime;
 
             yield return null;
         }
-        currentMusicSource.volume = 0f;
+        currentMusicSource.volume = to;
         currentMusicSource.Stop();
 
     }
     IEnumerator CrossfadeMusic(AudioSource from, AudioSource to, float duration)
     {
+        //GET BOTH MAX VOLUME
+        float fromMaxVolume = 1.0f;
+        float toMaxVolume= 1.0f;
+        for (int i = 0; i < GameMusicList.Count; i++)
+        {
+            if (GameMusicList[i].music == from)
+            {
+                fromMaxVolume = GameMusicList[i].maxVolume;
+            }
+        }
+        for (int i = 0; i < GameMusicList.Count; i++)
+        {
+            if (GameMusicList[i].music == to)
+            {
+                toMaxVolume = GameMusicList[i].maxVolume;
+            }
+        }
+
+
         float elapsed = 0;
         to.volume = 0f;
         to.Play();
         while (elapsed < duration)
         {
             float t = elapsed / duration;
-            float fromNewVolume = Mathf.Lerp(1, 0, t);
+            float fromNewVolume = Mathf.Lerp(fromMaxVolume, 0, t);
             from.volume = fromNewVolume;
-            float toNewVolume = Mathf.Lerp(0, 1, t);
+            float toNewVolume = Mathf.Lerp(0, toMaxVolume, t);
             to.volume = toNewVolume;
             elapsed += Time.deltaTime;
 
