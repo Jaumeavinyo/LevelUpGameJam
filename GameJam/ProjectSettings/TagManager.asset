@@ -45,14 +45,17 @@ TagManager:
   - name: Background
     uniqueID: 957429737
     locked: 0
-  - name: Player
-    uniqueID: 1924763099
-    locked: 0
   - name: Obstacles
     uniqueID: 3433012637
     locked: 0
   - name: Car
     uniqueID: 4076813335
+    locked: 0
+  - name: Player
+    uniqueID: 1924763099
+    locked: 0
+  - name: UI
+    uniqueID: 2294727913
     locked: 0
   m_RenderingLayers:
   - Default

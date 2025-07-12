@@ -15,7 +15,7 @@ public class idle_state : FSM_BaseState
     public override void Enter()
     {
         base.Enter();
-        Debug.Log("ENTER() IDLE");
+       // Debug.Log("ENTER() IDLE");
         horizontalInput = 0;
         jumpInput = false;
         dashInput = false;
