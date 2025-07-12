@@ -3,29 +3,29 @@ using UnityEngine;
 
 public class Dissolve : MonoBehaviour
 {
-    public float dissolveTime = 0.75f;
+    public float dissolveTime = 0.75f, fastDissolveTime = 0.15f;
     public Material material;
     private int dissolveAmount = Shader.PropertyToID("_DissolveAmount");
     private int verticalDissolveAmount = Shader.PropertyToID("_VerticalDissolve");
 
     public bool UseVerticalDissolve;
 
-    public void StartVanishing()
+    public void StartVanishing(bool fast)
     {
-        StartCoroutine(Vanish());
+        StartCoroutine(Vanish(fast ? fastDissolveTime : dissolveTime));
     }
     public void StartAppear()
     {
         StartCoroutine(Appear());
     }
 
-    private IEnumerator Vanish()
+    private IEnumerator Vanish(float time)
     {
         float elapsedTime = 0f;
-        while (elapsedTime <= dissolveTime)
+        while (elapsedTime <= time)
         {
             elapsedTime += Time.deltaTime;
-            float lerpedDissolve = Mathf.Lerp(0, 1.1f, elapsedTime / dissolveTime);
+            float lerpedDissolve = Mathf.Lerp(0, 1.1f, elapsedTime / time);
 
             material.SetFloat(dissolveAmount, lerpedDissolve);
             if (UseVerticalDissolve) material.SetFloat(verticalDissolveAmount, lerpedDissolve);

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BackgroundManager : MonoBehaviour
 {
-    public BackgroundChunk StartingBackground;
+    public BackgroundChunk StartingBackground, SecondBackground, ThirdBackground;
     [NonSerialized] public List<BackgroundChunk> LiveBackgrounds = new();
     private BackgroundChunk CurrentBackground;
     public GameObject Display;
@@ -12,10 +12,9 @@ public class BackgroundManager : MonoBehaviour
     void Start()
     {
         BackgroundChunk FirstBackground = Instantiate(StartingBackground, Display.transform);
+        FirstBackground.transform.localPosition = Vector3.zero;
         LiveBackgrounds.Add(FirstBackground);
         CurrentBackground = FirstBackground;
-        GenerateRandomNextBackground();
-        GenerateRandomNextBackground();
     }
 
     void Update()
@@ -30,20 +29,20 @@ public class BackgroundManager : MonoBehaviour
                 LiveBackgrounds.Remove(chunk);
             }
         }
-        if (CurrentBackground.transform.localPosition.x <= 11) GenerateRandomNextBackground();
-        ChunksManager.Instance.Speed += Time.deltaTime * ChunksManager.Instance.Acceleration;
+        if (CurrentBackground.transform.localPosition.x <= 11) GenerateNextBackground();
     }
 
-    public void GenerateRandomNextBackground()
+    public void GenerateNextBackground()
     {
-        if (CurrentBackground == null || CurrentBackground.NextPossibleBackgrounds == null || CurrentBackground.NextPossibleBackgrounds.Count == 0)
-            throw new ArgumentException("PreviousChunk or its NextPossibleChunks is null or empty.");
-
-        int index = UnityEngine.Random.Range(0, CurrentBackground.NextPossibleBackgrounds.Count);
-        BackgroundChunk selectedTemplate = CurrentBackground.NextPossibleBackgrounds[index];
+        BackgroundChunk selectedTemplate = EventsManager.Instance.currentGamePhase switch
+        {
+            CurrentGamePhase.First => StartingBackground,
+            CurrentGamePhase.Second => SecondBackground,
+            _ => ThirdBackground
+        };
         BackgroundChunk NewBackground = Instantiate(selectedTemplate, Display.transform);
         LiveBackgrounds.Add(NewBackground);
-        NewBackground.transform.localPosition = CurrentBackground.transform.localPosition + new Vector3(CurrentBackground.GetXSize() / 2, 0, 0) + new Vector3(NewBackground.GetXSize() / 2, 0, 0);
+        NewBackground.transform.localPosition = CurrentBackground.transform.localPosition + new Vector3(CurrentBackground.GetXSize() / 2f, 0, 0) + new Vector3(NewBackground.GetXSize() / 2f, 0, 0);
         CurrentBackground = NewBackground;
     }
 }

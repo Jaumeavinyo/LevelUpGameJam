@@ -437,9 +437,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e22b7b671f61c94ab22c01811bc9076, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartingChunk: {fileID: 1737325614816170554, guid: 9f4e19c1074781440a0a1a200e408d91, type: 3}
-  Speed: 2
-  Acceleration: 0.1
+  StartingChunk: {fileID: 1737325614816170554, guid: 602df69bc92482e438a782962d980c83, type: 3}
+  baseSpeed: 2
+  baseAcceleration: 0.1
   Display: {fileID: 513273539}
   Character: {fileID: 1145192389}
 --- !u!1 &135298412
@@ -1088,7 +1088,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -2.2}
+  m_AnchoredPosition: {x: -19.68, y: -2.2}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &567314505
@@ -1450,7 +1450,7 @@ Transform:
   m_GameObject: {fileID: 698172815}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: -9.91, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2595,11 +2595,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3259833154674830497, guid: 7b3aa52c2b893404189583a372a62318, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -20.36
+      value: 8.67
       objectReference: {fileID: 0}
     - target: {fileID: 3259833154674830497, guid: 7b3aa52c2b893404189583a372a62318, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.68
+      value: 5.01
       objectReference: {fileID: 0}
     - target: {fileID: 3259833154674830497, guid: 7b3aa52c2b893404189583a372a62318, type: 3}
       propertyPath: m_LocalPosition.z

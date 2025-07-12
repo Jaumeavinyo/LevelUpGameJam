@@ -53,7 +53,7 @@ public class SoundManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void PlayOneShotSFX(AudioClip audio)
@@ -70,7 +70,7 @@ public class SoundManager : MonoBehaviour
         if (selectedMusic != null)
         {
             newMusicSource = selectedMusic;
-            if(currentMusicSource != null)
+            if (currentMusicSource != null)
             {
                 StartCoroutine(CrossfadeMusic(currentMusicSource, newMusicSource, musicFadeDuration));
             }
@@ -89,7 +89,7 @@ public class SoundManager : MonoBehaviour
     }
     IEnumerator MusicFadeOut(float duration)
     {
-        float elapsed = 0;       
+        float elapsed = 0;
         while (elapsed < duration)
         {
             float t = elapsed / duration;
@@ -102,7 +102,7 @@ public class SoundManager : MonoBehaviour
         }
         currentMusicSource.volume = 0f;
         currentMusicSource.Stop();
-      
+
     }
     IEnumerator CrossfadeMusic(AudioSource from, AudioSource to, float duration)
     {
@@ -121,21 +121,21 @@ public class SoundManager : MonoBehaviour
             yield return null;
         }
         from.volume = 0f;
-        to.volume   = 1f;
+        to.volume = 1f;
         from.Stop();
         currentMusicSource = to;
     }
     AudioSource getMusic(MusicTheme theme_)
     {
         AudioSource ret = null;
-        for(int i = 0; i < GameMusicList.Count; i++)
+        for (int i = 0; i < GameMusicList.Count; i++)
         {
             if (GameMusicList[i].theme == theme_)
-            {               
+            {
                 return GameMusicList[i].music;
             }
         }
-       
+
         return null;
     }
 }

@@ -30,9 +30,4 @@ public class DebugManager : MonoBehaviour
         }
         CurrentChunkText.text = ChunksManager.Instance.CurrentChunk.name.Replace("(Clone)", "");
     }
-
-    public void ChangeSpeed(bool increase)
-    {
-        ChunksManager.Instance.Speed += increase ? .3f : -.3f;
-    }
 }
