@@ -32,6 +32,8 @@ public class GameManager : MonoBehaviour
     public float secondsToForceEventIfNointeraction;
     [NonSerialized] public string playerName;
 
+    SoundManager soundManager;
+
     public static GameManager Instance;
     public TextMeshProUGUI StateText;
     public Vector3 CAMERA_POSITION_FOR_GAME = new(-16.5f, 1, -1);
@@ -52,6 +54,7 @@ public class GameManager : MonoBehaviour
         playerName = PlayerData.playerName;
         Debug.Log(playerName);
         SoundManager.Instance.PlayMusic(MusicTheme.GAME_START);
+        soundManager = FindFirstObjectByType<SoundManager>();
     }
 
     void Awake()
@@ -94,7 +97,14 @@ public class GameManager : MonoBehaviour
                     bool cameraWithZoom = CheckCameraZoom();
                     bool cameraInPos = CheckGameCameraPosition();
                     if (cameraInPos && cameraWithZoom)
-                    {
+                    {   //añadir este codigo tmb a cuando obligamos al player a volver a jugar
+                        if (soundManager.currentMusicSource.volume != soundManager.getMusicByAudioSource(soundManager.currentMusicSource).maxVolume)
+                        {
+                            Debug.Log("ME QUIEREN MATAR AYUDA");
+                            Debug.Log("Curr volume" + soundManager.currentMusicSource.volume);
+                            Debug.Log("New volume" + soundManager.getMusicByAudioSource(soundManager.currentMusicSource).maxVolume);
+                            StartCoroutine(soundManager.MusicFadeIn(2.0f, soundManager.currentMusicSource.volume, soundManager.getMusicByAudioSource(soundManager.currentMusicSource).maxVolume));
+                        }
                         gamePlayMode = GamePlayMode.PLAYING;
                         ChangingToPlayMode = false;
                         StateText.text = "Playing";
@@ -134,13 +144,13 @@ public class GameManager : MonoBehaviour
         // Use manually tracked input device
         if (inputdetector.LastInputDevice == "Gamepad")
         {
-            Debug.Log("USING GAMEPAD");
+            
             PressAgameObject.SetActive(canEnterPlayNinja);
             PressEGameObject.SetActive(false);
         }
         else // Assume Keyboard & Mouse
         {
-            Debug.Log("USING KEYBOARD");
+           
             PressEGameObject.SetActive(canEnterPlayNinja);
             PressAgameObject.SetActive(false);
         }
@@ -148,14 +158,14 @@ public class GameManager : MonoBehaviour
         // Start game logic for both control schemes
         if (canEnterPlayNinja && inputdetector.LastInputDevice == "KeyboardMouse" && Input.GetKey(KeyCode.E))
         {
-            Debug.Log("USING KEYBOARD");
+            
             ChangingToPlayMode = true;
             PressEGameObject.SetActive(false);
             PressAgameObject.SetActive(false);
         }
         else if (canEnterPlayNinja && inputdetector.LastInputDevice == "Gamepad" && gamepadButtonPressed == 1.0f)
         {
-            Debug.Log("USING GAMEPAD");
+            
             ChangingToPlayMode = true;
             PressAgameObject.SetActive(false);
             PressEGameObject.SetActive(false);

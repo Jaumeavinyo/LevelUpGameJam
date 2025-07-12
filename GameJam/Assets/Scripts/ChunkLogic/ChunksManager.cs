@@ -55,6 +55,7 @@ public class ChunksManager : MonoBehaviour
         rb.linearVelocity = Vector2.zero;
         rb.angularVelocity = 0f;
         Character.GetComponent<Dissolve>().StartAppear();
+       
     }
 
     public void StartRestartCountdown()

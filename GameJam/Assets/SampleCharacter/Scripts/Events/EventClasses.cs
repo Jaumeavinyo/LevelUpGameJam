@@ -28,8 +28,14 @@ public class EventData
     public string Dialogue;
     [Tooltip("Event duration")]
     public float EventDuration;
-    [Tooltip("Music to play in this event")]
-    public AudioClip Music;
+    [Tooltip("Music to play in this event, if none is selected, current playing music will be used in fade outs if wanted")]
+    public MusicTheme musicTheme;
+    [Tooltip("currentMusic will fade out to the desired volume")]
+    public float MusicVolumeDuringEvent;
+    [Tooltip("currentMusic will fade out in a time duration")]
+    public float fadeDuration;
+
+
 }
 
 [Serializable]

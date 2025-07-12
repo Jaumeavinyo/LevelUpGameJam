@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public enum CurrentGamePhase
@@ -13,6 +14,7 @@ public enum CurrentGamePhase
 
 public class EventsManager : MonoBehaviour
 {
+    public SoundManager soundManager;
     public Transform CarCenter, LWindow, RWindow;
     public static EventsManager Instance;
     [NonSerialized] public List<BaseEvent> Events = new();
@@ -30,6 +32,8 @@ public class EventsManager : MonoBehaviour
     public Camera Camera;
     private bool isMoving, pressedInput;
     public float vel;
+
+  
 
     void Awake()
     {
@@ -50,6 +54,7 @@ public class EventsManager : MonoBehaviour
         FatherBaseSprite = Father.sprite;
         MotherBaseSprite = Mother.sprite;
         currentGamePhase = CurrentGamePhase.First;
+        soundManager = FindFirstObjectByType<SoundManager>();
     }
 
     public void PressedInput()
@@ -84,10 +89,23 @@ public class EventsManager : MonoBehaviour
         isMoving = true;
         Textos.Instance.OpenEvent(data.Dialogue);
         changeSprites(data);
-        if (data.Music != null)
+        if (soundManager)
         {
-            // PLAY CLIP
+            if (data.musicTheme == MusicTheme.NONE)
+            {
+                StartCoroutine(soundManager.MusicFadeOut(data.fadeDuration, soundManager.currentMusicSource.volume, data.MusicVolumeDuringEvent));
+            }
+            else if(data.musicTheme != MusicTheme.NONE && data.musicTheme != soundManager.getMusicByAudioSource(soundManager.currentMusicSource).theme)
+            {
+                StartCoroutine(soundManager.CrossfadeMusic(soundManager.currentMusicSource, soundManager.getMusicBytheme(data.musicTheme).music, data.fadeDuration));
+            }
+            
+            
         }
+        //if (data.Music != null)
+        //{
+        //    // PLAY CLIP
+        //}
     }
 
     void Update()
@@ -172,6 +190,8 @@ public class EventsManager : MonoBehaviour
         Father.sprite = FatherBaseSprite;
         Mother.sprite = MotherBaseSprite;
         Textos.Instance.FinishEvent();
+       
+
     }
 
     public void changeSprites(EventData Event)

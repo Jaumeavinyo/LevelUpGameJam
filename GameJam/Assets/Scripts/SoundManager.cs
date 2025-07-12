@@ -6,6 +6,7 @@ using System.Collections;
 [SerializeField]
 public enum MusicTheme
 {
+    NONE,
     MAIN_MENU,
     GAME_START,
     RADIO_MUSIC
@@ -64,6 +65,15 @@ public class SoundManager : MonoBehaviour
             GameMusicList[i].maxVolume = newMaxVolume;           
         }
     }
+
+    public void changeAllMusicVolume(float Volume)
+    {
+        for (int i = 0; i < GameMusicList.Count; i++)
+        {
+            GameMusicList[i].music.volume = Volume;
+        }
+    }
+
     public void changeOneSongMaxVolume(MusicTheme musicTheme,float newMaxVolume)
     {
         for(int i = 0;i< GameMusicList.Count; i++)
@@ -83,7 +93,7 @@ public class SoundManager : MonoBehaviour
 
     public void PlayMusic(MusicTheme theme_)
     {
-        AudioSource selectedMusic = getMusic(theme_);
+        AudioSource selectedMusic = getMusicBytheme(theme_).music;
         //Debug.Log($"Selected music: {selectedMusic}, Clip: {selectedMusic.clip}");
         if (selectedMusic != null)
         {
@@ -94,18 +104,20 @@ public class SoundManager : MonoBehaviour
             }
             else
             {
+
                 currentMusicSource = newMusicSource;
-                currentMusicSource.volume = 1f;
+                currentMusicSource.volume = getMusicByAudioSource(currentMusicSource).maxVolume;
                 currentMusicSource.Play();
             }
             
         }
     }
-    public void StopCurrentMusic()
+    public void StopCurrentMusic(float fadeDuration)
     {
-        StartCoroutine(MusicFadeOut(musicFadeOutAndStopDuration,currentMusicSource.volume,0.0f));
+        StartCoroutine(MusicFadeOut(musicFadeOutAndStopDuration,currentMusicSource.volume, fadeDuration));
     }
-    IEnumerator MusicFadeOut(float duration,float from, float to)
+
+    public IEnumerator MusicFadeOut(float duration,float from, float to)
     {
         float elapsed = 0;
         while (elapsed < duration)
@@ -119,10 +131,28 @@ public class SoundManager : MonoBehaviour
             yield return null;
         }
         currentMusicSource.volume = to;
-        currentMusicSource.Stop();
-
+        if(currentMusicSource.volume == 0)
+        {
+            currentMusicSource.Stop();
+        }
     }
-    IEnumerator CrossfadeMusic(AudioSource from, AudioSource to, float duration)
+
+    public IEnumerator MusicFadeIn(float duration, float from, float to)
+    {
+        float elapsed = 0;
+        while (elapsed < duration)
+        {
+            float t = elapsed / duration;
+            float newVolume = Mathf.Lerp(from, to, t);
+            currentMusicSource.volume = newVolume;
+
+            elapsed += Time.deltaTime;
+
+            yield return null;
+        }
+        currentMusicSource.volume = to;
+    }
+    public IEnumerator CrossfadeMusic(AudioSource from, AudioSource to, float duration)
     {
         //GET BOTH MAX VOLUME
         float fromMaxVolume = 1.0f;
@@ -162,14 +192,27 @@ public class SoundManager : MonoBehaviour
         from.Stop();
         currentMusicSource = to;
     }
-    AudioSource getMusic(MusicTheme theme_)
+    public GameMusic getMusicBytheme(MusicTheme theme_)
     {
-        AudioSource ret = null;
+      
         for (int i = 0; i < GameMusicList.Count; i++)
         {
             if (GameMusicList[i].theme == theme_)
             {
-                return GameMusicList[i].music;
+                return GameMusicList[i];
+            }
+        }
+
+        return null;
+    }
+    public GameMusic getMusicByAudioSource(AudioSource ASource)
+    {
+   
+        for (int i = 0; i < GameMusicList.Count; i++)
+        {
+            if (GameMusicList[i].music == ASource)
+            {
+                return GameMusicList[i];
             }
         }
 

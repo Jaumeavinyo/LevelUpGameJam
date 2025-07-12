@@ -21,7 +21,12 @@ public class MainMenuUI : MonoBehaviour
 
     public GameObject nameInputPopup;
     public GameObject optionsPopup;
+    public GameObject creditsPanel;
+    public GameObject mainPanel;
+
     public Button CreditsButton;
+    public Button BackFromOptionsButton;
+    public Button BackfromCreditsButton;
     public Slider volumeSlider;
 
     public TMP_InputField InputNameUI;
@@ -37,12 +42,17 @@ public class MainMenuUI : MonoBehaviour
         Options.onClick.AddListener(OnOptionsClicked);
         Quit.onClick.AddListener(OnQuitClicked);
         AcceptInputName.onClick.AddListener(SubmitName);
-        
+        BackFromOptionsButton.onClick.AddListener(BackToMainMenu);
+        BackfromCreditsButton.onClick.AddListener(BackToMainMenu);
+
         if (CreditsButton != null)
             CreditsButton.onClick.AddListener(OnCreditsClicked);
 
         if (volumeSlider != null)
             volumeSlider.onValueChanged.AddListener(OnVolumeChanged);
+
+        volumeSlider.value = 1.0f;
+
         SoundManager.Instance.PlayMusic(MusicTheme.MAIN_MENU);
         // Hide popups initially
         nameInputPopup.SetActive(false);
@@ -53,7 +63,7 @@ public class MainMenuUI : MonoBehaviour
         if(InputNameUI.text != null)
         {
             PlayerData.playerName = InputNameUI.text;
-            SoundManager.Instance.StopCurrentMusic();
+            SoundManager.Instance.StopCurrentMusic(2.0f);
             StartCoroutine(WaitnewScene("GAME", 5.0f));
         }
     }
@@ -72,14 +82,24 @@ public class MainMenuUI : MonoBehaviour
         optionsPopup.SetActive(true);
     }
 
+    void BackToMainMenu()
+    {
+        optionsPopup.SetActive(false);
+        mainPanel.SetActive(true);
+        creditsPanel.SetActive(false);
+    }
+
     void OnCreditsClicked()
     {
-        SceneManager.LoadScene("GAME_CREDITS"); // Replace with your actual credits scene name
+        optionsPopup.SetActive(false);
+        creditsPanel.SetActive(true);
     }
 
     void OnVolumeChanged(float value)
     {
-        AudioListener.volume = value;
+        //AudioListener.volume;
+        soundManager.changeMaxVolume(value);
+        soundManager.changeAllMusicVolume(value);
     }
 
     void OnQuitClicked()

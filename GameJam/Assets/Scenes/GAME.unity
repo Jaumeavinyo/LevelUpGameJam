@@ -2939,6 +2939,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8099b879cdd78154daa92b9fe64178d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundManager: {fileID: 0}
   CarCenter: {fileID: 448610587}
   LWindow: {fileID: 1728003794}
   RWindow: {fileID: 1432375470}
@@ -2950,26 +2951,10 @@ MonoBehaviour:
         spriteTarget: {fileID: 8374611977483790002, guid: 3a97c804383fec54f848606ba592b89f, type: 3}
       Dialogue: 'Hey Sweetie! Do you still like this song! I love it! '
       EventDuration: 8
-      Music: {fileID: 0}
-  LongEvents:
-  - Events:
-    - TargetCameraPosition: 0
-      SpriteTargets: []
-      Dialogue: sdfsdfsdfsdfsdf
-      EventDuration: 3
-      Music: {fileID: 0}
-    - TargetCameraPosition: 0
-      SpriteTargets: []
-      Dialogue: asdasdasdasd
-      EventDuration: 3
-      Music: {fileID: 0}
-    - TargetCameraPosition: 0
-      SpriteTargets: []
-      Dialogue: adasdasd
-      EventDuration: 3
-      Music: {fileID: 0}
-    GoToPlayAfterEvent: 0
-    WaitForPlayerInput: 0
+      musicTheme: 1
+      MusicVolumeDuringEvent: 0.3
+      fadeDuration: 1.09
+  LongEvents: []
   GasEvent:
     Events: []
     GoToPlayAfterEvent: 0
@@ -2981,7 +2966,9 @@ MonoBehaviour:
       SpriteTargets: []
       Dialogue: DONE!
       EventDuration: 0
-      Music: {fileID: 0}
+      musicTheme: 0
+      MusicVolumeDuringEvent: 0
+      fadeDuration: 0
     GoToPlayAfterEvent: 0
     WaitForPlayerInput: 1
   Father: {fileID: 711817468}
