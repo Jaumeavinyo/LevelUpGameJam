@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1545004264085878595}
   - component: {fileID: 1319370636062657303}
   - component: {fileID: 8886484321172370734}
-  - component: {fileID: -4647403437477058993}
   m_Layer: 0
   m_Name: QUITAMIEDOS_
   m_TagString: Untagged
@@ -57,7 +56,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: af3e2491404d1ea43bf13a1a5f6b320f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -135,15 +134,3 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.6542858, y: 1.555352}
   m_EdgeRadius: 0
---- !u!114 &-4647403437477058993
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6764905847949993257}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3cce70277d8eba4f8d9be3f87c3dbcc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
