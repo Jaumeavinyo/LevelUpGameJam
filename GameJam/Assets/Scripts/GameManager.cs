@@ -55,6 +55,7 @@ public class GameManager : MonoBehaviour
         Debug.Log(playerName);
         SoundManager.Instance.PlayMusic(MusicTheme.GAME_START);
         soundManager = FindFirstObjectByType<SoundManager>();
+        soundManager.changeAllMusicVolume(soundManager.GameMusicList[1].maxVolume);//esto es una puta chapuza q soluciona un bug de reseteo de volumen de los sourceSounds
     }
 
     void Awake()
