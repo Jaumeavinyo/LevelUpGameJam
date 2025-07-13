@@ -17,23 +17,23 @@ public class run_state : FSM_BaseState
         horizontalInput = my_sm.inputAction_move.ReadValue<Vector2>().x;
 
 
-        if(GameManager.Instance.gamePlayMode == GamePlayMode.PLAYING)
+        if (GameManager.Instance.gamePlayMode == GamePlayMode.PLAYING)
         {
             SoundManager.Instance.PlaySound(my_sm.RunAudioClip, true);
         }
-        
+
     }
 
     public override void UpdateLogic()
     {
         base.UpdateLogic();
-        if(horizontalInput == 0)
+        if (horizontalInput == 0)
         {
             my_sm.ChangeState(my_sm.idle);
         }
         my_sm.animator.Play("run");
-        
-       
+
+
         handleStateInputs();
 
     }
@@ -54,7 +54,7 @@ public class run_state : FSM_BaseState
         }
         Vector2 velDir = my_sm.rigidBody.linearVelocity;
         velDir.x = my_sm.speed * dir;
-        my_sm.rigidBody.linearVelocity = velDir;    
+        my_sm.rigidBody.linearVelocity = velDir;
     }
     public override void Exit()
     {
@@ -66,7 +66,7 @@ public class run_state : FSM_BaseState
     {
         ////   ### --- ###
         horizontalInput = my_sm.inputAction_move.ReadValue<Vector2>().x;
-        
+
         //   ### --- ###
         float bJump = my_sm.inputAction_jump.ReadValue<float>();
         if (bJump == 1.0f)
