@@ -51,6 +51,12 @@ TagManager:
   - name: Car
     uniqueID: 4076813335
     locked: 0
+  - name: Padres
+    uniqueID: 3319601571
+    locked: 0
+  - name: CarAsientos
+    uniqueID: 3274615753
+    locked: 0
   - name: Player
     uniqueID: 1924763099
     locked: 0

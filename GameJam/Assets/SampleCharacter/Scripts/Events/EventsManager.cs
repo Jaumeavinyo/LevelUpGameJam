@@ -112,7 +112,7 @@ public class EventsManager : MonoBehaviour
 
     void Update()
     {
-        Debug.Log($"Mother sprite: {Mother.sprite}, Enabled: {Mother.enabled}");
+        
         if (CurrentEvent != null)
         {
             EventData currentData = CurrentEvent.GetCurrentData(currentSubEvent);
