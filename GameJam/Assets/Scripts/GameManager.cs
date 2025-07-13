@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
     public Vector3 CAMERA_POSITION_FOR_GAME = new(-16.5f, 1, -1);
     public Camera Camera;
     public static float IN_GAME_CAMERA_SIZE = 4.75f, IN_EVENT_CAMERA_SIZE = 6;
-    public static float TIME_BETWEEN_EVENTS = 40;
+    public static float TIME_BETWEEN_EVENTS = 22.5f;
     public float freeMovementVel;
     private float nextEventTimer = 0, forceEventTimer = 0;
     [NonSerialized] public GamePlayMode gamePlayMode;
