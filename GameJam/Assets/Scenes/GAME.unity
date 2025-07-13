@@ -2202,7 +2202,7 @@ MonoBehaviour:
     m_Flags: 0
   playerInput: {fileID: 1011426170}
   inputdetector: {fileID: 1367363261}
-  secondsToForceEventIfNointeraction: 10
+  secondsToForceEventIfNointeraction: 5
   StateText: {fileID: 2141811197}
   CAMERA_POSITION_FOR_GAME: {x: -20, y: 1, z: -1}
   Camera: {fileID: 907485541}
