@@ -55,6 +55,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NextPossibleChunks:
   - {fileID: 1737325614816170554}
+  - {fileID: 1737325614816170554, guid: 5a6fecaa1f184f7479ab4d728d177bb2, type: 3}
+  - {fileID: 1737325614816170554, guid: 602df69bc92482e438a782962d980c83, type: 3}
+  - {fileID: 1737325614816170554, guid: 1125b93b9e0806c43bca108aa2eda4d5, type: 3}
+  - {fileID: 1737325614816170554, guid: 5a1343b4a3948a54dbd7a7396eb9db82, type: 3}
 --- !u!1001 &3833126781415933848
 PrefabInstance:
   m_ObjectHideFlags: 0
