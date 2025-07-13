@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -703850579747923803, guid: 5e49c3f9461dff748bb83af36e803004, type: 3}
+  m_Sprite: {fileID: -631370141979972165, guid: 3de94bf5b7f35434cb3b461435d13a77, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -127,7 +127,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.02}
+  m_Offset: {x: 0, y: 0.7}
   m_Size: {x: 0.5, y: 1.39}
   m_Direction: 0
 --- !u!50 &1027348671065137755
@@ -250,7 +250,8 @@ MonoBehaviour:
   directionInput: 0
   lastDirectionInput: 0
   grounded: 0
-  wallGrabbed: 0
+  LWallCollision: 0
+  RWallCollision: 0
   gravityScale: 3
   dashJumpGravityScale: 2
 --- !u!114 &5024023641227474126
@@ -296,5 +297,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dissolveTime: 0.75
+  fastDissolveTime: 0.15
   material: {fileID: 2100000, guid: af3e2491404d1ea43bf13a1a5f6b320f, type: 2}
   UseVerticalDissolve: 0

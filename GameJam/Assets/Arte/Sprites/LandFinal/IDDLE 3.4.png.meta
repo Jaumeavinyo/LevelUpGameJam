@@ -1,37 +1,28 @@
 fileFormatVersion: 2
-guid: 2a0dcd11fe17a114ebb179581a327650
+guid: eda0a9c663146b146b3507aefd6bdc44
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8080696482237838949
-    second: TIRA CORRER (1)_0
+      213: -631370141979972165
+    second: IDDLE 3.4_0
   - first:
-      213: -6429927142516298427
-    second: TIRA CORRER (1)_1
+      213: 425978985993182804
+    second: IDDLE 3.4_1
   - first:
-      213: 1276805885638010860
-    second: TIRA CORRER (1)_2
+      213: -3152192576885356012
+    second: IDDLE 3.4_2
   - first:
-      213: -4635368457216175491
-    second: TIRA CORRER (1)_3
+      213: 5986584812577817994
+    second: IDDLE 3.4_3
   - first:
-      213: -4681151178742178046
-    second: TIRA CORRER (1)_4
+      213: -3791865593377276118
+    second: IDDLE 3.4_4
   - first:
-      213: -4054163477866185916
-    second: TIRA CORRER (1)_5
+      213: -3514867831657456632
+    second: IDDLE 3.4_5
   - first:
-      213: 190115817759531680
-    second: TIRA CORRER (1)_6
-  - first:
-      213: -8690612748830599955
-    second: TIRA CORRER (1)_7
-  - first:
-      213: 6449626111518781910
-    second: TIRA CORRER (1)_8
-  - first:
-      213: 3069464585227175647
-    second: TIRA CORRER (1)_9
+      213: -4639380083515354879
+    second: IDDLE 3.4_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -78,7 +69,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 450
+  spritePixelsToUnits: 200
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -127,177 +118,155 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Run_Final_0
+      name: IDDLE 3.4_0
       rect:
         serializedVersion: 2
-        x: 156
-        y: 107
-        width: 554
-        height: 822
+        x: 285
+        y: 0
+        width: 191
+        height: 375
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 94edc03783a96e74f9781b82346c1a57
-      internalID: -1422693763
+      spriteID: bbdee75733cec37f0800000000000000
+      internalID: -631370141979972165
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run_Final_2
+      name: IDDLE 3.4_1
       rect:
         serializedVersion: 2
-        x: 1947
-        y: 145
-        width: 431
-        height: 822
+        x: 1087
+        y: 0
+        width: 189
+        height: 367
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: f66f6d51a2d7bea4182ea4c73340e188
-      internalID: -568983081
+      spriteID: 45e97ed71a169e500800000000000000
+      internalID: 425978985993182804
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run_Final_3
+      name: IDDLE 3.4_2
       rect:
         serializedVersion: 2
-        x: 3556
-        y: 86
-        width: 535
-        height: 822
+        x: 1881
+        y: 0
+        width: 194
+        height: 356
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: cac3011cc1b758f4eafda4fd352fafde
-      internalID: 1605029989
+      spriteID: 41a00276d892144d0800000000000000
+      internalID: -3152192576885356012
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run_Final_4
+      name: IDDLE 3.4_3
       rect:
         serializedVersion: 2
-        x: 5156
-        y: 86
-        width: 652
-        height: 822
+        x: 2683
+        y: 0
+        width: 191
+        height: 361
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: b026bb9b588183f4ebebb9df3aedc5c2
-      internalID: -946396113
+      spriteID: a8503733b2f941350800000000000000
+      internalID: 5986584812577817994
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run_Final_5
+      name: IDDLE 3.4_4
       rect:
         serializedVersion: 2
-        x: 6774
-        y: 86
-        width: 590
-        height: 822
+        x: 3487
+        y: 0
+        width: 189
+        height: 364
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 377a69c7601da994181234d26eda8287
-      internalID: 2057002634
+      spriteID: a2fb8be3556906bc0800000000000000
+      internalID: -3791865593377276118
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run_Final_6
+      name: IDDLE 3.4_5
       rect:
         serializedVersion: 2
-        x: 8558
-        y: 104
-        width: 424
-        height: 822
+        x: 4289
+        y: 0
+        width: 189
+        height: 364
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: a839341ed48dc6547abfe9841e69a9ec
-      internalID: -460000971
+      spriteID: 80c1c95645ea83fc0800000000000000
+      internalID: -3514867831657456632
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run_Final_7
+      name: IDDLE 3.4_6
       rect:
         serializedVersion: 2
-        x: 10262
-        y: 104
-        width: 486
-        height: 822
+        x: 5091
+        y: 0
+        width: 189
+        height: 375
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 2f55de2258c1a3f4b9c173a570ef2408
-      internalID: 570216127
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Run_Final_9
-      rect:
-        serializedVersion: 2
-        x: 11892
-        y: 92
-        width: 634
-        height: 822
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 48a9061e9262b7344a6e1799ecdd2c0c
-      internalID: -588889481
+      spriteID: 1019b00056c9d9fb0800000000000000
+      internalID: -4639380083515354879
       vertices: []
       indices: 
       edges: []
@@ -306,7 +275,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 1df1fed04fc5148488a4da5becb194ef
+    spriteID: 0360ff9844ead604e833aa64570b44fa
     internalID: 0
     vertices: []
     indices: 
@@ -318,16 +287,13 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Run_Final_0: -1422693763
-      Run_Final_1: -1331982440
-      Run_Final_2: -568983081
-      Run_Final_3: 1605029989
-      Run_Final_4: -946396113
-      Run_Final_5: 2057002634
-      Run_Final_6: -460000971
-      Run_Final_7: 570216127
-      Run_Final_8: -405271442
-      Run_Final_9: -588889481
+      IDDLE 3.4_0: -631370141979972165
+      IDDLE 3.4_1: 425978985993182804
+      IDDLE 3.4_2: -3152192576885356012
+      IDDLE 3.4_3: 5986584812577817994
+      IDDLE 3.4_4: -3791865593377276118
+      IDDLE 3.4_5: -3514867831657456632
+      IDDLE 3.4_6: -4639380083515354879
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
