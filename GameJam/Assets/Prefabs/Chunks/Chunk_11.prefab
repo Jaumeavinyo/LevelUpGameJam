@@ -53,11 +53,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NextPossibleChunks:
-  - {fileID: 1737325614816170554, guid: 5a1343b4a3948a54dbd7a7396eb9db82, type: 3}
-  - {fileID: 1737325614816170554, guid: 38cf3e5b873dad54a9ea5d68d429e648, type: 3}
-  - {fileID: 1737325614816170554, guid: 5a6fecaa1f184f7479ab4d728d177bb2, type: 3}
-  - {fileID: 1737325614816170554, guid: f38fbc3e14255da46bba926f01c4c2d5, type: 3}
-  - {fileID: 1737325614816170554, guid: 7d6b05885c8dfa147b6cca056eb01caa, type: 3}
+  - {fileID: 1737325614816170554}
 --- !u!1001 &171778373893633362
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -80,7 +76,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9074520971342772774, guid: da46234151a564240b492b36b90979d4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.84661496
+      value: 1.38
       objectReference: {fileID: 0}
     - target: {fileID: 9074520971342772774, guid: da46234151a564240b492b36b90979d4, type: 3}
       propertyPath: m_LocalPosition.z
