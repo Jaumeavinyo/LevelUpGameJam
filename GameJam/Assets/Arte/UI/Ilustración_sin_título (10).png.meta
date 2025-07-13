@@ -1,0 +1,419 @@
+fileFormatVersion: 2
+guid: a36569adefd356743abdcdbc7b03f967
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2670696434164467666
+    second: "Ilustracio\u0301n_sin_ti\u0301tulo (10)_0"
+  - first:
+      213: -5897515121235593094
+    second: "Ilustracio\u0301n_sin_ti\u0301tulo (10)_1"
+  - first:
+      213: -3504229939035188642
+    second: "Ilustracio\u0301n_sin_ti\u0301tulo (10)_2"
+  - first:
+      213: -796026017670045322
+    second: "Ilustracio\u0301n_sin_ti\u0301tulo (10)_3"
+  - first:
+      213: -5320877858491121336
+    second: "Ilustracio\u0301n_sin_ti\u0301tulo (10)_4"
+  - first:
+      213: 7542949676021795320
+    second: "Ilustracio\u0301n_sin_ti\u0301tulo (10)_5"
+  - first:
+      213: -2722080446442688743
+    second: "Ilustracio\u0301n_sin_ti\u0301tulo (10)_6"
+  - first:
+      213: 8009207144595374313
+    second: "Ilustracio\u0301n_sin_ti\u0301tulo (10)_7"
+  - first:
+      213: -5026350285068899160
+    second: "Ilustracio\u0301n_sin_ti\u0301tulo (10)_8"
+  - first:
+      213: -3767995354643007406
+    second: "Ilustracio\u0301n_sin_ti\u0301tulo (10)_9"
+  - first:
+      213: 243501803758681963
+    second: "Ilustracio\u0301n_sin_ti\u0301tulo (10)_10"
+  - first:
+      213: -6726733788024445660
+    second: "Ilustracio\u0301n_sin_ti\u0301tulo (10)_11"
+  - first:
+      213: -2389226056313186585
+    second: "Ilustracio\u0301n_sin_ti\u0301tulo (10)_12"
+  - first:
+      213: 5892577150695306494
+    second: "Ilustracio\u0301n_sin_ti\u0301tulo (10)_13"
+  - first:
+      213: 4715308458020974691
+    second: "Ilustracio\u0301n_sin_ti\u0301tulo (10)_14"
+  - first:
+      213: 5366199510055673267
+    second: "Ilustracio\u0301n_sin_ti\u0301tulo (10)_15"
+  - first:
+      213: 5433938978194943656
+    second: "Ilustracio\u0301n_sin_ti\u0301tulo (10)_16"
+  - first:
+      213: -3975663804905162077
+    second: "Ilustracio\u0301n_sin_ti\u0301tulo (10)_17"
+  - first:
+      213: -8397489589597203590
+    second: "Ilustracio\u0301n_sin_ti\u0301tulo (10)_18"
+  - first:
+      213: 2659483064643399907
+    second: "Ilustracio\u0301n_sin_ti\u0301tulo (10)_19"
+  - first:
+      213: 5996538784696238981
+    second: "Ilustracio\u0301n_sin_ti\u0301tulo (10)_20"
+  - first:
+      213: 6744821019722894276
+    second: "Ilustracio\u0301n_sin_ti\u0301tulo (10)_21"
+  - first:
+      213: 2021689256199747452
+    second: "Ilustracio\u0301n_sin_ti\u0301tulo (10)_22"
+  - first:
+      213: -78594400480375343
+    second: "Ilustracio\u0301n_sin_ti\u0301tulo (10)_23"
+  - first:
+      213: -2525533672664581041
+    second: "Ilustracio\u0301n_sin_ti\u0301tulo (10)_24"
+  - first:
+      213: 127515466313822014
+    second: "Ilustracio\u0301n_sin_ti\u0301tulo (10)_25"
+  - first:
+      213: -522817067971758150
+    second: "Ilustracio\u0301n_sin_ti\u0301tulo (10)_26"
+  - first:
+      213: 2875093410339814977
+    second: "Ilustracio\u0301n_sin_ti\u0301tulo (10)_27"
+  - first:
+      213: 7856131811143632781
+    second: "Ilustracio\u0301n_sin_ti\u0301tulo (10)_28"
+  - first:
+      213: -6993756899833665813
+    second: "Ilustracio\u0301n_sin_ti\u0301tulo (10)_29"
+  - first:
+      213: -4602766701074442766
+    second: "Ilustracio\u0301n_sin_ti\u0301tulo (10)_30"
+  - first:
+      213: -9038115790626836243
+    second: "Ilustracio\u0301n_sin_ti\u0301tulo (10)_31"
+  - first:
+      213: -2162233063011245241
+    second: "Ilustracio\u0301n_sin_ti\u0301tulo (10)_32"
+  - first:
+      213: -3717978594345524558
+    second: "Ilustracio\u0301n_sin_ti\u0301tulo (10)_33"
+  - first:
+      213: -7104781776975553710
+    second: "Ilustracio\u0301n_sin_ti\u0301tulo (10)_34"
+  - first:
+      213: 8950070858492000257
+    second: "Ilustracio\u0301n_sin_ti\u0301tulo (10)_35"
+  - first:
+      213: 3599854401830138508
+    second: "Ilustracio\u0301n_sin_ti\u0301tulo (10)_36"
+  - first:
+      213: 5756214473617501546
+    second: "Ilustracio\u0301n_sin_ti\u0301tulo (10)_37"
+  - first:
+      213: -3691638914827760283
+    second: "Ilustracio\u0301n_sin_ti\u0301tulo (10)_38"
+  - first:
+      213: -6856906581060696238
+    second: "Ilustracio\u0301n_sin_ti\u0301tulo (10)_39"
+  - first:
+      213: -3563101192752445979
+    second: "Ilustracio\u0301n_sin_ti\u0301tulo (10)_40"
+  - first:
+      213: 3732863726020897035
+    second: "Ilustracio\u0301n_sin_ti\u0301tulo (10)_41"
+  - first:
+      213: 3378449688069335336
+    second: "Ilustracio\u0301n_sin_ti\u0301tulo (10)_42"
+  - first:
+      213: 5612394976369170692
+    second: "Ilustracio\u0301n_sin_ti\u0301tulo (10)_43"
+  - first:
+      213: -6604348669073556550
+    second: "Ilustracio\u0301n_sin_ti\u0301tulo (10)_44"
+  - first:
+      213: 561882983777607715
+    second: "Ilustracio\u0301n_sin_ti\u0301tulo (10)_45"
+  - first:
+      213: 5490395307998714531
+    second: "Ilustracio\u0301n_sin_ti\u0301tulo (10)_46"
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "Ilustracio\u0301n_sin_ti\u0301tulo (10)_37"
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 1541
+        width: 3094
+        height: 1078
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6deee6e09e22ef40800000000000000
+      internalID: 5756214473617501546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Ilustracio\u0301n_sin_ti\u0301tulo (10)_38"
+      rect:
+        serializedVersion: 2
+        x: 3056
+        y: 2226
+        width: 31
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56dcea257f9a4ccc0800000000000000
+      internalID: -3691638914827760283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Ilustracio\u0301n_sin_ti\u0301tulo (10)_42"
+      rect:
+        serializedVersion: 2
+        x: 1489
+        y: 1560
+        width: 11
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 829e6ec671aa2ee20800000000000000
+      internalID: 3378449688069335336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Ilustracio\u0301n_sin_ti\u0301tulo (10)_43"
+      rect:
+        serializedVersion: 2
+        x: 4092
+        y: 1563
+        width: 14
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 409dba9ce7b33ed40800000000000000
+      internalID: 5612394976369170692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Ilustracio\u0301n_sin_ti\u0301tulo (10)_44"
+      rect:
+        serializedVersion: 2
+        x: 4160
+        y: 1564
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abbfb0770e3a854a0800000000000000
+      internalID: -6604348669073556550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Ilustracio\u0301n_sin_ti\u0301tulo (10)_45"
+      rect:
+        serializedVersion: 2
+        x: 4179
+        y: 1564
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 320a665c8953cc700800000000000000
+      internalID: 561882983777607715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Ilustracio\u0301n_sin_ti\u0301tulo (10)_46"
+      rect:
+        serializedVersion: 2
+        x: 1482
+        y: 1549
+        width: 55
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3aa1cb9717dc13c40800000000000000
+      internalID: 5490395307998714531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 97a64283591e3644898a41408d12c6a3
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      "Ilustracio\u0301n_sin_ti\u0301tulo (10)_37": 5756214473617501546
+      "Ilustracio\u0301n_sin_ti\u0301tulo (10)_38": -3691638914827760283
+      "Ilustracio\u0301n_sin_ti\u0301tulo (10)_42": 3378449688069335336
+      "Ilustracio\u0301n_sin_ti\u0301tulo (10)_43": 5612394976369170692
+      "Ilustracio\u0301n_sin_ti\u0301tulo (10)_44": -6604348669073556550
+      "Ilustracio\u0301n_sin_ti\u0301tulo (10)_45": 561882983777607715
+      "Ilustracio\u0301n_sin_ti\u0301tulo (10)_46": 5490395307998714531
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

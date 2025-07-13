@@ -162,7 +162,7 @@ public class EventsManager : MonoBehaviour
                             if (!longEvent.IsShort && currentGamePhase == CurrentGamePhase.Second) currentGamePhase = CurrentGamePhase.Third;
                             if (CurrentEvent is EndEvent)
                             {
-                                // END GAME
+                                SceneManager.LoadScene("GAME_CREDITS");
                             }
                             else
                             {

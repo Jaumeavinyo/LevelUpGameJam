@@ -169,12 +169,12 @@ TextureImporter:
       name: "Ilustracio\u0301n_sin_ti\u0301tulo (8)_0"
       rect:
         serializedVersion: 2
-        x: 1452
-        y: 2274
-        width: 354
-        height: 294
+        x: 1304
+        y: 1547
+        width: 3095
+        height: 1027
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -188,380 +188,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Ilustracio\u0301n_sin_ti\u0301tulo (8)_1"
-      rect:
-        serializedVersion: 2
-        x: 1804
-        y: 2289
-        width: 158
-        height: 260
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8e9ec8648301a5a60800000000000000
-      internalID: 7663455549812173288
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "Ilustracio\u0301n_sin_ti\u0301tulo (8)_2"
-      rect:
-        serializedVersion: 2
-        x: 2117
-        y: 2292
-        width: 133
-        height: 342
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3cf5fc9f9e0930df0800000000000000
-      internalID: -215169022590754877
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "Ilustracio\u0301n_sin_ti\u0301tulo (8)_3"
-      rect:
-        serializedVersion: 2
-        x: 2274
-        y: 2501
-        width: 29
-        height: 90
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ee3c8dc986e87f460800000000000000
-      internalID: 7275440302999520238
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "Ilustracio\u0301n_sin_ti\u0301tulo (8)_4"
-      rect:
-        serializedVersion: 2
-        x: 2300
-        y: 2294
-        width: 138
-        height: 208
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 231e0b4e048782c20800000000000000
-      internalID: 3181925356847292722
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "Ilustracio\u0301n_sin_ti\u0301tulo (8)_5"
-      rect:
-        serializedVersion: 2
-        x: 2566
-        y: 2280
-        width: 222
-        height: 264
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3ea95f4d333f10a00800000000000000
-      internalID: 721124819297737443
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "Ilustracio\u0301n_sin_ti\u0301tulo (8)_6"
-      rect:
-        serializedVersion: 2
-        x: 3380
-        y: 2255
-        width: 191
-        height: 259
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e83b64cc9e9860a90800000000000000
-      internalID: -7348034104760814706
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "Ilustracio\u0301n_sin_ti\u0301tulo (8)_7"
-      rect:
-        serializedVersion: 2
-        x: 1983
-        y: 2297
-        width: 150
-        height: 139
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4c11443eb60db5780800000000000000
-      internalID: -8693125493915643452
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "Ilustracio\u0301n_sin_ti\u0301tulo (8)_8"
-      rect:
-        serializedVersion: 2
-        x: 2721
-        y: 2267
-        width: 174
-        height: 181
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: aea792c6305109430800000000000000
-      internalID: 3787550391062330090
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "Ilustracio\u0301n_sin_ti\u0301tulo (8)_9"
-      rect:
-        serializedVersion: 2
-        x: 2922
-        y: 2267
-        width: 147
-        height: 196
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1ba9d1f3f1198e6b0800000000000000
-      internalID: -5266800200820876623
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "Ilustracio\u0301n_sin_ti\u0301tulo (8)_10"
-      rect:
-        serializedVersion: 2
-        x: 3099
-        y: 2282
-        width: 144
-        height: 186
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a49fc99d58c8ac5d0800000000000000
-      internalID: -3041464091825866422
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "Ilustracio\u0301n_sin_ti\u0301tulo (8)_11"
-      rect:
-        serializedVersion: 2
-        x: 3593
-        y: 2259
-        width: 147
-        height: 205
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5034ae3e4a39ee8d0800000000000000
-      internalID: -2815150380652281083
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "Ilustracio\u0301n_sin_ti\u0301tulo (8)_12"
-      rect:
-        serializedVersion: 2
-        x: 3757
-        y: 2273
-        width: 225
-        height: 205
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a3dfd9d43f7e0aaf0800000000000000
-      internalID: -387054535788593862
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "Ilustracio\u0301n_sin_ti\u0301tulo (8)_13"
-      rect:
-        serializedVersion: 2
-        x: 4001
-        y: 2277
-        width: 208
-        height: 212
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: dc92716528e4d7090800000000000000
-      internalID: -8035179838462023219
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "Ilustracio\u0301n_sin_ti\u0301tulo (8)_14"
-      rect:
-        serializedVersion: 2
-        x: 1315
-        y: 1541
-        width: 3094
-        height: 688
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cf8cf2a46bccc0170800000000000000
-      internalID: 8146110909307144444
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "Ilustracio\u0301n_sin_ti\u0301tulo (8)_15"
-      rect:
-        serializedVersion: 2
-        x: 3056
-        y: 2226
-        width: 31
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 925fd46065738bc70800000000000000
-      internalID: 8986993899030312233
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "Ilustracio\u0301n_sin_ti\u0301tulo (8)_16"
-      rect:
-        serializedVersion: 2
-        x: 4153
-        y: 2220
-        width: 37
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b4607ed3f91eb5fc0800000000000000
-      internalID: -3504959810923198901
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "Ilustracio\u0301n_sin_ti\u0301tulo (8)_17"
-      rect:
-        serializedVersion: 2
-        x: 4203
-        y: 2223
-        width: 8
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ec74f561c5cf34ab0800000000000000
-      internalID: -5024895286772807730
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: "Ilustracio\u0301n_sin_ti\u0301tulo (8)_18"
       rect:
         serializedVersion: 2
@@ -570,7 +196,7 @@ TextureImporter:
         width: 11
         height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -592,7 +218,7 @@ TextureImporter:
         width: 14
         height: 7
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -614,7 +240,7 @@ TextureImporter:
         width: 9
         height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -636,7 +262,7 @@ TextureImporter:
         width: 7
         height: 7
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -658,7 +284,7 @@ TextureImporter:
         width: 55
         height: 14
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -675,7 +301,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e08cae7328cd2a4498f7eec0ec8847d9
     internalID: 0
     vertices: []
     indices: 
