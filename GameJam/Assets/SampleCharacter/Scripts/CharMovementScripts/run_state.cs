@@ -14,8 +14,14 @@ public class run_state : FSM_BaseState
     {
         base.Enter();
         //Debug.Log("ENTER() RUN");
-        horizontalInput = my_sm.inputAction_move.ReadValue<Vector2>().x;       
+        horizontalInput = my_sm.inputAction_move.ReadValue<Vector2>().x;
 
+
+        if(GameManager.Instance.gamePlayMode == GamePlayMode.PLAYING)
+        {
+            SoundManager.Instance.PlaySound(my_sm.RunAudioClip, true);
+        }
+        
     }
 
     public override void UpdateLogic()
@@ -26,7 +32,8 @@ public class run_state : FSM_BaseState
             my_sm.ChangeState(my_sm.idle);
         }
         my_sm.animator.Play("run");
-        //SoundManager.Instance.PlayOneShotSFX(my_sm.RunAudioClip);
+        
+       
         handleStateInputs();
 
     }
@@ -52,6 +59,7 @@ public class run_state : FSM_BaseState
     public override void Exit()
     {
         base.Exit();
+        SoundManager.Instance.StopSoundFX();
     }
 
     public void handleStateInputs()

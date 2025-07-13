@@ -82,7 +82,32 @@ public class SoundManager : MonoBehaviour
             }
         }
     }
+  
+    public void StopSoundFX()
+    {
+        soundFXAudioSource.Stop();
+    }
+    public void PlaySound(AudioClip clip, bool loop = false, float volume = 1f)
+    {
+        if (clip == null)
+        {
+            Debug.LogWarning("No audio clip provided!");
+            return;
+        }
 
+
+
+
+        soundFXAudioSource.clip = clip;
+        soundFXAudioSource.loop = loop;
+        soundFXAudioSource.volume = Mathf.Clamp01(volume);
+        soundFXAudioSource.Play();
+
+        if (!loop)
+        {
+            Destroy(soundFXAudioSource, clip.length + 0.1f); // Clean up after playback
+        }
+    }
     public void PlayOneShotSFX(AudioClip audio)
     {
         soundFXAudioSource.loop = false;

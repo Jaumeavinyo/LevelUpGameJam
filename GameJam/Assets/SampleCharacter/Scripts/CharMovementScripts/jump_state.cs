@@ -38,6 +38,7 @@ public class jump_state : FSM_BaseState
         jumpingMid = false;
         falling = false;
         doubleJumpEnergy = 100;
+        SoundManager.Instance.PlayOneShotSFX(my_sm.jumpAudioClip);
     }
 
     public override void UpdateLogic()

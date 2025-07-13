@@ -45,6 +45,8 @@ public class FSM_CharMovement : FSM
     public float gravityScale;
     public float dashJumpGravityScale;
 
+   
+
     private void Awake()
     {
 
@@ -60,6 +62,7 @@ public class FSM_CharMovement : FSM
         grounded = isGrounded();
         directionInput = 0;
         lastDirectionInput = 0;
+       
 
     }
 

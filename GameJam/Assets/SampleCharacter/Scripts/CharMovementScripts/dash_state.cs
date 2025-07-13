@@ -37,6 +37,7 @@ public class dash_state : FSM_BaseState
         {
             horizontalDash = -1;
         }
+        SoundManager.Instance.PlayOneShotSFX(my_sm.dashAudioClip);
     }
 
     public override void UpdateLogic()

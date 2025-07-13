@@ -2304,6 +2304,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8499458064394099852, guid: 7b3aa52c2b893404189583a372a62318, type: 3}
+      propertyPath: GM
+      value: 
+      objectReference: {fileID: 1032448509}
     - target: {fileID: 8786673201951054855, guid: 7b3aa52c2b893404189583a372a62318, type: 3}
       propertyPath: UseVerticalDissolve
       value: 1
@@ -3290,7 +3294,7 @@ MonoBehaviour:
       Dialogue: 'Mom: Hey Sweetie! Do you still like this song! I love it!'
       EventDuration: 3
       musicTheme: 3
-      MusicVolumeDuringEvent: 1
+      MusicVolumeDuringEvent: 0.2
       fadeDuration: 1
       audioClip: {fileID: 0}
     GoToPlayAfterEvent: 1
@@ -3305,7 +3309,7 @@ MonoBehaviour:
         years ago! '
       EventDuration: 3
       musicTheme: 0
-      MusicVolumeDuringEvent: 0.5
+      MusicVolumeDuringEvent: 0.2
       fadeDuration: 1
       audioClip: {fileID: 0}
     - TargetCameraPosition: 1
@@ -3315,7 +3319,7 @@ MonoBehaviour:
       Dialogue: '<>: Oh, nice.'
       EventDuration: 3
       musicTheme: 0
-      MusicVolumeDuringEvent: 0.5
+      MusicVolumeDuringEvent: 0.2
       fadeDuration: 1
       audioClip: {fileID: 0}
     GoToPlayAfterEvent: 1
@@ -3329,7 +3333,7 @@ MonoBehaviour:
       Dialogue: '<>: How far are we?'
       EventDuration: 3
       musicTheme: 0
-      MusicVolumeDuringEvent: 0.5
+      MusicVolumeDuringEvent: 0.2
       fadeDuration: 1
       audioClip: {fileID: 0}
     - TargetCameraPosition: 1
@@ -3339,7 +3343,7 @@ MonoBehaviour:
       Dialogue: 'Mom: We are almost there sweetie. Are you excited to see your friends?'
       EventDuration: 5
       musicTheme: 0
-      MusicVolumeDuringEvent: 0.5
+      MusicVolumeDuringEvent: 0.2
       fadeDuration: 1
       audioClip: {fileID: 0}
     - TargetCameraPosition: 1
@@ -3349,7 +3353,7 @@ MonoBehaviour:
       Dialogue: '<>: Yes! It is going to be amazing!'
       EventDuration: 3
       musicTheme: 0
-      MusicVolumeDuringEvent: 0.5
+      MusicVolumeDuringEvent: 0.2
       fadeDuration: 1
       audioClip: {fileID: 0}
     GoToPlayAfterEvent: 1
@@ -3364,7 +3368,7 @@ MonoBehaviour:
       Dialogue: 'Mom: Are you hungry sweetie? Its almost lunch time!'
       EventDuration: 3
       musicTheme: 0
-      MusicVolumeDuringEvent: 0.5
+      MusicVolumeDuringEvent: 0.2
       fadeDuration: 1
       audioClip: {fileID: 0}
     - TargetCameraPosition: 1
@@ -3374,7 +3378,7 @@ MonoBehaviour:
       Dialogue: "<>: Yess! I\u2019m so hungry! Is it my favourite?"
       EventDuration: 3
       musicTheme: 0
-      MusicVolumeDuringEvent: 0.5
+      MusicVolumeDuringEvent: 0.2
       fadeDuration: 1
       audioClip: {fileID: 0}
     - TargetCameraPosition: 1
@@ -3384,7 +3388,7 @@ MonoBehaviour:
       Dialogue: 'Mom: yes! I made it this morning before leaving!'
       EventDuration: 3
       musicTheme: 0
-      MusicVolumeDuringEvent: 0.5
+      MusicVolumeDuringEvent: 0.2
       fadeDuration: 1
       audioClip: {fileID: 0}
     - TargetCameraPosition: 4
@@ -3394,7 +3398,7 @@ MonoBehaviour:
       Dialogue: '<>: yummm!'
       EventDuration: 1
       musicTheme: 0
-      MusicVolumeDuringEvent: 0.5
+      MusicVolumeDuringEvent: 0.2
       fadeDuration: 1
       audioClip: {fileID: 0}
     - TargetCameraPosition: 3
@@ -3402,7 +3406,7 @@ MonoBehaviour:
       Dialogue: 
       EventDuration: 1
       musicTheme: 0
-      MusicVolumeDuringEvent: 0.5
+      MusicVolumeDuringEvent: 0.2
       fadeDuration: 1
       audioClip: {fileID: 0}
     GoToPlayAfterEvent: 0
@@ -3414,7 +3418,7 @@ MonoBehaviour:
       Dialogue: 
       EventDuration: 3
       musicTheme: 0
-      MusicVolumeDuringEvent: 0
+      MusicVolumeDuringEvent: 0.2
       fadeDuration: 0
       audioClip: {fileID: 0}
     - TargetCameraPosition: 1
@@ -3424,7 +3428,7 @@ MonoBehaviour:
       Dialogue: 'Mom: What happened?!'
       EventDuration: 2
       musicTheme: 0
-      MusicVolumeDuringEvent: 0
+      MusicVolumeDuringEvent: 0.2
       fadeDuration: 0
       audioClip: {fileID: 0}
     - TargetCameraPosition: 1
@@ -3432,7 +3436,7 @@ MonoBehaviour:
       Dialogue: 'Dad: Flat tire...'
       EventDuration: 2
       musicTheme: 0
-      MusicVolumeDuringEvent: 0
+      MusicVolumeDuringEvent: 0.2
       fadeDuration: 0
       audioClip: {fileID: 0}
     - TargetCameraPosition: 1
@@ -3440,7 +3444,7 @@ MonoBehaviour:
       Dialogue: '<>: Oh no! Will we make it?'
       EventDuration: 3
       musicTheme: 0
-      MusicVolumeDuringEvent: 0
+      MusicVolumeDuringEvent: 0.2
       fadeDuration: 0
       audioClip: {fileID: 0}
     - TargetCameraPosition: 1
@@ -3448,7 +3452,7 @@ MonoBehaviour:
       Dialogue: 'Dad: No worries! It''ll just be a sec!'
       EventDuration: 3
       musicTheme: 0
-      MusicVolumeDuringEvent: 0
+      MusicVolumeDuringEvent: 0.2
       fadeDuration: 0
       audioClip: {fileID: 0}
     - TargetCameraPosition: 1
@@ -3458,7 +3462,7 @@ MonoBehaviour:
       Dialogue: 
       EventDuration: 0.3
       musicTheme: 0
-      MusicVolumeDuringEvent: 0
+      MusicVolumeDuringEvent: 0.2
       fadeDuration: 0
       audioClip: {fileID: 0}
     - TargetCameraPosition: 0
@@ -3466,7 +3470,7 @@ MonoBehaviour:
       Dialogue: 
       EventDuration: 0.5
       musicTheme: 0
-      MusicVolumeDuringEvent: 0
+      MusicVolumeDuringEvent: 0.2
       fadeDuration: 0
       audioClip: {fileID: 0}
     - TargetCameraPosition: 4
@@ -3474,7 +3478,7 @@ MonoBehaviour:
       Dialogue: '<>: I really want to see my friends...'
       EventDuration: 3
       musicTheme: 0
-      MusicVolumeDuringEvent: 0
+      MusicVolumeDuringEvent: 0.2
       fadeDuration: 0
       audioClip: {fileID: 0}
     - TargetCameraPosition: 3
@@ -3482,7 +3486,7 @@ MonoBehaviour:
       Dialogue: 
       EventDuration: 1
       musicTheme: 0
-      MusicVolumeDuringEvent: 0
+      MusicVolumeDuringEvent: 0.2
       fadeDuration: 0
       audioClip: {fileID: 0}
     - TargetCameraPosition: 1
@@ -3492,7 +3496,7 @@ MonoBehaviour:
       Dialogue: 'Dad: All done!'
       EventDuration: 2
       musicTheme: 0
-      MusicVolumeDuringEvent: 0
+      MusicVolumeDuringEvent: 0.2
       fadeDuration: 0
       audioClip: {fileID: 0}
     - TargetCameraPosition: 0
@@ -3502,7 +3506,7 @@ MonoBehaviour:
       Dialogue: YIPIIII!
       EventDuration: 3
       musicTheme: 0
-      MusicVolumeDuringEvent: 0
+      MusicVolumeDuringEvent: 0.2
       fadeDuration: 0
       audioClip: {fileID: 0}
     GoToPlayAfterEvent: 0
