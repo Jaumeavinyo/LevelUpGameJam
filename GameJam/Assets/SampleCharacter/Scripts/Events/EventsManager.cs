@@ -44,7 +44,6 @@ public class EventsManager : MonoBehaviour
         AddShorts();
         AddUniqueLong();
         AddShorts();
-        AddShorts();
         AddUniqueLong();
         AddShorts();
         Events.Add(EndEvent);
@@ -155,6 +154,7 @@ public class EventsManager : MonoBehaviour
                         }
                         else
                         {
+                            if (!longEvent.IsShort && currentGamePhase == CurrentGamePhase.First) currentGamePhase = CurrentGamePhase.Second;
                             if (!longEvent.IsShort && currentGamePhase == CurrentGamePhase.Second) currentGamePhase = CurrentGamePhase.Third;
                             if (CurrentEvent is EndEvent)
                             {
@@ -162,7 +162,6 @@ public class EventsManager : MonoBehaviour
                             }
                             else
                             {
-                                currentGamePhase = CurrentGamePhase.Second;
                                 ChunksManager.Instance.Speed = ChunksManager.Instance.baseSpeed;
                                 ChunksManager.Instance.Acceleration = ChunksManager.Instance.baseAcceleration;
                                 FinishEvent(longEvent.GoToPlayAfterEvent);

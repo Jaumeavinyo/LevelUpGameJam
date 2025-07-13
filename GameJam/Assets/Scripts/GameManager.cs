@@ -2,10 +2,6 @@ using UnityEngine;
 using System;
 using TMPro;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Users;
-using UnityEngine.InputSystem.UI;
-using System.Collections.Generic;
-using UnityEngine.TextCore.Text;
 
 
 public enum TargetName
@@ -56,8 +52,7 @@ public class GameManager : MonoBehaviour
     {
         gamePlayMode = GamePlayMode.FREE_MOVEMENT;
         playerName = PlayerData.playerName;
-        Debug.Log(playerName);
-        if (SoundManager.Instance != null) SoundManager.Instance.PlayMusic(MusicTheme.GAME_START);
+        SoundManager.Instance.PlayMusic(MusicTheme.GAME_START);
         soundManager = FindFirstObjectByType<SoundManager>();
         soundManager.changeAllMusicVolume(soundManager.GameMusicList[1].maxVolume);//esto es una puta chapuza q soluciona un bug de reseteo de volumen de los sourceSounds
     }

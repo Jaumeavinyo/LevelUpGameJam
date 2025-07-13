@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using Unity.Mathematics;
 using UnityEngine;
 
 public class BackgroundManager : MonoBehaviour
@@ -21,16 +20,17 @@ public class BackgroundManager : MonoBehaviour
 
     private bool CheckDestroyPosition(BackgroundChunk chunk)
     {
-        return IsRightBackgroundManager ? chunk.transform.localPosition.x >= 40 : chunk.transform.localPosition.x <= -30;
+        return IsRightBackgroundManager ? chunk.transform.localPosition.x >= 32 : chunk.transform.localPosition.x <= -28;
     }
 
     private bool CheckGeneratePosition(BackgroundChunk chunk)
     {
-        return IsRightBackgroundManager ? chunk.transform.localPosition.x >= 20 : chunk.transform.localPosition.x <= 11;
+        return IsRightBackgroundManager ? chunk.transform.localPosition.x >= 16 : chunk.transform.localPosition.x <= -12;
     }
 
     void Update()
     {
+        Display.gameObject.SetActive(IsRightBackgroundManager ? GameManager.Instance.Camera.transform.localPosition.x > 0 : GameManager.Instance.Camera.transform.localPosition.x < 0);
         List<BackgroundChunk> CurrentLiveBackgrounds = new(LiveBackgrounds);
         foreach (BackgroundChunk chunk in CurrentLiveBackgrounds)
         {
@@ -55,7 +55,7 @@ public class BackgroundManager : MonoBehaviour
         };
         BackgroundChunk NewBackground = Instantiate(selectedTemplate, Display.transform);
         LiveBackgrounds.Add(NewBackground);
-        NewBackground.transform.localPosition = CurrentBackground.transform.localPosition + (new Vector3(CurrentBackground.GetXSize() / 2f, 0, 0) + new Vector3(NewBackground.GetXSize() / 2f, 0, 0)) * (IsRightBackgroundManager ? -1 : 1);
+        NewBackground.transform.localPosition = new Vector3(IsRightBackgroundManager ? -24 : 28, 0, 0);
         CurrentBackground = NewBackground;
     }
 }

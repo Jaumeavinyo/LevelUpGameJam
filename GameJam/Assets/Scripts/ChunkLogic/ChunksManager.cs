@@ -27,11 +27,12 @@ public class ChunksManager : MonoBehaviour
 
     void Start()
     {
+        Character.GetComponent<Dissolve>().StartVanishing(true);
         Acceleration = baseAcceleration;
         Speed = baseSpeed;
         Character.transform.localPosition = PlayerStartingPoint.transform.localPosition;
-        Character.gameObject.GetComponent<SpriteRenderer>().enabled = false; 
-        
+        Character.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+
         Chunk firstChunk = Instantiate(StartingChunk, Display.transform);
         LiveChunks.Add(firstChunk);
         CurrentChunk = firstChunk;
