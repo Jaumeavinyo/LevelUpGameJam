@@ -107,15 +107,12 @@ public class EventsManager : MonoBehaviour
             {
                 StartCoroutine(soundManager.CrossfadeMusic(soundManager.currentMusicSource, soundManager.getMusicBytheme(data.musicTheme).music, data.fadeDuration));
             }
-        }
-        //if (data.Music != null)
-        //{
-        //    // PLAY CLIP
-        //}
+        }     
     }
 
     void Update()
     {
+        Debug.Log($"Mother sprite: {Mother.sprite}, Enabled: {Mother.enabled}");
         if (CurrentEvent != null)
         {
             EventData currentData = CurrentEvent.GetCurrentData(currentSubEvent);
@@ -215,10 +212,12 @@ public class EventsManager : MonoBehaviour
             if (Event.SpriteTargets[i].target == TargetName.FATHER)
             {//cambiar el sprite base del padre por otro del padre
                 Father.sprite = Event.SpriteTargets[i].spriteTarget;
+                Father.enabled = true;
             }
             else
             {
                 Mother.sprite = Event.SpriteTargets[i].spriteTarget;
+                Mother.enabled = true;
             }
         }
     }

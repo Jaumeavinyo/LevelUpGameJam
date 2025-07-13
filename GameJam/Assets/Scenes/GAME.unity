@@ -389,7 +389,7 @@ Transform:
   m_GameObject: {fileID: 328751636}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1, y: 4, z: 0}
+  m_LocalPosition: {x: 3.33, y: 2.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3050,7 +3050,7 @@ MonoBehaviour:
     - TargetCameraPosition: 1
       SpriteTargets:
       - target: 1
-        spriteTarget: {fileID: -3638327469456189017, guid: 4e3184daa038e12428bb48d9654bcc3b, type: 3}
+        spriteTarget: {fileID: 9195235056209088891, guid: 4e3184daa038e12428bb48d9654bcc3b, type: 3}
       Dialogue: 'Mom: Have you seen where we are? I met your father near here 15
         years ago! '
       EventDuration: 3
@@ -3085,7 +3085,7 @@ MonoBehaviour:
     - TargetCameraPosition: 1
       SpriteTargets:
       - target: 1
-        spriteTarget: {fileID: -3638327469456189017, guid: 4e3184daa038e12428bb48d9654bcc3b, type: 3}
+        spriteTarget: {fileID: 9195235056209088891, guid: 4e3184daa038e12428bb48d9654bcc3b, type: 3}
       Dialogue: 'Mom: We are almost there sweetie. Are you excited to see your friends?'
       EventDuration: 5
       musicTheme: 0
@@ -3095,7 +3095,7 @@ MonoBehaviour:
     - TargetCameraPosition: 1
       SpriteTargets:
       - target: 1
-        spriteTarget: {fileID: -3638327469456189017, guid: 4e3184daa038e12428bb48d9654bcc3b, type: 3}
+        spriteTarget: {fileID: 9195235056209088891, guid: 4e3184daa038e12428bb48d9654bcc3b, type: 3}
       Dialogue: '<>: Yes! It is going to be amazing!'
       EventDuration: 3
       musicTheme: 0
@@ -3110,7 +3110,7 @@ MonoBehaviour:
     - TargetCameraPosition: 1
       SpriteTargets:
       - target: 1
-        spriteTarget: {fileID: -6834461204193345849, guid: 2221b08585cb15b4995fc72d153a056e, type: 3}
+        spriteTarget: {fileID: 662504160793858594, guid: 2221b08585cb15b4995fc72d153a056e, type: 3}
       Dialogue: 'Mom: Are you hungry sweetie? Its almost lunch time!'
       EventDuration: 3
       musicTheme: 0
@@ -3120,7 +3120,7 @@ MonoBehaviour:
     - TargetCameraPosition: 1
       SpriteTargets:
       - target: 1
-        spriteTarget: {fileID: -3638327469456189017, guid: 4e3184daa038e12428bb48d9654bcc3b, type: 3}
+        spriteTarget: {fileID: 9195235056209088891, guid: 4e3184daa038e12428bb48d9654bcc3b, type: 3}
       Dialogue: "<>: Yess! I\u2019m so hungry! Is it my favourite?"
       EventDuration: 3
       musicTheme: 0
@@ -3130,7 +3130,7 @@ MonoBehaviour:
     - TargetCameraPosition: 1
       SpriteTargets:
       - target: 1
-        spriteTarget: {fileID: -6834461204193345849, guid: 2221b08585cb15b4995fc72d153a056e, type: 3}
+        spriteTarget: {fileID: 662504160793858594, guid: 2221b08585cb15b4995fc72d153a056e, type: 3}
       Dialogue: 'Mom: yes! I made it this morning before leaving!'
       EventDuration: 3
       musicTheme: 0
@@ -3140,7 +3140,7 @@ MonoBehaviour:
     - TargetCameraPosition: 4
       SpriteTargets:
       - target: 1
-        spriteTarget: {fileID: 21300000, guid: 7ec3b5a3d95922441addaf5e4de9453e, type: 3}
+        spriteTarget: {fileID: 9195235056209088891, guid: 4e3184daa038e12428bb48d9654bcc3b, type: 3}
       Dialogue: '<>: yummm!'
       EventDuration: 1
       musicTheme: 0
@@ -3168,7 +3168,9 @@ MonoBehaviour:
       fadeDuration: 0
       audioClip: {fileID: 0}
     - TargetCameraPosition: 1
-      SpriteTargets: []
+      SpriteTargets:
+      - target: 1
+        spriteTarget: {fileID: -8197386270341515182, guid: 0425e5885bd6d6645bc345cd5fd50d62, type: 3}
       Dialogue: 'Mom: What happened?!'
       EventDuration: 2
       musicTheme: 0
@@ -3244,7 +3246,9 @@ MonoBehaviour:
       fadeDuration: 0
       audioClip: {fileID: 0}
     - TargetCameraPosition: 0
-      SpriteTargets: []
+      SpriteTargets:
+      - target: 1
+        spriteTarget: {fileID: 9195235056209088891, guid: 4e3184daa038e12428bb48d9654bcc3b, type: 3}
       Dialogue: YIPIIII!
       EventDuration: 3
       musicTheme: 0
@@ -3262,8 +3266,10 @@ MonoBehaviour:
   EndEvent:
     Events:
     - TargetCameraPosition: 0
-      SpriteTargets: []
-      Dialogue: DONE!
+      SpriteTargets:
+      - target: 1
+        spriteTarget: {fileID: 662504160793858594, guid: 2221b08585cb15b4995fc72d153a056e, type: 3}
+      Dialogue: 'Mom: We arrived! '
       EventDuration: 0
       musicTheme: 0
       MusicVolumeDuringEvent: 0
