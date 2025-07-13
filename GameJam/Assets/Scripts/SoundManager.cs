@@ -42,8 +42,6 @@ public class SoundManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
-
-
     void Start()
     {
         foreach (var gameMusic in GameMusicList)
@@ -114,7 +112,7 @@ public class SoundManager : MonoBehaviour
     }
     public void StopCurrentMusic(float fadeDuration)
     {
-        StartCoroutine(MusicFadeOut(musicFadeOutAndStopDuration,currentMusicSource.volume, fadeDuration));
+        StartCoroutine(MusicFadeOut(fadeDuration, currentMusicSource.volume, 0.0f));
     }
 
     public IEnumerator MusicFadeOut(float duration,float from, float to)
@@ -188,7 +186,7 @@ public class SoundManager : MonoBehaviour
             yield return null;
         }
         from.volume = 0f;
-        to.volume = 1f;
+        to.volume = toMaxVolume;
         from.Stop();
         currentMusicSource = to;
     }
