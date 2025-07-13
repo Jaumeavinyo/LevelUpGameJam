@@ -50,13 +50,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NextPossibleChunks:
-  - {fileID: 1737325614816170554}
+  - {fileID: 1737325614816170554, guid: 5a1343b4a3948a54dbd7a7396eb9db82, type: 3}
   - {fileID: 1737325614816170554, guid: 38cf3e5b873dad54a9ea5d68d429e648, type: 3}
   - {fileID: 1737325614816170554, guid: f38fbc3e14255da46bba926f01c4c2d5, type: 3}
-  - {fileID: 1737325614816170554, guid: 7d6b05885c8dfa147b6cca056eb01caa, type: 3}
-  - {fileID: 1737325614816170554, guid: 2640e0f720500204db55b473efdeda36, type: 3}
-  - {fileID: 1737325614816170554, guid: da12d2164d291d0428e7e3cd3ab624fd, type: 3}
-  - {fileID: 1737325614816170554, guid: 0f888ef03edc51d4b963c08d059e722f, type: 3}
+  - {fileID: 1737325614816170554, guid: 879a1fbd1e4a8cb4d871f5d5788f8c4d, type: 3}
+  - {fileID: 1737325614816170554, guid: f38fbc3e14255da46bba926f01c4c2d5, type: 3}
   - {fileID: 1737325614816170554, guid: 8309194e701d98e4fac5c0e2f304c0b2, type: 3}
 --- !u!1001 &527106696204230874
 PrefabInstance:
