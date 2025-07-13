@@ -1,31 +1,28 @@
 fileFormatVersion: 2
-guid: ea32cd07c562ecb40810a7752e655f74
+guid: b3884e6db8f72c34098d0f0ae01a94eb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2459609569768118046
-    second: MIRA ATRAS_0
+      213: -2878761869227041255
+    second: NORMAL_0
   - first:
-      213: -4611384145492288604
-    second: MIRA ATRAS_1
+      213: -2518765783103470618
+    second: NORMAL_1
   - first:
-      213: 6044906270313663149
-    second: MIRA ATRAS_2
+      213: -95714534348396587
+    second: NORMAL_2
   - first:
-      213: -1727476621288858460
-    second: MIRA ATRAS_3
+      213: 1665190240612291087
+    second: NORMAL_3
   - first:
-      213: -6815351368047768759
-    second: MIRA ATRAS_4
+      213: -7332770539186949992
+    second: NORMAL_4
   - first:
-      213: 8084550130637685181
-    second: MIRA ATRAS_5
+      213: 7829633256263558437
+    second: NORMAL_5
   - first:
-      213: -9003409289754932089
-    second: MIRA ATRAS_6
-  - first:
-      213: -1925903649464407957
-    second: MIRA ATRAS_7
+      213: -2386694458210397717
+    second: NORMAL_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -72,7 +69,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 450
+  spritePixelsToUnits: 490
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -117,52 +114,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MIRA ATRAS_0
-      rect:
-        serializedVersion: 2
-        x: 2067
-        y: 4127
-        width: 22
-        height: 43
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2e8e1dbb026bdddd0800000000000000
-      internalID: -2459609569768118046
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MIRA ATRAS_1
+      name: NORMAL_0
       rect:
         serializedVersion: 2
         x: 942
         y: 923
-        width: 2316
-        height: 3064
+        width: 2024
+        height: 3264
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,14 +133,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4ab50154d821100c0800000000000000
-      internalID: -4611384145492288604
+      spriteID: 91e58cf05559c08d0800000000000000
+      internalID: -2878761869227041255
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MIRA ATRAS_2
+      name: NORMAL_1
       rect:
         serializedVersion: 2
         x: 3589
@@ -193,14 +155,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: daac39eb932d3e350800000000000000
-      internalID: 6044906270313663149
+      spriteID: 6e385b18ddb8b0dd0800000000000000
+      internalID: -2518765783103470618
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MIRA ATRAS_3
+      name: NORMAL_2
       rect:
         serializedVersion: 2
         x: 816
@@ -215,14 +177,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4ac194e5a25c608e0800000000000000
-      internalID: -1727476621288858460
+      spriteID: 5d7625c5324fbaef0800000000000000
+      internalID: -95714534348396587
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MIRA ATRAS_4
+      name: NORMAL_3
       rect:
         serializedVersion: 2
         x: 784
@@ -237,14 +199,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 94b4a004a020b61a0800000000000000
-      internalID: -6815351368047768759
+      spriteID: f02942783b1fb1710800000000000000
+      internalID: 1665190240612291087
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MIRA ATRAS_5
+      name: NORMAL_4
       rect:
         serializedVersion: 2
         x: 771
@@ -259,14 +221,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: db14f719287123070800000000000000
-      internalID: 8084550130637685181
+      spriteID: 890ff489b04cc3a90800000000000000
+      internalID: -7332770539186949992
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MIRA ATRAS_6
+      name: NORMAL_5
       rect:
         serializedVersion: 2
         x: 767
@@ -281,14 +243,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 78c84bcf3f67d0380800000000000000
-      internalID: -9003409289754932089
+      spriteID: 525ac21a6f178ac60800000000000000
+      internalID: 7829633256263558437
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MIRA ATRAS_7
+      name: NORMAL_6
       rect:
         serializedVersion: 2
         x: 763
@@ -303,8 +265,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b68ab0ea5d0d545e0800000000000000
-      internalID: -1925903649464407957
+      spriteID: be1d9f61902c0eed0800000000000000
+      internalID: -2386694458210397717
       vertices: []
       indices: 
       edges: []
@@ -323,14 +285,13 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      MIRA ATRAS_0: -2459609569768118046
-      MIRA ATRAS_1: -4611384145492288604
-      MIRA ATRAS_2: 6044906270313663149
-      MIRA ATRAS_3: -1727476621288858460
-      MIRA ATRAS_4: -6815351368047768759
-      MIRA ATRAS_5: 8084550130637685181
-      MIRA ATRAS_6: -9003409289754932089
-      MIRA ATRAS_7: -1925903649464407957
+      NORMAL_0: -2878761869227041255
+      NORMAL_1: -2518765783103470618
+      NORMAL_2: -95714534348396587
+      NORMAL_3: 1665190240612291087
+      NORMAL_4: -7332770539186949992
+      NORMAL_5: 7829633256263558437
+      NORMAL_6: -2386694458210397717
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

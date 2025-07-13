@@ -182,7 +182,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &88163550
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -866,7 +866,7 @@ Transform:
   m_GameObject: {fileID: 711817466}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.35, y: 1.09, z: 0}
+  m_LocalPosition: {x: -1.65, y: 1.39, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -916,7 +916,7 @@ SpriteRenderer:
   m_SortingLayerID: -2000239383
   m_SortingLayer: 5
   m_SortingOrder: 8
-  m_Sprite: {fileID: 850509716442320723, guid: 2ee8271a5a3c9a449aae6f10b4896745, type: 3}
+  m_Sprite: {fileID: -1646421530638951644, guid: fce0067d48dd6354fa8292dd5cddd7ba, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2389,7 +2389,7 @@ SpriteRenderer:
   m_Size: {x: 259.84, y: 63.818123}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1190000706
@@ -3032,17 +3032,228 @@ MonoBehaviour:
   LWindow: {fileID: 1728003794}
   RWindow: {fileID: 1432375470}
   ShortEvents:
-  - Event:
-      TargetCameraPosition: 1
+  - Events:
+    - TargetCameraPosition: 1
       SpriteTargets:
       - target: 1
-        spriteTarget: {fileID: 8374611977483790002, guid: 3a97c804383fec54f848606ba592b89f, type: 3}
-      Dialogue: 'Hey Sweetie! Do you still like this song! I love it! '
-      EventDuration: 8
-      musicTheme: 1
-      MusicVolumeDuringEvent: 0.3
-      fadeDuration: 1.09
-  LongEvents: []
+        spriteTarget: {fileID: -8197386270341515182, guid: 0425e5885bd6d6645bc345cd5fd50d62, type: 3}
+      Dialogue: 'Mom: Hey Sweetie! Do you still like this song! I love it!'
+      EventDuration: 3
+      musicTheme: 3
+      MusicVolumeDuringEvent: 1
+      fadeDuration: 1
+      audioClip: {fileID: 0}
+    GoToPlayAfterEvent: 1
+    WaitForPlayerInput: 0
+    Deacceleration: 0
+  - Events:
+    - TargetCameraPosition: 1
+      SpriteTargets:
+      - target: 1
+        spriteTarget: {fileID: -3638327469456189017, guid: 4e3184daa038e12428bb48d9654bcc3b, type: 3}
+      Dialogue: 'Mom: Have you seen where we are? I met your father near here 15
+        years ago! '
+      EventDuration: 3
+      musicTheme: 0
+      MusicVolumeDuringEvent: 0.5
+      fadeDuration: 1
+      audioClip: {fileID: 0}
+    - TargetCameraPosition: 1
+      SpriteTargets:
+      - target: 1
+        spriteTarget: {fileID: -2878761869227041255, guid: b3884e6db8f72c34098d0f0ae01a94eb, type: 3}
+      Dialogue: '<>: Oh, nice.'
+      EventDuration: 3
+      musicTheme: 0
+      MusicVolumeDuringEvent: 0.5
+      fadeDuration: 1
+      audioClip: {fileID: 0}
+    GoToPlayAfterEvent: 1
+    WaitForPlayerInput: 0
+    Deacceleration: 0
+  - Events:
+    - TargetCameraPosition: 1
+      SpriteTargets:
+      - target: 1
+        spriteTarget: {fileID: -2878761869227041255, guid: b3884e6db8f72c34098d0f0ae01a94eb, type: 3}
+      Dialogue: '<>: How far are we?'
+      EventDuration: 3
+      musicTheme: 0
+      MusicVolumeDuringEvent: 0.5
+      fadeDuration: 1
+      audioClip: {fileID: 0}
+    - TargetCameraPosition: 1
+      SpriteTargets:
+      - target: 1
+        spriteTarget: {fileID: -3638327469456189017, guid: 4e3184daa038e12428bb48d9654bcc3b, type: 3}
+      Dialogue: 'Mom: We are almost there sweetie. Are you excited to see your friends?'
+      EventDuration: 5
+      musicTheme: 0
+      MusicVolumeDuringEvent: 0.5
+      fadeDuration: 1
+      audioClip: {fileID: 0}
+    - TargetCameraPosition: 1
+      SpriteTargets:
+      - target: 1
+        spriteTarget: {fileID: -3638327469456189017, guid: 4e3184daa038e12428bb48d9654bcc3b, type: 3}
+      Dialogue: '<>: Yes! It is going to be amazing!'
+      EventDuration: 3
+      musicTheme: 0
+      MusicVolumeDuringEvent: 0.5
+      fadeDuration: 1
+      audioClip: {fileID: 0}
+    GoToPlayAfterEvent: 1
+    WaitForPlayerInput: 0
+    Deacceleration: 0
+  LongEvents:
+  - Events:
+    - TargetCameraPosition: 1
+      SpriteTargets:
+      - target: 1
+        spriteTarget: {fileID: -6834461204193345849, guid: 2221b08585cb15b4995fc72d153a056e, type: 3}
+      Dialogue: 'Mom: Are you hungry sweetie? Its almost lunch time!'
+      EventDuration: 3
+      musicTheme: 0
+      MusicVolumeDuringEvent: 0.5
+      fadeDuration: 1
+      audioClip: {fileID: 0}
+    - TargetCameraPosition: 1
+      SpriteTargets:
+      - target: 1
+        spriteTarget: {fileID: -3638327469456189017, guid: 4e3184daa038e12428bb48d9654bcc3b, type: 3}
+      Dialogue: "<>: Yess! I\u2019m so hungry! Is it my favourite?"
+      EventDuration: 3
+      musicTheme: 0
+      MusicVolumeDuringEvent: 0.5
+      fadeDuration: 1
+      audioClip: {fileID: 0}
+    - TargetCameraPosition: 1
+      SpriteTargets:
+      - target: 1
+        spriteTarget: {fileID: -6834461204193345849, guid: 2221b08585cb15b4995fc72d153a056e, type: 3}
+      Dialogue: 'Mom: yes! I made it this morning before leaving!'
+      EventDuration: 3
+      musicTheme: 0
+      MusicVolumeDuringEvent: 0.5
+      fadeDuration: 1
+      audioClip: {fileID: 0}
+    - TargetCameraPosition: 4
+      SpriteTargets:
+      - target: 1
+        spriteTarget: {fileID: 21300000, guid: 7ec3b5a3d95922441addaf5e4de9453e, type: 3}
+      Dialogue: '<>: yummm!'
+      EventDuration: 1
+      musicTheme: 0
+      MusicVolumeDuringEvent: 0.5
+      fadeDuration: 1
+      audioClip: {fileID: 0}
+    - TargetCameraPosition: 3
+      SpriteTargets: []
+      Dialogue: 
+      EventDuration: 1
+      musicTheme: 0
+      MusicVolumeDuringEvent: 0.5
+      fadeDuration: 1
+      audioClip: {fileID: 0}
+    GoToPlayAfterEvent: 0
+    WaitForPlayerInput: 0
+    Deacceleration: 0
+  - Events:
+    - TargetCameraPosition: 0
+      SpriteTargets: []
+      Dialogue: 
+      EventDuration: 3
+      musicTheme: 0
+      MusicVolumeDuringEvent: 0
+      fadeDuration: 0
+      audioClip: {fileID: 0}
+    - TargetCameraPosition: 1
+      SpriteTargets: []
+      Dialogue: 'Mom: What happened?!'
+      EventDuration: 2
+      musicTheme: 0
+      MusicVolumeDuringEvent: 0
+      fadeDuration: 0
+      audioClip: {fileID: 0}
+    - TargetCameraPosition: 1
+      SpriteTargets: []
+      Dialogue: 'Dad: Flat tire...'
+      EventDuration: 2
+      musicTheme: 0
+      MusicVolumeDuringEvent: 0
+      fadeDuration: 0
+      audioClip: {fileID: 0}
+    - TargetCameraPosition: 1
+      SpriteTargets: []
+      Dialogue: '<>: Oh no! Will we make it?'
+      EventDuration: 3
+      musicTheme: 0
+      MusicVolumeDuringEvent: 0
+      fadeDuration: 0
+      audioClip: {fileID: 0}
+    - TargetCameraPosition: 1
+      SpriteTargets: []
+      Dialogue: 'Dad: No worries! It''ll just be a sec!'
+      EventDuration: 3
+      musicTheme: 0
+      MusicVolumeDuringEvent: 0
+      fadeDuration: 0
+      audioClip: {fileID: 0}
+    - TargetCameraPosition: 1
+      SpriteTargets:
+      - target: 0
+        spriteTarget: {fileID: 6685404017453448167, guid: b6210bc31f8305d45877fedd7e82504f, type: 3}
+      Dialogue: 
+      EventDuration: 0.3
+      musicTheme: 0
+      MusicVolumeDuringEvent: 0
+      fadeDuration: 0
+      audioClip: {fileID: 0}
+    - TargetCameraPosition: 0
+      SpriteTargets: []
+      Dialogue: 
+      EventDuration: 0.5
+      musicTheme: 0
+      MusicVolumeDuringEvent: 0
+      fadeDuration: 0
+      audioClip: {fileID: 0}
+    - TargetCameraPosition: 4
+      SpriteTargets: []
+      Dialogue: '<>: I really want to see my friends...'
+      EventDuration: 3
+      musicTheme: 0
+      MusicVolumeDuringEvent: 0
+      fadeDuration: 0
+      audioClip: {fileID: 0}
+    - TargetCameraPosition: 3
+      SpriteTargets: []
+      Dialogue: 
+      EventDuration: 1
+      musicTheme: 0
+      MusicVolumeDuringEvent: 0
+      fadeDuration: 0
+      audioClip: {fileID: 0}
+    - TargetCameraPosition: 1
+      SpriteTargets:
+      - target: 0
+        spriteTarget: {fileID: 21300000, guid: 85ed23816e3e6d644ad325c09717f64b, type: 3}
+      Dialogue: 'Dad: All done!'
+      EventDuration: 2
+      musicTheme: 0
+      MusicVolumeDuringEvent: 0
+      fadeDuration: 0
+      audioClip: {fileID: 0}
+    - TargetCameraPosition: 0
+      SpriteTargets: []
+      Dialogue: YIPIIII!
+      EventDuration: 3
+      musicTheme: 0
+      MusicVolumeDuringEvent: 0
+      fadeDuration: 0
+      audioClip: {fileID: 0}
+    GoToPlayAfterEvent: 0
+    WaitForPlayerInput: 0
+    Deacceleration: 10
   GasEvent:
     Events: []
     GoToPlayAfterEvent: 0
@@ -3057,12 +3268,15 @@ MonoBehaviour:
       musicTheme: 0
       MusicVolumeDuringEvent: 0
       fadeDuration: 0
+      audioClip: {fileID: 0}
     GoToPlayAfterEvent: 0
     WaitForPlayerInput: 1
+    Deacceleration: 0
   Father: {fileID: 711817468}
   Mother: {fileID: 1970219309}
   Camera: {fileID: 907485541}
   vel: 18
+  audioSource: {fileID: 0}
 --- !u!4 &1492295113
 Transform:
   m_ObjectHideFlags: 0
@@ -3228,7 +3442,7 @@ Transform:
   m_GameObject: {fileID: 1970219307}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.61, y: 0.69, z: 0}
+  m_LocalPosition: {x: 4.5373, y: -1.0937, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3278,7 +3492,7 @@ SpriteRenderer:
   m_SortingLayerID: -2000239383
   m_SortingLayer: 5
   m_SortingOrder: 10
-  m_Sprite: {fileID: 2794704429521113632, guid: 2ee8271a5a3c9a449aae6f10b4896745, type: 3}
+  m_Sprite: {fileID: -2878761869227041255, guid: b3884e6db8f72c34098d0f0ae01a94eb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
