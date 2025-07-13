@@ -45,7 +45,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: ad03d78d7fafffd4aaeeeeed0889f1f8, type: 3}
   m_Resource: {fileID: 8300000, guid: ad03d78d7fafffd4aaeeeeed0889f1f8, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.775
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -174,7 +174,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 7e6ff926f7e489747b10f84164f89939, type: 3}
   m_Resource: {fileID: 8300000, guid: 7e6ff926f7e489747b10f84164f89939, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.775
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -304,11 +304,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 403c1f2886cefe44a89848507005fd5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentMusicSource: {fileID: 0}
+  newMusicSource: {fileID: 0}
+  soundFXAudioSource: {fileID: 0}
   musicFadeDuration: 2
+  musicFadeOutAndStopDuration: 2
   GameMusicList:
   - music: {fileID: 1274303695407446966}
     theme: 0
+    maxVolume: 0
   - music: {fileID: 2213924924129832650}
     theme: 1
+    maxVolume: 0
   - music: {fileID: 0}
     theme: 2
+    maxVolume: 0
