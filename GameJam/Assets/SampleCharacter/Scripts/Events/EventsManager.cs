@@ -19,9 +19,8 @@ public class EventsManager : MonoBehaviour
     public static EventsManager Instance;
     [NonSerialized] public List<LongEvent> Events = new();
     [NonSerialized] public CurrentGamePhase currentGamePhase;
-    public List<LongEvent> ShortEvents;
+    public List<ShortEvent> ShortEvents;
     public List<LongEvent> LongEvents;
-    public GasEvent GasEvent;
     public EndEvent EndEvent;
     public SpriteRenderer Father;
     public SpriteRenderer Mother;
@@ -34,8 +33,6 @@ public class EventsManager : MonoBehaviour
     public AudioSource audioSource;
     private int currentSubEvent = 0;
 
-
-
     void Awake()
     {
         Instance = this;
@@ -47,7 +44,6 @@ public class EventsManager : MonoBehaviour
         AddShorts();
         AddUniqueLong();
         AddShorts();
-        Events.Add(GasEvent);
         AddShorts();
         AddUniqueLong();
         AddShorts();
@@ -107,12 +103,12 @@ public class EventsManager : MonoBehaviour
             {
                 StartCoroutine(soundManager.CrossfadeMusic(soundManager.currentMusicSource, soundManager.getMusicBytheme(data.musicTheme).music, data.fadeDuration));
             }
-        }     
+        }
     }
 
     void Update()
     {
-        
+
         if (CurrentEvent != null)
         {
             EventData currentData = CurrentEvent.GetCurrentData(currentSubEvent);
@@ -224,14 +220,10 @@ public class EventsManager : MonoBehaviour
 
     void AddShorts()
     {
-        List<LongEvent> pool = new(ShortEvents);
-        for (int i = 0; i < 2; i++)
-        {
-            LongEvent selected = pool[UnityEngine.Random.Range(0, pool.Count)];
-            Events.Add(selected);
-            selected.IsShort = true;
-            pool.Remove(selected);
-        }
+        ShortEvent selected = ShortEvents[UnityEngine.Random.Range(0, ShortEvents.Count)];
+        Events.Add(selected);
+        selected.IsShort = true;
+        if (selected.shouldBeUnique) ShortEvents.Remove(selected);
     }
 
     void AddUniqueLong()

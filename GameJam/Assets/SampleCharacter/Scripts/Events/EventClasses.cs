@@ -59,8 +59,9 @@ public class LongEvent
 }
 
 [Serializable]
-public class GasEvent : LongEvent
+public class ShortEvent : LongEvent
 {
+    public bool shouldBeUnique;
 }
 
 [Serializable]
