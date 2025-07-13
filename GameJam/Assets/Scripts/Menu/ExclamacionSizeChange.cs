@@ -26,7 +26,7 @@ public class ExclamacionSizeChange : MonoBehaviour
             float currentScale = Mathf.Lerp(minScale, maxScale, normalizedValue);
 
             // Apply to both X and Y axes
-            exclamacion.transform.localScale = new Vector3(currentScale, currentScale, 1f);
+            exclamacion.transform.localScale = new Vector3(1.0f, currentScale, 1f);
         }
     }
 }
