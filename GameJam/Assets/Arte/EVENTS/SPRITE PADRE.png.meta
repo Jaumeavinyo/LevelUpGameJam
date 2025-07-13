@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: 24a7cca675bd97949a3668a04e18d5d2
+guid: fce0067d48dd6354fa8292dd5cddd7ba
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7839027252549372492
-    second: BOCATA_0
-  - first:
-      213: -4994632587887338021
-    second: BOCATA_1
-  - first:
-      213: 2263853368196765610
-    second: BOCATA_2
-  - first:
-      213: -1310799275810324666
-    second: BOCATA_3
+      213: -1646421530638951644
+    second: SPRITE PADRE_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -60,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 450
+  spritePixelsToUnits: 490
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -105,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BOCATA_0
+      name: SPRITE PADRE_0
       rect:
         serializedVersion: 2
-        x: 2067
-        y: 4127
-        width: 22
-        height: 43
+        x: 123
+        y: 322
+        width: 1418
+        height: 1300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,74 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4b5303b2f3e263390800000000000000
-      internalID: -7839027252549372492
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BOCATA_1
-      rect:
-        serializedVersion: 2
-        x: 658
-        y: 923
-        width: 2290
-        height: 3064
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bdd926fbf108faab0800000000000000
-      internalID: -4994632587887338021
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BOCATA_2
-      rect:
-        serializedVersion: 2
-        x: 3589
-        y: 2526
-        width: 30
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: aa790fad4a2da6f10800000000000000
-      internalID: 2263853368196765610
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BOCATA_3
-      rect:
-        serializedVersion: 2
-        x: 639
-        y: 1378
-        width: 10
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 64f7c79e00b1fcde0800000000000000
-      internalID: -1310799275810324666
+      spriteID: 42bd5bb475cb629e0800000000000000
+      internalID: -1646421530638951644
       vertices: []
       indices: 
       edges: []
@@ -223,10 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      BOCATA_0: -7839027252549372492
-      BOCATA_1: -4994632587887338021
-      BOCATA_2: 2263853368196765610
-      BOCATA_3: -1310799275810324666
+      SPRITE PADRE_0: -1646421530638951644
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

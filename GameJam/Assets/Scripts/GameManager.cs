@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
         gamePlayMode = GamePlayMode.FREE_MOVEMENT;
         playerName = PlayerData.playerName;
         Debug.Log(playerName);
-        SoundManager.Instance.PlayMusic(MusicTheme.GAME_START);
+        if (SoundManager.Instance != null) SoundManager.Instance.PlayMusic(MusicTheme.GAME_START);
         soundManager = FindFirstObjectByType<SoundManager>();
         soundManager.changeAllMusicVolume(soundManager.GameMusicList[1].maxVolume);//esto es una puta chapuza q soluciona un bug de reseteo de volumen de los sourceSounds
     }
@@ -98,8 +98,8 @@ public class GameManager : MonoBehaviour
                     bool cameraWithZoom = CheckCameraZoom();
                     bool cameraInPos = CheckGameCameraPosition();
                     if (cameraInPos && cameraWithZoom)
-                    {   //añadir este codigo tmb a cuando obligamos al player a volver a jugar
-                        if (soundManager.currentMusicSource.volume != soundManager.getMusicByAudioSource(soundManager.currentMusicSource).maxVolume)
+                    {   //aï¿½adir este codigo tmb a cuando obligamos al player a volver a jugar
+                        if (soundManager != null && soundManager.currentMusicSource.volume != soundManager.getMusicByAudioSource(soundManager.currentMusicSource).maxVolume)
                         {
                             Debug.Log("ME QUIEREN MATAR AYUDA");
                             Debug.Log("Curr volume" + soundManager.currentMusicSource.volume);
@@ -145,13 +145,13 @@ public class GameManager : MonoBehaviour
         // Use manually tracked input device
         if (inputdetector.LastInputDevice == "Gamepad")
         {
-            
+
             PressAgameObject.SetActive(canEnterPlayNinja);
             PressEGameObject.SetActive(false);
         }
         else // Assume Keyboard & Mouse
         {
-           
+
             PressEGameObject.SetActive(canEnterPlayNinja);
             PressAgameObject.SetActive(false);
         }
@@ -159,14 +159,14 @@ public class GameManager : MonoBehaviour
         // Start game logic for both control schemes
         if (canEnterPlayNinja && inputdetector.LastInputDevice == "KeyboardMouse" && Input.GetKey(KeyCode.E))
         {
-            
+
             ChangingToPlayMode = true;
             PressEGameObject.SetActive(false);
             PressAgameObject.SetActive(false);
         }
         else if (canEnterPlayNinja && inputdetector.LastInputDevice == "Gamepad" && gamepadButtonPressed == 1.0f)
         {
-            
+
             ChangingToPlayMode = true;
             PressAgameObject.SetActive(false);
             PressEGameObject.SetActive(false);

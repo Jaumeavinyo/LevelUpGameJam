@@ -1,31 +1,31 @@
 fileFormatVersion: 2
-guid: b6210bc31f8305d45877fedd7e82504f
+guid: 4e3184daa038e12428bb48d9654bcc3b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2152400589232173134
-    second: "Ilustracio\u0301n_sin_ti\u0301tulo (7)_0"
+      213: -3638327469456189017
+    second: MIRA ATRAS (1)_0
   - first:
-      213: -8763768546957233344
-    second: "Ilustracio\u0301n_sin_ti\u0301tulo (7)_1"
+      213: 9195235056209088891
+    second: MIRA ATRAS (1)_1
   - first:
-      213: -1048950983335820372
-    second: "Ilustracio\u0301n_sin_ti\u0301tulo (7)_2"
+      213: -7908096562106377185
+    second: MIRA ATRAS (1)_2
   - first:
-      213: -1131228270260819107
-    second: "Ilustracio\u0301n_sin_ti\u0301tulo (7)_3"
+      213: -445324677560483049
+    second: MIRA ATRAS (1)_3
   - first:
-      213: -2491626250772099490
-    second: "Ilustracio\u0301n_sin_ti\u0301tulo (7)_4"
+      213: 6416815685072135129
+    second: MIRA ATRAS (1)_4
   - first:
-      213: 2399642669858168384
-    second: "Ilustracio\u0301n_sin_ti\u0301tulo (7)_5"
+      213: -1245961900701263361
+    second: MIRA ATRAS (1)_5
   - first:
-      213: 7434248279605459577
-    second: "Ilustracio\u0301n_sin_ti\u0301tulo (7)_6"
+      213: 2058699276782285042
+    second: MIRA ATRAS (1)_6
   - first:
-      213: 6685404017453448167
-    second: "Ilustracio\u0301n_sin_ti\u0301tulo (7)_7"
+      213: 8496485815076662293
+    second: MIRA ATRAS (1)_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -72,7 +72,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 490
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -117,30 +117,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "Ilustracio\u0301n_sin_ti\u0301tulo (7)_0"
+      name: MIRA ATRAS (1)_0
       rect:
         serializedVersion: 2
-        x: 1462
-        y: 1240
-        width: 2299
-        height: 786
+        x: 2067
+        y: 4127
+        width: 22
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -149,20 +136,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e4076879eecdedd10800000000000000
-      internalID: 2152400589232173134
+      spriteID: 7a994867170128dc0800000000000000
+      internalID: -3638327469456189017
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Ilustracio\u0301n_sin_ti\u0301tulo (7)_1"
+      name: MIRA ATRAS (1)_1
       rect:
         serializedVersion: 2
-        x: 3574
-        y: 2015
-        width: 21
-        height: 12
+        x: 942
+        y: 923
+        width: 2316
+        height: 3064
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0437fd060f6d06680800000000000000
-      internalID: -8763768546957233344
+      spriteID: b71df8fa0990c9f70800000000000000
+      internalID: 9195235056209088891
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Ilustracio\u0301n_sin_ti\u0301tulo (7)_2"
+      name: MIRA ATRAS (1)_2
       rect:
         serializedVersion: 2
-        x: 1468
-        y: 1567
-        width: 6
-        height: 6
+        x: 3589
+        y: 2526
+        width: 30
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,20 +180,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ca3c87363a06171f0800000000000000
-      internalID: -1048950983335820372
+      spriteID: f1c592e531cc04290800000000000000
+      internalID: -7908096562106377185
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Ilustracio\u0301n_sin_ti\u0301tulo (7)_3"
+      name: MIRA ATRAS (1)_3
       rect:
         serializedVersion: 2
-        x: 1921
-        y: 1244
-        width: 13
-        height: 7
+        x: 816
+        y: 2231
+        width: 33
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,20 +202,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d5b6937b1e11d40f0800000000000000
-      internalID: -1131228270260819107
+      spriteID: 713ca40b093e1d9f0800000000000000
+      internalID: -445324677560483049
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Ilustracio\u0301n_sin_ti\u0301tulo (7)_4"
+      name: MIRA ATRAS (1)_4
       rect:
         serializedVersion: 2
-        x: 1933
-        y: 1246
-        width: 7
-        height: 6
+        x: 784
+        y: 1948
+        width: 55
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -237,20 +224,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e5ec0b94027fb6dd0800000000000000
-      internalID: -2491626250772099490
+      spriteID: 9d321e92edb1d0950800000000000000
+      internalID: 6416815685072135129
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Ilustracio\u0301n_sin_ti\u0301tulo (7)_5"
+      name: MIRA ATRAS (1)_5
       rect:
         serializedVersion: 2
-        x: 1940
-        y: 1244
-        width: 11
-        height: 6
+        x: 771
+        y: 1755
+        width: 50
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -259,19 +246,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 04e14cc5b4e3d4120800000000000000
-      internalID: 2399642669858168384
+      spriteID: ff9d701b04475bee0800000000000000
+      internalID: -1245961900701263361
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Ilustracio\u0301n_sin_ti\u0301tulo (7)_6"
+      name: MIRA ATRAS (1)_6
       rect:
         serializedVersion: 2
-        x: 1956
-        y: 1240
-        width: 25
+        x: 767
+        y: 1693
+        width: 36
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -281,20 +268,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 97a31f50c61cb2760800000000000000
-      internalID: 7434248279605459577
+      spriteID: 2f036f3b518f19c10800000000000000
+      internalID: 2058699276782285042
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Ilustracio\u0301n_sin_ti\u0301tulo (7)_7"
+      name: MIRA ATRAS (1)_7
       rect:
         serializedVersion: 2
-        x: 2002
-        y: 1240
-        width: 30
-        height: 10
+        x: 763
+        y: 1610
+        width: 21
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -303,8 +290,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7eb3848788357cc50800000000000000
-      internalID: 6685404017453448167
+      spriteID: 51c2ace15d499e570800000000000000
+      internalID: 8496485815076662293
       vertices: []
       indices: 
       edges: []
@@ -323,14 +310,14 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "Ilustracio\u0301n_sin_ti\u0301tulo (7)_0": 2152400589232173134
-      "Ilustracio\u0301n_sin_ti\u0301tulo (7)_1": -8763768546957233344
-      "Ilustracio\u0301n_sin_ti\u0301tulo (7)_2": -1048950983335820372
-      "Ilustracio\u0301n_sin_ti\u0301tulo (7)_3": -1131228270260819107
-      "Ilustracio\u0301n_sin_ti\u0301tulo (7)_4": -2491626250772099490
-      "Ilustracio\u0301n_sin_ti\u0301tulo (7)_5": 2399642669858168384
-      "Ilustracio\u0301n_sin_ti\u0301tulo (7)_6": 7434248279605459577
-      "Ilustracio\u0301n_sin_ti\u0301tulo (7)_7": 6685404017453448167
+      MIRA ATRAS (1)_0: -3638327469456189017
+      MIRA ATRAS (1)_1: 9195235056209088891
+      MIRA ATRAS (1)_2: -7908096562106377185
+      MIRA ATRAS (1)_3: -445324677560483049
+      MIRA ATRAS (1)_4: 6416815685072135129
+      MIRA ATRAS (1)_5: -1245961900701263361
+      MIRA ATRAS (1)_6: 2058699276782285042
+      MIRA ATRAS (1)_7: 8496485815076662293
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
