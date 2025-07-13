@@ -40,7 +40,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -106,9 +106,9 @@ TextureImporter:
       name: CAR INICIO 1_1
       rect:
         serializedVersion: 2
-        x: 0
+        x: 372
         y: 0
-        width: 1920
+        width: 1548
         height: 1080
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -120,6 +120,28 @@ TextureImporter:
       bones: []
       spriteID: 9fc94da5440668c00800000000000000
       internalID: 902514622032289017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CAR INICIO 1_0
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 113
+        width: 123
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e39a660c3d1f814488150729bb9f074
+      internalID: -620392411
       vertices: []
       indices: 
       edges: []
@@ -138,6 +160,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+      CAR INICIO 1_0: -620392411
       CAR INICIO 1_1: 902514622032289017
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0

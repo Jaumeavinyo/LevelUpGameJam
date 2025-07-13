@@ -43,7 +43,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -111,10 +111,10 @@ TextureImporter:
         serializedVersion: 2
         x: 636
         y: 110
-        width: 707
+        width: 755
         height: 639
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -128,28 +128,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CAR INICIO 2_1
-      rect:
-        serializedVersion: 2
-        x: 1279
-        y: 483
-        width: 105
-        height: 107
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e77f3b83b16c12b50800000000000000
-      internalID: 6566747551900628862
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: CAR INICIO 2_2
       rect:
         serializedVersion: 2
@@ -158,7 +136,7 @@ TextureImporter:
         width: 134
         height: 108
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -175,7 +153,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 8eee40ba0230d224f9bfac3d0edeb5f5
     internalID: 0
     vertices: []
     indices: 
@@ -184,7 +162,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      CAR INICIO 2_0: -44752121646883392
+      CAR INICIO 2_1: 6566747551900628862
+      CAR INICIO 2_2: 2652490022685096367
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
