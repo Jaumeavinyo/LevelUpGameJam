@@ -355,7 +355,7 @@ RectTransform:
   m_GameObject: {fileID: 384976970}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.7624, y: 1.8874, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 827827587}
@@ -363,7 +363,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -36.281, y: -34.417}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &522814317
@@ -391,8 +391,8 @@ Transform:
   m_GameObject: {fileID: 522814317}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -131.13205, y: -8.735748, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -267.39, y: -50.904, z: 0}
+  m_LocalScale: {x: 1.7624, y: 1.8874, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2113900458}
@@ -2101,8 +2101,8 @@ Transform:
   m_GameObject: {fileID: 1277584648}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -131.13205, y: -117, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -267.39, y: -255.24, z: 0}
+  m_LocalScale: {x: 1.7624, y: 1.8874, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 789372180}
@@ -2569,7 +2569,7 @@ RectTransform:
   m_GameObject: {fileID: 1593491263}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.7624, y: 1.8874, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1006529233}
@@ -2579,7 +2579,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -7.8270264, y: 68.450195}
+  m_AnchoredPosition: {x: -50.075, y: 94.773}
   m_SizeDelta: {x: -729.9185, y: -301.1936}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1593491267
@@ -3182,7 +3182,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.745
   m_Pitch: 1
   Loop: 0
   Mute: 0
