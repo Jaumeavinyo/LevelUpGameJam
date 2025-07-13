@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -31,6 +32,7 @@ public class EventsManager : MonoBehaviour
     private bool isMoving, pressedInput;
     public float vel;
     public AudioSource audioSource;
+    public AudioClip newEventSound, skipDialogueSound;
     private int currentSubEvent = 0;
 
     void Awake()
@@ -57,6 +59,18 @@ public class EventsManager : MonoBehaviour
     public void PressedInput()
     {
         pressedInput = true;
+    }
+
+    public void PlayNotificationSound()
+    {
+        audioSource.clip = newEventSound;
+        audioSource.Play();
+    }
+
+    private void PlaySkipTextSound()
+    {
+        audioSource.clip = skipDialogueSound;
+        audioSource.Play();
     }
 
     public void StartNextEvent()
@@ -139,11 +153,11 @@ public class EventsManager : MonoBehaviour
             }
             else
             {
-
+                bool skipDialogue = pressedInput && currentData.Dialogue != "";
                 eventTimer -= Time.deltaTime;
-                bool waitForInput = CurrentEvent is LongEvent lE && lE.WaitForPlayerInput;
-                if ((!waitForInput && eventTimer <= 0) || (waitForInput && pressedInput))
+                if (eventTimer <= 0 || skipDialogue)
                 {
+                    if (skipDialogue) PlaySkipTextSound();
                     if (CurrentEvent is LongEvent longEvent)
                     {
                         currentSubEvent += 1;
@@ -222,7 +236,7 @@ public class EventsManager : MonoBehaviour
         ShortEvent selected = ShortEvents[UnityEngine.Random.Range(0, ShortEvents.Count)];
         Events.Add(selected);
         selected.IsShort = true;
-        if (selected.shouldBeUnique) ShortEvents.Remove(selected);
+        ShortEvents.Remove(selected);
     }
 
     void AddUniqueLong()

@@ -84,6 +84,7 @@ public class GameManager : MonoBehaviour
                     {
                         forceEventTimer += Time.deltaTime;
                         Textos.Instance.ShowNotification = true;
+                        EventsManager.Instance.PlayNotificationSound();
                         if (forceEventTimer >= secondsToForceEventIfNointeraction)
                         {
                             LoadNewEvent();

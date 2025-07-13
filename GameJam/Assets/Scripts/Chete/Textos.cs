@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -16,6 +17,7 @@ public class Textos : MonoBehaviour
     [SerializeField] private TextMeshProUGUI eventText;
 
     [NonSerialized] public bool ShowNotification;
+    public AudioSource audioSource;
 
     void Awake()
     {
@@ -51,7 +53,7 @@ public class Textos : MonoBehaviour
         }
 
     }
-    private IEnumerator openTextBoxRoutine()
+    private IEnumerator openTextBoxRoutine(string Dialogue)
     {
         float timer = 0f;
         while (timer < 1f)
@@ -60,13 +62,14 @@ public class Textos : MonoBehaviour
             yield return null;
         }
         uiBackground.SetActive(true);
+        eventText.text = Dialogue.Replace("<>", PlayerData.playerName);
+        if (Dialogue != "") audioSource.Play();
     }
 
     public void OpenEvent(string Dialogue)
     {
-        eventText.text = Dialogue.Replace("<>", PlayerData.playerName);
         ShowNotification = false;
-        if (!uiBackground.activeInHierarchy) StartCoroutine(openTextBoxRoutine());
+        StartCoroutine(openTextBoxRoutine(Dialogue));
     }
 
     public void FinishEvent()

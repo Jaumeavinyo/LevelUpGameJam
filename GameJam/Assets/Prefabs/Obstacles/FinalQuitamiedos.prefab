@@ -91,7 +91,7 @@ PrefabInstance:
     - target: {fileID: 3189507720451525745, guid: c3ed8f3023fd5b8428887904d325beec, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: af3e2491404d1ea43bf13a1a5f6b320f, type: 2}
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 4282620978185773732, guid: c3ed8f3023fd5b8428887904d325beec, type: 3}
       propertyPath: m_Name
       value: FinalQuitamiedos

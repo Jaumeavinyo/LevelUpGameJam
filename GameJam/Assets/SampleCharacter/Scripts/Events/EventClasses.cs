@@ -47,7 +47,6 @@ public class LongEvent
     [Tooltip("Automatically go to play mode after event is finished")]
     public bool GoToPlayAfterEvent;
     [Tooltip("Ignore Event Duration and wait till player input")]
-    public bool WaitForPlayerInput = true;
     [NonSerialized] public bool IsShort;
     [Tooltip("How fast the background stops moving. Leave at -1 to instantly stop!")]
     public float Deacceleration = 0;
@@ -61,7 +60,6 @@ public class LongEvent
 [Serializable]
 public class ShortEvent : LongEvent
 {
-    public bool shouldBeUnique;
 }
 
 [Serializable]
