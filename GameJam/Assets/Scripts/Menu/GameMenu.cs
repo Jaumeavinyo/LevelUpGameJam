@@ -12,7 +12,7 @@ using TMPro;
 
 public class MainMenuUI : MonoBehaviour
 {
-  
+
 
     public Button StartGame;
     public Button Options;//volume credits
@@ -35,7 +35,7 @@ public class MainMenuUI : MonoBehaviour
 
     public SoundManager soundManager;
 
-    
+
     void Start()
     {
         StartGame.onClick.AddListener(OnStartGameClicked);
@@ -60,15 +60,16 @@ public class MainMenuUI : MonoBehaviour
     }
     void SubmitName()
     {
-        if(InputNameUI.text != null)
+        if (InputNameUI.text != null)
         {
             PlayerData.playerName = InputNameUI.text;
             SoundManager.Instance.StopCurrentMusic(2.0f);
-            StartCoroutine(WaitnewScene("GAME", 5.0f));
+            StartCoroutine(WaitnewScene("GAME", 3.0f));
         }
     }
-    IEnumerator WaitnewScene(string scene,float timeToWait)
+    IEnumerator WaitnewScene(string scene, float timeToWait)
     {
+        FadeToBlack.Instance.FadeOut();
         yield return new WaitForSeconds(timeToWait);
         SceneManager.LoadScene("GAME");
     }

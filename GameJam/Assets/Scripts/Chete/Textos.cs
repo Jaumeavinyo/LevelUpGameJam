@@ -56,7 +56,7 @@ public class Textos : MonoBehaviour
     private IEnumerator openTextBoxRoutine(string Dialogue)
     {
         float timer = 0f;
-        while (timer < 1f)
+        while (timer < 0.5f)
         {
             timer += Time.deltaTime;
             yield return null;
