@@ -5,7 +5,6 @@ public class BackgroundChunk : MonoBehaviour
 {
     void Start()
     {
-        GetComponent<SpriteRenderer>().maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
     }
     public float GetXSize()
     {

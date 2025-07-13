@@ -55,7 +55,7 @@ public class BackgroundManager : MonoBehaviour
         };
         BackgroundChunk NewBackground = Instantiate(selectedTemplate, Display.transform);
         LiveBackgrounds.Add(NewBackground);
-        NewBackground.transform.localPosition = new Vector3(IsRightBackgroundManager ? -24 : 28, 0, 0);
+        NewBackground.transform.localPosition = CurrentBackground.transform.localPosition + new Vector3(IsRightBackgroundManager ? -40 : 40, 0, 0);
         CurrentBackground = NewBackground;
     }
 }
