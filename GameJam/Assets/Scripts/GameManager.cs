@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Users;
 using UnityEngine.InputSystem.UI;
 using System.Collections.Generic;
+using UnityEngine.TextCore.Text;
 
 
 public enum TargetName
@@ -23,6 +24,9 @@ public enum GamePlayMode
 public class GameManager : MonoBehaviour
 {
     //INPUT SYSTEM
+
+    public FSM_CharMovement character;
+
     public InputActionAsset inputActions;
     public InputAction inputAction_move_camera, inputAction_interact;
     public static string LastInputDevice = "None";
@@ -99,6 +103,7 @@ public class GameManager : MonoBehaviour
                     bool cameraInPos = CheckGameCameraPosition();
                     if (cameraInPos && cameraWithZoom)
                     {   //a�adir este codigo tmb a cuando obligamos al player a volver a jugar
+                        character.gameObject.GetComponent<SpriteRenderer>().enabled = true;
                         if (soundManager != null && soundManager.currentMusicSource.volume != soundManager.getMusicByAudioSource(soundManager.currentMusicSource).maxVolume)
                         {
                             Debug.Log("ME QUIEREN MATAR AYUDA");

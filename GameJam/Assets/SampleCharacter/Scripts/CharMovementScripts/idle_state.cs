@@ -66,6 +66,10 @@ public class idle_state : FSM_BaseState
             jumpInput = true;
             stateMachine.ChangeState(my_sm.jump);
         }
+        //if (!my_sm.grounded)
+        //{
+        //    stateMachine.ChangeState(my_sm.jump);
+        //}
 
         //   ### --- ###
         float bDash = my_sm.inputAction_dash.ReadValue<float>();

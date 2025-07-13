@@ -1076,6 +1076,7 @@ MonoBehaviour:
   Display: {fileID: 445523841}
   PlayerStartingPoint: {fileID: 328751637}
   Character: {fileID: 1869172342}
+  spriteRenderer: {fileID: 0}
 --- !u!4 &692484571
 Transform:
   m_ObjectHideFlags: 0
@@ -2317,6 +2318,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b3aa52c2b893404189583a372a62318, type: 3}
+--- !u!114 &1011426170 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5024023641227474126, guid: 7b3aa52c2b893404189583a372a62318, type: 3}
+  m_PrefabInstance: {fileID: 1011426169}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1027350377
 GameObject:
   m_ObjectHideFlags: 0
@@ -2396,6 +2408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f71d99822637a14fa5274a012e3a319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character: {fileID: 1869172342}
   inputActions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   inputAction_move_camera:
     m_Name: Input Action_move_camera
@@ -2415,7 +2428,7 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
-  playerInput: {fileID: 0}
+  playerInput: {fileID: 1011426170}
   inputdetector: {fileID: 1367363261}
   secondsToForceEventIfNointeraction: 10
   StateText: {fileID: 2141811197}

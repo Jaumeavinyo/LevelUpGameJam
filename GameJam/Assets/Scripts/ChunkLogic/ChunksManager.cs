@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class ChunksManager : MonoBehaviour
@@ -17,6 +18,7 @@ public class ChunksManager : MonoBehaviour
     public Transform PlayerStartingPoint;
 
     public FSM_CharMovement Character;
+    public SpriteRenderer spriteRenderer;
 
     void Awake()
     {
@@ -28,6 +30,8 @@ public class ChunksManager : MonoBehaviour
         Acceleration = baseAcceleration;
         Speed = baseSpeed;
         Character.transform.localPosition = PlayerStartingPoint.transform.localPosition;
+        Character.gameObject.GetComponent<SpriteRenderer>().enabled = false; 
+        
         Chunk firstChunk = Instantiate(StartingChunk, Display.transform);
         LiveChunks.Add(firstChunk);
         CurrentChunk = firstChunk;
