@@ -17,7 +17,7 @@ public class EventsManager : MonoBehaviour
     public SoundManager soundManager;
     public Transform CarCenter, LWindow, RWindow;
     public static EventsManager Instance;
-    [NonSerialized] public List<BaseEvent> Events = new();
+    [NonSerialized] public List<LongEvent> Events = new();
     [NonSerialized] public CurrentGamePhase currentGamePhase;
     public List<LongEvent> ShortEvents;
     public List<LongEvent> LongEvents;
@@ -26,11 +26,13 @@ public class EventsManager : MonoBehaviour
     public SpriteRenderer Father;
     public SpriteRenderer Mother;
     private Sprite FatherBaseSprite, MotherBaseSprite;
-    private BaseEvent CurrentEvent;
+    private LongEvent CurrentEvent;
     private float eventTimer;
     public Camera Camera;
     private bool isMoving, pressedInput;
     public float vel;
+    public AudioSource audioSource;
+    private int currentSubEvent = 0;
 
 
 
@@ -41,6 +43,7 @@ public class EventsManager : MonoBehaviour
 
     void Start()
     {
+        Events.Clear();
         AddShorts();
         AddUniqueLong();
         AddShorts();
@@ -67,17 +70,18 @@ public class EventsManager : MonoBehaviour
         {
             CurrentEvent = Events[0];
             Events.RemoveAt(0);
-            StartNewEventSection(CurrentEvent.GetCurrentData());
-            if (CurrentEvent is GasEvent gasEvent)
+            currentSubEvent = 0;
+            StartNewEventSection(CurrentEvent.GetCurrentData(0));
+            if (CurrentEvent is LongEvent LongEvent && LongEvent.Deacceleration != 0)
             {
-                if (gasEvent.Deacceleration == -1)
+                if (LongEvent.Deacceleration == -1)
                 {
                     ChunksManager.Instance.Acceleration = 0;
                     ChunksManager.Instance.Speed = 0;
                 }
                 else
                 {
-                    ChunksManager.Instance.Acceleration = -gasEvent.Deacceleration;
+                    ChunksManager.Instance.Acceleration = -LongEvent.Deacceleration;
                 }
             }
         }
@@ -88,6 +92,11 @@ public class EventsManager : MonoBehaviour
         isMoving = true;
         Textos.Instance.OpenEvent(data.Dialogue);
         changeSprites(data);
+        if (data.audioClip != null)
+        {
+            audioSource.clip = data.audioClip;
+            audioSource.Play();
+        }
         if (soundManager)
         {
             if (data.musicTheme == MusicTheme.NONE)
@@ -98,8 +107,6 @@ public class EventsManager : MonoBehaviour
             {
                 StartCoroutine(soundManager.CrossfadeMusic(soundManager.currentMusicSource, soundManager.getMusicBytheme(data.musicTheme).music, data.fadeDuration));
             }
-
-
         }
         //if (data.Music != null)
         //{
@@ -111,13 +118,31 @@ public class EventsManager : MonoBehaviour
     {
         if (CurrentEvent != null)
         {
-            EventData currentData = CurrentEvent.GetCurrentData();
+            EventData currentData = CurrentEvent.GetCurrentData(currentSubEvent);
             if (isMoving)
             {
-                if (GoToEvent(currentData.TargetCameraPosition))
+                if (currentData.TargetCameraPosition == TargetPosition.FadeIn || currentData.TargetCameraPosition == TargetPosition.FadeOut)
                 {
+                    isMoving = false;
                     eventTimer = currentData.EventDuration;
                     pressedInput = false;
+                    if (currentData.TargetCameraPosition == TargetPosition.FadeIn)
+                    {
+                        FadeToBlack.Instance.FadeIn();
+                    }
+                    else
+                    {
+                        FadeToBlack.Instance.FadeOut();
+                    }
+                }
+                else
+                {
+                    if (GoToEvent(currentData.TargetCameraPosition))
+                    {
+                        isMoving = false;
+                        eventTimer = currentData.EventDuration;
+                        pressedInput = false;
+                    }
                 }
             }
             else
@@ -129,27 +154,24 @@ public class EventsManager : MonoBehaviour
                 {
                     if (CurrentEvent is LongEvent longEvent)
                     {
-                        longEvent.Events.RemoveAt(0);
-                        EventData data = longEvent.GetCurrentData();
+                        currentSubEvent += 1;
+                        EventData data = longEvent.GetCurrentData(currentSubEvent);
                         if (data != null)
                         {
                             StartNewEventSection(data);
                         }
                         else
                         {
-                            if (currentGamePhase == CurrentGamePhase.Second) currentGamePhase = CurrentGamePhase.Third;
+                            if (!longEvent.IsShort && currentGamePhase == CurrentGamePhase.Second) currentGamePhase = CurrentGamePhase.Third;
                             if (CurrentEvent is EndEvent)
                             {
                                 // END GAME
                             }
                             else
                             {
-                                if (CurrentEvent is GasEvent)
-                                {
-                                    currentGamePhase = CurrentGamePhase.Second;
-                                    ChunksManager.Instance.Speed = ChunksManager.Instance.baseSpeed;
-                                    ChunksManager.Instance.Acceleration = ChunksManager.Instance.baseAcceleration;
-                                }
+                                currentGamePhase = CurrentGamePhase.Second;
+                                ChunksManager.Instance.Speed = ChunksManager.Instance.baseSpeed;
+                                ChunksManager.Instance.Acceleration = ChunksManager.Instance.baseAcceleration;
                                 FinishEvent(longEvent.GoToPlayAfterEvent);
                             }
                         }
@@ -172,7 +194,6 @@ public class EventsManager : MonoBehaviour
 
         if (Vector3.Distance(Camera.transform.position, targetPosition) == 0)
         {
-            isMoving = false;
             return true;
         }
         return false;
@@ -185,8 +206,6 @@ public class EventsManager : MonoBehaviour
         Father.sprite = FatherBaseSprite;
         Mother.sprite = MotherBaseSprite;
         Textos.Instance.FinishEvent();
-
-
     }
 
     public void changeSprites(EventData Event)
@@ -209,9 +228,9 @@ public class EventsManager : MonoBehaviour
         List<LongEvent> pool = new(ShortEvents);
         for (int i = 0; i < 2; i++)
         {
-            if (pool.Count == 0) pool = new(ShortEvents);
-            var selected = pool[UnityEngine.Random.Range(0, pool.Count)];
+            LongEvent selected = pool[UnityEngine.Random.Range(0, pool.Count)];
             Events.Add(selected);
+            selected.IsShort = true;
             pool.Remove(selected);
         }
     }
@@ -219,6 +238,6 @@ public class EventsManager : MonoBehaviour
     void AddUniqueLong()
     {
         Events.Add(LongEvents[0]);
-        Events.RemoveAt(0);
+        LongEvents.RemoveAt(0);
     }
 }

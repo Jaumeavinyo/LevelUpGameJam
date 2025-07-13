@@ -6,7 +6,9 @@ public enum TargetPosition
 {
     LeftWindow,
     CarCenter,
-    RightWindow
+    RightWindow,
+    FadeIn,
+    FadeOut
 }
 [Serializable]
 public struct SpriteTarget
@@ -35,35 +37,30 @@ public class EventData
     [Tooltip("currentMusic will fade out in a time duration")]
     public float fadeDuration;
 
-
+    public AudioClip audioClip;
 }
 
 [Serializable]
-public abstract class BaseEvent
-{
-    public abstract EventData GetCurrentData();
-}
-
-[Serializable]
-public class LongEvent : BaseEvent
+public class LongEvent
 {
     public List<EventData> Events;
     [Tooltip("Automatically go to play mode after event is finished")]
     public bool GoToPlayAfterEvent;
     [Tooltip("Ignore Event Duration and wait till player input")]
     public bool WaitForPlayerInput = true;
+    [NonSerialized] public bool IsShort;
+    [Tooltip("How fast the background stops moving. Leave at -1 to instantly stop!")]
+    public float Deacceleration = 0;
 
-    public override EventData GetCurrentData()
+    public EventData GetCurrentData(int index)
     {
-        return Events.Count > 0 ? Events[0] : null;
+        return Events.Count > index ? Events[index] : null;
     }
 }
 
 [Serializable]
 public class GasEvent : LongEvent
 {
-    [Tooltip("How fast the background stops moving. Leave at -1 to instantly stop!")]
-    public float Deacceleration = -1;
 }
 
 [Serializable]

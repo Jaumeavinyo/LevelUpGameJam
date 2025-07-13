@@ -11,6 +11,7 @@ public class ChunksManager : MonoBehaviour
     [NonSerialized] public Chunk CurrentChunk;
     public float baseSpeed = 2, baseAcceleration = 0.05f, MAX_SPEED = 3;
     [NonSerialized] public float Acceleration, Speed;
+
     public GameObject Display;
     private bool GameStarted = false;
     public Transform PlayerStartingPoint;
@@ -55,7 +56,7 @@ public class ChunksManager : MonoBehaviour
         rb.linearVelocity = Vector2.zero;
         rb.angularVelocity = 0f;
         Character.GetComponent<Dissolve>().StartAppear();
-       
+
     }
 
     public void StartRestartCountdown()
